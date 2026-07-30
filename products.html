@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Portfolio | Meritorious Pharmaceuticals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
+                    colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#046132', 600: '#034e28', 700: '#023c1e', 900: '#012010' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .medical-bg {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='42' viewBox='0 0 24 42'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.03'%3E%3Cpath d='M12 3L2 9v12l10 6 10-6V9zM2 33l10 6 10-6v-12l-10-6-10 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="medical-bg text-slate-800 font-sans antialiased">
+
+    <!-- Global Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-house-medical text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
+                    <span class="text-[9px] tracking-widest uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-brand-500 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-500 transition-colors">About Us</a>
+                <a href="products.html" class="text-brand-500">Products</a>
+                <a href="resources.html" class="hover:text-brand-500 transition-colors">Resources</a>
+                <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
+            </nav>
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="contact.html" class="bg-brand-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-600 transition-all">Enquiry</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Certified Product Portfolio</h1>
+            <p class="text-sm text-slate-400 mt-2 font-light">Select from our 18 certified therapeutic formulations. Filter by therapeutic segment below.</p>
+        </div>
+    </section>
+
+    <!-- Interactive Filtering UI -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-2 justify-center mb-12">
+            <button onclick="filterProducts('all')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-500 text-white">All Segments</button>
+            <button onclick="filterProducts('gynecology')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Gynecology / Women's Care</button>
+            <button onclick="filterProducts('ortho')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Orthopedic</button>
+            <button onclick="filterProducts('gastro')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Gastroenterology</button>
+            <button onclick="filterProducts('neuro-general')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Neuro &amp; General Medicine</button>
+            <button onclick="filterProducts('nutra-wellness')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Nutra &amp; Wellness</button>
+        </div>
+
+        <!-- Product Cards Grid (18 Formulations) -->
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- 1 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">CL24 Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Specialized clinical support formula matching women's health needs.</p>
+                </div>
+                <button onclick="requestQuote('CL24 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 2 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">CLK2 Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Advanced bone health and premium calcium management formulation.</p>
+                </div>
+                <button onclick="requestQuote('CLK2 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 3 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Cream</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Stretch Bliss Cream</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Dermatological tissue-hydration standard formulation.</p>
+                </div>
+                <button onclick="requestQuote('Stretch Bliss Cream')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 4 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="nutra-wellness">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Polmanac Capsules</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">High-potency immune system wellness formulation.</p>
+                </div>
+                <button onclick="requestQuote('Polmanac Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 5 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="nutra-wellness">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Softgel Capsule</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">CQ GEM Softgel Capsules</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Specialized antioxidant defense supplement.</p>
+                </div>
+                <button onclick="requestQuote('CQ GEM Softgel Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 6 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">ESO D Capsules</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Gastric acid release control formula.</p>
+                </div>
+                <button onclick="requestQuote('ESO D Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 7 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Streptolac Capsules</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Standard gut microbial flora support capsule.</p>
+                </div>
+                <button onclick="requestQuote('Streptolac Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 8 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Streptolac IBS Capsules</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Advanced targeted support for bowel balance.</p>
+                </div>
+                <button onclick="requestQuote('Streptolac IBS Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 9 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Suspension</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">PYRORAFT Suspension</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Antacid formulation matching clinical specifications.</p>
+                </div>
+                <button onclick="requestQuote('PYRORAFT Suspension')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 10 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="ortho">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Axonac MR Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Muscle relaxant and analgesic combination formula.</p>
+                </div>
+                <button onclick="requestQuote('Axonac MR Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 11 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="nutra-wellness">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Nano Shots</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">D LOZY Nano Shots</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">High-absorption Vitamin D supplement nano format.</p>
+                </div>
+                <button onclick="requestQuote('D LOZY Nano Shots')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 12 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Softgel Capsule</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">CL Plus Softgel Capsules</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Standard prenatal nutrient complex formula.</p>
+                </div>
+                <button onclick="requestQuote('CL Plus Softgel Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 13 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="ortho">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">MGBLISS D3 Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Premium joint and calcium mineralization tablet.</p>
+                </div>
+                <button onclick="requestQuote('MGBLISS D3 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 14 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Softgel Capsule</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Zeptide Softgel Capsules</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Neurological vitality and nerve conductivity supplement.</p>
+                </div>
+                <button onclick="requestQuote('Zeptide Softgel Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 15 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="ortho">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Tolbliss Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Osteo-skeletal muscle spasm release formulation.</p>
+                </div>
+                <button onclick="requestQuote('Tolbliss Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 16 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">ABstat Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Active chemical management for metabolic indices.</p>
+                </div>
+                <button onclick="requestQuote('ABstat Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 17 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Megaglim NT Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Neuropathy management and glycemic comfort tablet.</p>
+                </div>
+                <button onclick="requestQuote('Megaglim NT Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+            <!-- 18 -->
+            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+                <div>
+                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
+                    <h3 class="font-bold text-slate-900 text-base mt-2">Tofaday Tablets</h3>
+                    <p class="text-xs text-slate-400 mt-1 font-light">Specialized immune-support anti-rheumatic formulation.</p>
+                </div>
+                <button onclick="requestQuote('Tofaday Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                <div class="space-y-4">
+                    <span class="text-white font-extrabold text-lg font-display">MERITORIOUS</span>
+                    <p class="text-xs font-light">Redefining standardized therapeutics across major Indian clinical zones.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigations</h4>
+                    <ul class="space-y-2 text-xs font-light">
+                        <li><a href="about.html" class="hover:text-brand-400">About Our Company</a></li>
+                        <li><a href="products.html" class="hover:text-brand-400">Our Portfolio</a></li>
+                        <li><a href="resources.html" class="hover:text-brand-400">Healthcare Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Contact Info</h4>
+                    <p class="text-xs font-light">info@meritoriouspharma.com<br>+91 (124) 456-7890</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Office Address</h4>
+                    <p class="text-xs font-light">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-light">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('bg-brand-500', 'text-white');
+                    btn.classList.remove('bg-white', 'text-slate-600');
+                } else {
+                    btn.classList.remove('bg-brand-500', 'text-white');
+                    btn.classList.add('bg-white', 'text-slate-600');
+                }
+            });
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Actionable routing redirect with parameters
+        function requestQuote(productName) {
+            window.location.href = `contact.html?product=${encodeURIComponent(productName)}`;
+        }
+    </script>
+</body>
+</html>

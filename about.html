@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Meritorious Pharmaceuticals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
+                    colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#046132', 600: '#034e28', 700: '#023c1e', 900: '#012010' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .medical-bg {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='42' viewBox='0 0 24 42'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.03'%3E%3Cpath d='M12 3L2 9v12l10 6 10-6V9zM2 33l10 6 10-6v-12l-10-6-10 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="medical-bg text-slate-800 font-sans antialiased">
+
+    <!-- Global Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-house-medical text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
+                    <span class="text-[9px] tracking-widest uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-brand-500 transition-colors">Home</a>
+                <a href="about.html" class="text-brand-500">About Us</a>
+                <a href="products.html" class="hover:text-brand-500 transition-colors">Products</a>
+                <a href="resources.html" class="hover:text-brand-500 transition-colors">Resources</a>
+                <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
+            </nav>
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="contact.html" class="bg-brand-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-600 transition-all">Enquiry</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Corporate Background</h1>
+            <p class="text-sm text-slate-400 mt-2 font-light">Established in 2021 with headquarters in Gurugram, India.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block mb-2">Our History</span>
+                <h2 class="text-3xl font-bold font-display text-slate-900 mb-6">Patient-Centricity and R&amp;D Innovation</h2>
+                <p class="text-slate-600 leading-relaxed font-light mb-4">
+                    Meritorious Pharmaceuticals specializes in high-quality pharmaceutical and nutraceutical products. Our core product classes focus on Gynecology, Orthopedics, Gastroenterology, Neurology, General Medicine, Dermatology, and Wellness.
+                </p>
+                <p class="text-slate-600 leading-relaxed font-light">
+                    Every formulation is sourced from WHO-GMP-certified manufacturing partners to maintain standard safety regulations and robust clinical bio-availability.
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block mb-6">Corporate Milestones</span>
+                <div class="relative pl-6 border-l border-brand-100 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-brand-600">2021</span>
+                        <h4 class="font-bold text-slate-900 text-sm mt-0.5">Corporate Headquarters established in Gurugram, Haryana</h4>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-brand-600">Present</span>
+                        <h4 class="font-bold text-slate-900 text-sm mt-0.5">Over 1,500+ clinics and distributors served pan-India</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-slate-50 p-10 rounded-2xl border border-slate-200">
+                <h3 class="text-2xl font-bold text-slate-900 font-display mb-4">Our Mission</h3>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">To improve lives through innovative, affordable, and high-quality healthcare solutions while maintaining ethics, scientific reliability, and standard clinical compliance.</p>
+            </div>
+            <div class="bg-slate-50 p-10 rounded-2xl border border-slate-200">
+                <h3 class="text-2xl font-bold text-slate-900 font-display mb-4">Our Vision</h3>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">To become one of India's most trusted healthcare companies by delivering excellence in pharmaceuticals and making quality healthcare widely accessible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block">Values &amp; Ethics</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 font-display mt-2">Why Professionals Partner With Us</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <h4 class="font-bold text-brand-600 text-lg mb-2">Premium Quality</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">All chemical compounds undergo systematic biological assessments before final clinical distribution.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <h4 class="font-bold text-brand-600 text-lg mb-2">Scientific Integrity</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">Formulations are centered strictly around verified pharmacokinetic profiles to aid recovery pipelines.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <h4 class="font-bold text-brand-600 text-lg mb-2">Ethical Distribution</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">Complete transparency regarding commercial trade terms, pricing, and certified bio-safety standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                <div class="space-y-4">
+                    <span class="text-white font-extrabold text-lg font-display">MERITORIOUS</span>
+                    <p class="text-xs font-light">Redefining standardized therapeutics across major Indian clinical zones.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigations</h4>
+                    <ul class="space-y-2 text-xs font-light">
+                        <li><a href="about.html" class="hover:text-brand-400">About Our Company</a></li>
+                        <li><a href="products.html" class="hover:text-brand-400">Our Portfolio</a></li>
+                        <li><a href="resources.html" class="hover:text-brand-400">Healthcare Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Contact Info</h4>
+                    <p class="text-xs font-light">info@meritoriouspharma.com<br>+91 (124) 456-7890</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Office Address</h4>
+                    <p class="text-xs font-light">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-light">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
