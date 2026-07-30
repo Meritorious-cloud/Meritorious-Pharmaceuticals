@@ -12,7 +12,7 @@
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind CSS with custom configurations -->
@@ -28,10 +28,18 @@
                     colors: {
                         brand: {
                             50: '#f0fdf4',
-                            100: '#dcfce7',
-                            500: '#046132', /* Elegant Corporate Green */
-                            600: '#034e28',
-                            900: '#012010',
+                            100: '#e1efe6',
+                            500: '#004d26', /* Exact corporate green from logo */
+                            600: '#003a1c',
+                            700: '#002613',
+                            900: '#00140a',
+                        },
+                        clinical: {
+                            50: '#f4f8f9',
+                            100: '#e5eef1',
+                            200: '#cbdfe5',
+                            500: '#648b96',
+                            900: '#1e2d31',
                         }
                     }
                 }
@@ -41,55 +49,60 @@
 
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #f4f8f9;
             letter-spacing: -0.01em;
         }
-        /* Minimalist, subtle hex pattern for clean premium texture */
+        
+        /* High-fidelity replica of the vertical geometric pattern provided */
         .medical-bg-subtle {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='52' viewBox='0 0 30 52'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.015'%3E%3Cpath d='M15 3L2 10v15l13 7 13-7V10zM2 40l13 7 13-7V25l-13-7-13 7z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-color: #f4f8f9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23004d26' stroke-opacity='0.025' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
         }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 238, 241, 0.7);
+        }
+
         .text-balance {
             text-wrap: balance;
         }
     </style>
 </head>
-<body class="text-slate-800 font-sans antialiased medical-bg-subtle">
+<body class="text-slate-800 font-sans antialiased medical-bg-subtle min-h-screen flex flex-col">
 
-    <!-- 1. HEADER (SPACIOUS & MINIMALIST) -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <!-- 1. HEADER (STYLISH & MINIMALIST) -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-clinical-100/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center text-white transition-transform group-hover:scale-105">
-                    <i class="fa-solid fa-house-medical text-base"></i>
-                </div>
-                <div>
-                    <span class="text-lg font-bold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
-                    <span class="text-[8px] tracking-[0.25em] uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
-                </div>
+            
+            <!-- Logo Section using Hosting Image -->
+            <a href="index.html" class="flex items-center group">
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
             </a>
             
             <nav class="hidden lg:flex space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
-                <a href="index.html" class="text-brand-500 font-bold">Home</a>
-                <a href="about.html" class="hover:text-brand-500 transition-colors">About Us</a>
-                <a href="products.html" class="hover:text-brand-500 transition-colors">Products</a>
-                <a href="resources.html" class="hover:text-brand-500 transition-colors">Resources</a>
-                <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
+                <a href="index.html" class="text-brand-500 border-b-2 border-brand-500 pb-1.5 transition-all">Home</a>
+                <a href="about.html" class="hover:text-brand-500 transition-colors pb-1.5">About Us</a>
+                <a href="products.html" class="hover:text-brand-500 transition-colors pb-1.5">Products</a>
+                <a href="resources.html" class="hover:text-brand-500 transition-colors pb-1.5">Resources</a>
+                <a href="contact.html" class="hover:text-brand-500 transition-colors pb-1.5">Contact</a>
             </nav>
 
             <div class="hidden lg:flex items-center space-x-4">
-                <a href="contact.html" class="border border-slate-200 hover:border-brand-500 text-slate-700 hover:text-brand-500 px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-colors">
-                    Enquiry Desk
-                </a>
+                <button onclick="openDrawer('General Inquiry')" class="bg-slate-900 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm">
+                    Inquiry Desk
+                </button>
             </div>
 
             <!-- Mobile menu button -->
-            <button id="hamburger-btn" class="lg:hidden p-2 text-slate-500 hover:text-brand-500 transition-colors">
+            <button id="hamburger-btn" class="lg:hidden p-2 text-slate-500 hover:text-brand-500 transition-colors focus:outline-none">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
         <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-6 space-y-4">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-clinical-100 px-6 py-6 space-y-4">
             <a href="index.html" class="block text-brand-500 font-semibold uppercase tracking-wider text-xs">Home</a>
             <a href="about.html" class="block text-slate-600 hover:text-brand-500 font-medium uppercase tracking-wider text-xs">About Us</a>
             <a href="products.html" class="block text-slate-600 hover:text-brand-500 font-medium uppercase tracking-wider text-xs">Products</a>
@@ -98,55 +111,60 @@
         </div>
     </header>
 
-    <!-- 2. HERO SECTION (CLEAN & ASYMMETRICAL) -->
-    <section class="relative bg-gradient-to-b from-slate-900 to-slate-950 text-white py-24 lg:py-36 overflow-hidden">
-        <div class="absolute inset-0 opacity-10 mix-blend-overlay">
+    <!-- 2. HERO SECTION -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-slate-950 to-brand-900 text-white py-24 lg:py-32 overflow-hidden border-b border-brand-900">
+        <div class="absolute inset-0 opacity-15 mix-blend-overlay">
             <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1920&q=80" alt="Laboratory Background" class="w-full h-full object-cover">
         </div>
         
         <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand-500/10 text-brand-100 border border-brand-500/20">
+                <div class="lg:col-span-7 space-y-8">
+                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[10px] font-semibold tracking-widest uppercase bg-brand-500/20 text-brand-100 border border-brand-500/30">
                         <i class="fa-solid fa-shield-halved mr-2 text-brand-500"></i> Corporate Standard Compliance
                     </span>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display leading-tight text-balance">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-display leading-tight text-balance">
                         Formulating trust. <br><span class="italic font-light text-slate-300">Prescribing health.</span>
                     </h1>
-                    <p class="text-sm sm:text-base text-slate-400 max-w-lg leading-relaxed font-light">
-                        Distributing high-purity pharmaceutical and nutraceutical formulations under strict pharmacopoeial metrics through WHO-GMP certified manufacturing alliances.
+                    <p class="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed font-light">
+                        Distributing clinical-grade pharmaceutical and therapeutic formulations across India. Our network relies strictly on pharmacopoeial metrics executed through WHO-GMP certified manufacturing alliances.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="products.html" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest transition-all">
+                        <a href="products.html" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-4 rounded-lg font-bold text-xs uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">
                             Explore Portfolio
                         </a>
-                        <a href="contact.html" class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest transition-all">
+                        <a href="contact.html" class="bg-white/5 hover:bg-white/10 text-white border border-white/15 px-6 py-4 rounded-lg font-bold text-xs uppercase tracking-widest transition-all">
                             Partner With Us
                         </a>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                    <div class="relative w-full max-w-[340px] aspect-square rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Doctor Discussion" class="w-full h-full object-cover">
+                    <div class="relative w-full max-w-[360px] aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Medical Discussion" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 glass-panel rounded-xl text-slate-900 border border-white/20">
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-brand-600 mb-1">Quality Assurance</p>
+                            <p class="text-xs font-semibold leading-relaxed">Systematic checks verify compliance from raw active materials to final dispatch.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. CLINICAL SEGMENT DIVISION STRATEGY (SPACIOUS & FLAT) -->
-    <section class="py-24 max-w-7xl mx-auto px-6 sm:px-8 border-b border-slate-100">
+    <!-- 3. STRATEGIC AREAS OF FORMULATION -->
+    <section class="py-24 max-w-7xl mx-auto px-6 sm:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div class="lg:col-span-4 space-y-4 lg:sticky lg:top-28">
                 <div class="h-1 w-12 bg-brand-500 rounded"></div>
                 <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block">Therapeutic Verticals</span>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display text-balance">Strategic Areas of Formulation</h2>
                 <p class="text-sm text-slate-500 leading-relaxed font-light">
-                    We maintain structured alignments within vital chemical and physiological wellness systems across India.
+                    We maintain structured alignments within vital chemical and physiological wellness systems across India, guaranteeing access to high-purity clinical compounds.
                 </p>
                 <div class="pt-4">
-                    <a href="products.html" class="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-600 uppercase tracking-wider">
+                    <a href="products.html" class="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-600 uppercase tracking-widest">
                         Open Full Catalog <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
                     </a>
                 </div>
@@ -154,32 +172,44 @@
 
             <!-- Verticals Showcase -->
             <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="p-8 bg-slate-50/60 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors">
-                    <div class="text-brand-500 mb-4 text-xl"><i class="fa-solid fa-person-pregnant"></i></div>
-                    <h3 class="font-bold text-slate-900 text-sm mb-1.5 font-display">Women's Health</h3>
+                <!-- Vertical 1 -->
+                <div class="p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-person-pregnant text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">Women's Health</h3>
                     <p class="text-xs text-slate-500 font-light leading-relaxed">Formulations optimized for structural calcification, micro-nutrition, and maternal safety indexes.</p>
                 </div>
-                <div class="p-8 bg-slate-50/60 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors">
-                    <div class="text-brand-500 mb-4 text-xl"><i class="fa-solid fa-bone"></i></div>
-                    <h3 class="font-bold text-slate-900 text-sm mb-1.5 font-display">Orthopedic Care</h3>
-                    <p class="text-xs text-slate-500 font-light leading-relaxed">Skeletal care compounds oriented around joint mineralization and calcium distribution.</p>
+                <!-- Vertical 2 -->
+                <div class="p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-bone text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">Orthopedic Care</h3>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">Skeletal care compounds oriented around joint mineralization, integrity, and calcium distribution pathways.</p>
                 </div>
-                <div class="p-8 bg-slate-50/60 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors">
-                    <div class="text-brand-500 mb-4 text-xl"><i class="fa-solid fa-stomach"></i></div>
-                    <h3 class="font-bold text-slate-900 text-sm mb-1.5 font-display">Gastroenterology</h3>
-                    <p class="text-xs text-slate-500 font-light leading-relaxed">Gut balance solutions, acid control complexes, and mucosal support suspensions.</p>
+                <!-- Vertical 3 -->
+                <div class="p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-stomach text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">Gastroenterology</h3>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">Gut balance solutions, acid control complexes, and mucosal support suspensions designed for patient compliance.</p>
                 </div>
-                <div class="p-8 bg-slate-50/60 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors">
-                    <div class="text-brand-500 mb-4 text-xl"><i class="fa-solid fa-stethoscope"></i></div>
-                    <h3 class="font-bold text-slate-900 text-sm mb-1.5 font-display">General &amp; Neuro</h3>
-                    <p class="text-xs text-slate-500 font-light leading-relaxed">Targeted compounds formulated to aid neuropathy management and glycemic parameters.</p>
+                <!-- Vertical 4 -->
+                <div class="p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-stethoscope text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">General &amp; Neuro</h3>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">Targeted compounds formulated to aid neuropathy management and stable glycemic parameters.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. FEATURED FORMULATIONS SHOWCASE (UNCLUTTERED - ONLY 3 HIGHLIGHTED) -->
-    <section class="py-24 bg-slate-50/50 border-b border-slate-100">
+    <!-- 4. FEATURED FORMULATIONS SHOWCASE (UNCLUTTERED CLINICAL LOOK) -->
+    <section class="py-24 bg-slate-50/50 border-y border-clinical-100">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
                 <div>
@@ -187,71 +217,144 @@
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display mt-1">Featured Formulations</h2>
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <a href="products.html" class="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-600 uppercase tracking-widest">
+                    <a href="products.html" class="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-600 uppercase tracking-widest transition-all">
                         View All 18 Formulations <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Only 3 cards instead of 18 (Eliminates Homepage Clutter) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Highlight 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-colors">
+                <div class="bg-white p-6 rounded-2xl border border-clinical-100 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 group">
                     <div>
-                        <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded uppercase font-display">Tablet • Women's Health</span>
-                        <h3 class="font-bold text-slate-900 text-base mt-2 font-display">CL24 Tablets</h3>
-                        <p class="text-xs text-slate-500 mt-2 font-light leading-relaxed">Specialized mineral-complex formulation developed with exact volumes to target clinical metabolic metrics.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded uppercase tracking-wider font-display">Women's Health</span>
+                            <span class="text-[10px] text-slate-400 font-medium font-sans">Tablet</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg font-display">CL24 Tablets</h3>
+                        <div class="my-4 border-t border-slate-100 pt-3 space-y-2">
+                            <p class="text-[11px] text-slate-500 font-light leading-relaxed">
+                                Specialized mineral-complex formulation developed with precise volumes to target clinical metabolic metrics.
+                            </p>
+                            <div class="flex items-center text-[10px] text-slate-400 space-x-2">
+                                <span class="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-medium">Standard IP</span>
+                                <span>• 10x10 Alu-Alu Packaging</span>
+                            </div>
+                        </div>
                     </div>
-                    <button onclick="routeToInquiry('CL24 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-lg text-xs font-bold transition-all border border-slate-100">Request Quote</button>
+                    <button onclick="openDrawer('CL24 Tablets')" class="mt-4 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-3 rounded-xl text-xs font-bold transition-all duration-300 border border-slate-100 hover:shadow-md">
+                        Request Quote
+                    </button>
                 </div>
+                
                 <!-- Highlight 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-colors">
+                <div class="bg-white p-6 rounded-2xl border border-clinical-100 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 group">
                     <div>
-                        <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded uppercase font-display">Capsule • Gastro Division</span>
-                        <h3 class="font-bold text-slate-900 text-base mt-2 font-display">Streptolac IBS</h3>
-                        <p class="text-xs text-slate-500 mt-2 font-light leading-relaxed">High-viability bacterial matrix optimized for intestinal wall integrity and physiological balance.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded uppercase tracking-wider font-display">Gastro Division</span>
+                            <span class="text-[10px] text-slate-400 font-medium font-sans">Capsule</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg font-display">Streptolac IBS</h3>
+                        <div class="my-4 border-t border-slate-100 pt-3 space-y-2">
+                            <p class="text-[11px] text-slate-500 font-light leading-relaxed">
+                                High-viability bacterial matrix optimized for intestinal wall integrity and physiological balance.
+                            </p>
+                            <div class="flex items-center text-[10px] text-slate-400 space-x-2">
+                                <span class="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-medium">Standard USP</span>
+                                <span>• Alu-Alu Blister Pack</span>
+                            </div>
+                        </div>
                     </div>
-                    <button onclick="routeToInquiry('Streptolac IBS Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-lg text-xs font-bold transition-all border border-slate-100">Request Quote</button>
+                    <button onclick="openDrawer('Streptolac IBS Capsules')" class="mt-4 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-3 rounded-xl text-xs font-bold transition-all duration-300 border border-slate-100 hover:shadow-md">
+                        Request Quote
+                    </button>
                 </div>
+                
                 <!-- Highlight 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-colors">
+                <div class="bg-white p-6 rounded-2xl border border-clinical-100 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 group">
                     <div>
-                        <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded uppercase font-display">Tablet • Orthopedic</span>
-                        <h3 class="font-bold text-slate-900 text-base mt-2 font-display">MGBLISS D3</h3>
-                        <p class="text-xs text-slate-500 mt-2 font-light leading-relaxed">Focused micro-nutrition co-factors promoting active calcium pathways and skeletal mineralization.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded uppercase tracking-wider font-display">Orthopedic</span>
+                            <span class="text-[10px] text-slate-400 font-medium font-sans">Tablet</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg font-display">MGBLISS D3</h3>
+                        <div class="my-4 border-t border-slate-100 pt-3 space-y-2">
+                            <p class="text-[11px] text-slate-500 font-light leading-relaxed">
+                                Focused micro-nutrition co-factors promoting active calcium pathways and skeletal mineralization.
+                            </p>
+                            <div class="flex items-center text-[10px] text-slate-400 space-x-2">
+                                <span class="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-medium">Standard BP</span>
+                                <span>• 15 Tablets per Strip</span>
+                            </div>
+                        </div>
                     </div>
-                    <button onclick="routeToInquiry('MGBLISS D3 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-lg text-xs font-bold transition-all border border-slate-100">Request Quote</button>
+                    <button onclick="openDrawer('MGBLISS D3 Tablets')" class="mt-4 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-3 rounded-xl text-xs font-bold transition-all duration-300 border border-slate-100 hover:shadow-md">
+                        Request Quote
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. SPACIOUS PARTNERSHIP BANNER -->
-    <section class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto text-center px-6 space-y-6">
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block">Commercial Sourcing</span>
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-display">RedefiningSourcing Standards in India</h2>
-            <p class="text-sm text-slate-500 leading-relaxed font-light max-w-xl mx-auto text-balance">
-                We invite authorized healthcare practitioners, commercial distributors, and institutional hubs to join our ethical trade alliance.
-            </p>
-            <div class="pt-2">
-                <a href="contact.html" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all">
-                    Initiate Commercial Dialogue
-                </a>
+    <!-- 5. CORPORATE ASSURANCE & QUALITY PROTOCOL -->
+    <section class="py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="glass-panel rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden border border-clinical-200">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-50/40 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 block">Rigorous Standards</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight leading-tight">Assurance and Chemical Integrity</h2>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Every batch delivered under our name undergoes strict vetting. Our verification workflows ensure that excipient sourcing, analytical parameters, and environmental packaging metrics closely conform to safety standards.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="space-y-1.5">
+                            <h4 class="text-slate-900 font-bold text-xs font-display">GMP Certified Alliances</h4>
+                            <p class="text-[11px] text-slate-400 font-light">Collaborations exclusively restricted to facilities holding valid WHO-GMP credentials.</p>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="text-slate-900 font-bold text-xs font-display">Stability Verified</h4>
+                            <p class="text-[11px] text-slate-400 font-light">Accelerated and real-time testing profiles designed to withstand climatic variances.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative bg-slate-950 p-8 rounded-2xl border border-slate-800 text-white/90">
+                    <h3 class="text-xs font-extrabold uppercase tracking-widest text-brand-500 mb-4">Request Commercial Dialogue</h3>
+                    <p class="text-xs font-light text-slate-400 leading-relaxed mb-6">
+                        Are you an authorized practitioner, stockist, or institution seeking reliable sourcing across India? Reach our team directly.
+                    </p>
+                    <form onsubmit="handleQuickSubmit(event)" class="space-y-3">
+                        <input type="email" placeholder="Corporate Email Address" required class="w-full bg-slate-900 border border-slate-800 focus:border-brand-500 focus:outline-none rounded-lg px-4 py-3 text-xs text-white placeholder-slate-500 transition-all">
+                        <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3 rounded-lg text-xs font-bold uppercase tracking-widest transition-all">
+                            Initiate Inquiry
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. FOOTER (CLEAN & BALANCED) -->
-    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+    <!-- 6. FOOTER -->
+    <footer class="mt-auto bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-900 text-xs font-light">
+                
+                <!-- Footer typography aligned with logo layout on dark theme -->
                 <div class="space-y-4">
-                    <span class="text-white font-extrabold text-base font-display block">MERITORIOUS</span>
-                    <p class="leading-relaxed">
-                        Redefining therapeutic and nutraceutical pathways across major Indian clinical zones.
+                    <div>
+                        <span class="text-white font-extrabold text-lg tracking-tight font-display block uppercase leading-none">
+                            MERITORIOUS
+                        </span>
+                        <span class="text-[8px] tracking-[0.25em] uppercase text-brand-500 font-semibold block mt-1 leading-none">
+                            PHARMACEUTICALS
+                        </span>
+                    </div>
+                    <p class="leading-relaxed text-slate-500">
+                        Distributing verified therapeutic and nutraceutical pathways across major Indian clinical zones.
                     </p>
                 </div>
+                
                 <div>
                     <h4 class="text-white font-semibold mb-4">Formulation Fields</h4>
                     <ul class="space-y-2">
@@ -287,18 +390,101 @@
         </div>
     </footer>
 
-    <!-- Script Routing Logic -->
+    <!-- INTERACTIVE SLIDE-OVER DRAWER (For premium commercial feel) -->
+    <div id="inquiry-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 overflow-hidden">
+            <div id="drawer-overlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"></div>
+            
+            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                <div id="drawer-panel" class="pointer-events-auto w-screen max-w-md transform translate-x-full transition-transform duration-300 ease-in-out">
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-2xl">
+                        <div class="px-6 py-6 border-b border-clinical-100 flex items-center justify-between">
+                            <div>
+                                <h2 class="text-base font-bold text-slate-900 font-display">Commercial Inquiry</h2>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Product Formulation Desk</p>
+                            </div>
+                            <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-slate-500 rounded-lg">
+                                <i class="fa-solid fa-xmark text-lg"></i>
+                            </button>
+                        </div>
+                        
+                        <form onsubmit="handleDrawerSubmit(event)" class="flex-1 flex flex-col justify-between p-6 space-y-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Selected Subject / Product</label>
+                                    <input type="text" id="drawer-subject" readonly class="w-full bg-slate-50 border border-clinical-100 text-slate-700 px-4 py-3 rounded-lg text-xs font-semibold focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Your Name</label>
+                                    <input type="text" required class="w-full border border-clinical-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Corporate Email</label>
+                                    <input type="email" required class="w-full border border-clinical-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Message / Requirements</label>
+                                    <textarea rows="4" placeholder="Mention volume requirements, therapeutic category focus..." required class="w-full border border-clinical-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400"></textarea>
+                                </div>
+                            </div>
+                            <div class="border-t border-clinical-100 pt-6">
+                                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">
+                                    Send Formulation Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Routing & UI Logic -->
     <script>
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const drawer = document.getElementById('inquiry-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const drawerPanel = document.getElementById('drawer-panel');
+        const drawerSubject = document.getElementById('drawer-subject');
         
         hamburgerBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Redirect parameter passing
-        function routeToInquiry(productName) {
-            window.location.href = `contact.html?product=${encodeURIComponent(productName)}`;
+        function openDrawer(subjectName) {
+            drawerSubject.value = subjectName;
+            drawer.classList.remove('hidden');
+            setTimeout(() => {
+                drawerOverlay.classList.remove('opacity-0');
+                drawerOverlay.classList.add('opacity-100');
+                drawerPanel.classList.remove('translate-x-full');
+                drawerPanel.classList.add('translate-x-0');
+            }, 10);
+        }
+
+        function closeDrawer() {
+            drawerOverlay.classList.remove('opacity-100');
+            drawerOverlay.classList.add('opacity-0');
+            drawerPanel.classList.remove('translate-x-0');
+            drawerPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                drawer.classList.add('hidden');
+            }, 300);
+        }
+
+        drawerOverlay.addEventListener('click', closeDrawer);
+
+        function handleDrawerSubmit(e) {
+            e.preventDefault();
+            alert(`Your request regarding ${drawerSubject.value} has been logged. Our commercial licensing desk will reach you shortly.`);
+            closeDrawer();
+        }
+
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            alert('Your corporate address has been registered for portfolio updates.');
+            e.target.reset();
         }
     </script>
 </body>
