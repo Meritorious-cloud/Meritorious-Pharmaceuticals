@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Meritorious Pharmaceuticals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
+                    colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#046132', 600: '#034e28', 700: '#023c1e', 900: '#012010' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .medical-bg {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='42' viewBox='0 0 24 42'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.03'%3E%3Cpath d='M12 3L2 9v12l10 6 10-6V9zM2 33l10 6 10-6v-12l-10-6-10 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .address-card-premium {
+            background: #ffffff;
+            border: 1px solid rgba(4, 97, 50, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(4, 97, 50, 0.15);
+            border-radius: 2rem;
+        }
+    </style>
+</head>
+<body class="medical-bg text-slate-800 font-sans antialiased">
+
+    <!-- Global Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-house-medical text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
+                    <span class="text-[9px] tracking-widest uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-brand-500 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-500 transition-colors">About Us</a>
+                <a href="products.html" class="hover:text-brand-500 transition-colors">Products</a>
+                <a href="resources.html" class="hover:text-brand-500 transition-colors">Resources</a>
+                <a href="contact.html" class="text-brand-500">Contact</a>
+            </nav>
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="contact.html" class="bg-brand-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-600 transition-all">Enquiry</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Connect with Our Office</h1>
+            <p class="text-sm text-slate-400 mt-2 font-light">For commercial distributions, bulk purchases, and licensing opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            <!-- Address Card -->
+            <div class="lg:col-span-5 address-card-premium p-10 md:p-12 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-50 rounded-full opacity-40"></div>
+                
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center font-display">
+                    <i class="fas fa-map-location-dot text-brand-500 mr-4"></i> Corporate Office
+                </h3>
+
+                <div class="space-y-8 relative z-10">
+                    <div>
+                        <p class="text-[11px] font-bold text-brand-600 uppercase tracking-[0.2em] mb-3 font-display">Registered HQ Address</p>
+                        <p class="text-slate-700 text-xl leading-relaxed">
+                            E-9, Lower Ground Floor,<br>
+                            Sushant Shopping Arcade, DLF Phase IV,<br>
+                            <span class="text-slate-900 font-extrabold tracking-tight underline decoration-emerald-200 decoration-4">Gurugram, Haryana 122009</span>
+                        </p>
+                    </div>
+
+                    <div class="flex items-center space-x-4 pt-6 border-t border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-brand-500">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Contact Email</p>
+                            <p class="text-slate-800 font-semibold text-sm">info@meritoriouspharma.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 pt-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-brand-500">
+                            <i class="fas fa-phone text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Direct Hotline</p>
+                            <p class="text-slate-800 font-semibold text-sm">+91 (124) 456-7890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Form -->
+            <div class="lg:col-span-7">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 font-display mb-6">Send Corporate Enquiry</h3>
+                    <form onsubmit="event.preventDefault(); alert('Enquiry successfully recorded. Our desk will contact you shortly.');" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">First Name</label>
+                                <input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Last Name</label>
+                                <input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Email Address</label>
+                                <input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Mobile Phone</label>
+                                <input type="tel" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Enquiry Subject</label>
+                            <select id="form-subject" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                <option>Commercial Distribution Inquiry</option>
+                                <option>Standard Product Bulk Purchase</option>
+                                <option>Partnership/Licensing Request</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Detailed Message</label>
+                            <textarea id="form-message" rows="4" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Please type your message..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-colors">Send Enquiry</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                <div class="space-y-4">
+                    <span class="text-white font-extrabold text-lg font-display">MERITORIOUS</span>
+                    <p class="text-xs font-light">Redefining standardized therapeutics across major Indian clinical zones.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigations</h4>
+                    <ul class="space-y-2 text-xs font-light">
+                        <li><a href="about.html" class="hover:text-brand-400">About Our Company</a></li>
+                        <li><a href="products.html" class="hover:text-brand-400">Our Portfolio</a></li>
+                        <li><a href="resources.html" class="hover:text-brand-400">Healthcare Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Contact Info</h4>
+                    <p class="text-xs font-light">info@meritoriouspharma.com<br>+91 (124) 456-7890</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Office Address</h4>
+                    <p class="text-xs font-light">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-light">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Parameter parsing logic -->
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedProduct = urlParams.get('product');
+            if (selectedProduct) {
+                const subjectField = document.getElementById('form-subject');
+                const messageField = document.getElementById('form-message');
+                if (subjectField) {
+                    subjectField.value = 'Standard Product Bulk Purchase';
+                }
+                if (messageField) {
+                    messageField.value = `Hello, I would like to request commercial distribution details, pricing models, and sample structures for: "${decodeURIComponent(selectedProduct)}".`;
+                }
+            }
+        };
+    </script>
+</body>
+</html>

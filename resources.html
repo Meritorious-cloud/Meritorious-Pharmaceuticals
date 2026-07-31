@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Meritorious Pharmaceuticals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
+                    colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#046132', 600: '#034e28', 700: '#023c1e', 900: '#012010' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .medical-bg {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='42' viewBox='0 0 24 42'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.03'%3E%3Cpath d='M12 3L2 9v12l10 6 10-6V9zM2 33l10 6 10-6v-12l-10-6-10 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="medical-bg text-slate-800 font-sans antialiased">
+
+    <!-- Global Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-house-medical text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
+                    <span class="text-[9px] tracking-widest uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-brand-500 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-500 transition-colors">About Us</a>
+                <a href="products.html" class="hover:text-brand-500 transition-colors">Products</a>
+                <a href="resources.html" class="text-brand-500">Resources</a>
+                <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
+            </nav>
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="contact.html" class="bg-brand-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-600 transition-all">Enquiry</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Healthcare Resources</h1>
+            <p class="text-sm text-slate-400 mt-2 font-light">Interactive safety dossiers, technical directories, and wellness resources.</p>
+        </div>
+    </section>
+
+    <!-- Resources Cards Layout -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-file-medical"></i></div>
+                <h3 class="font-bold text-slate-900 text-lg mb-2">Physician Guidelines</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-light mb-6">Access chemical purity certifications, pharmacokinetic safety models, and formulation indexes designed for clinicians.</p>
+            </div>
+            <a href="contact.html" class="text-xs font-bold text-brand-600 hover:text-brand-700">Request Safety Guides &rarr;</a>
+        </div>
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-book-open-reader"></i></div>
+                <h3 class="font-bold text-slate-900 text-lg mb-2">Wellness Publication Portal</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-light mb-6">Learn standard health management practices, dosage guidelines, structural bone density tracking, and gut health parameters.</p>
+            </div>
+            <a href="contact.html" class="text-xs font-bold text-brand-600 hover:text-brand-700">Explore Guides &rarr;</a>
+        </div>
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <h3 class="font-bold text-slate-900 text-lg mb-2">Dynamic Formulation Tool</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-light mb-6">Instantly navigate our certified 18 formulations to locate matching therapeutic solutions.</p>
+            </div>
+            <a href="products.html" class="text-xs font-bold text-brand-600 hover:text-brand-700">Launch Finder &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                <div class="space-y-4">
+                    <span class="text-white font-extrabold text-lg font-display">MERITORIOUS</span>
+                    <p class="text-xs font-light">Redefining standardized therapeutics across major Indian clinical zones.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigations</h4>
+                    <ul class="space-y-2 text-xs font-light">
+                        <li><a href="about.html" class="hover:text-brand-400">About Our Company</a></li>
+                        <li><a href="products.html" class="hover:text-brand-400">Our Portfolio</a></li>
+                        <li><a href="resources.html" class="hover:text-brand-400">Healthcare Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Contact Info</h4>
+                    <p class="text-xs font-light">info@meritoriouspharma.com<br>+91 (124) 456-7890</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Office Address</h4>
+                    <p class="text-xs font-light">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-light">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
