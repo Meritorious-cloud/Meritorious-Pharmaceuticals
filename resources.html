@@ -3,120 +3,597 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | Meritorious Pharmaceuticals</title>
+    <title>Healthcare Resources | Meritorious Pharmaceuticals</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Access official medical directories, PCD franchise dossiers, and wholesale C&F regulatory checklists from Meritorious Pharmaceuticals.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS with custom configurations -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
-                    colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#046132', 600: '#034e28', 700: '#023c1e', 900: '#012010' } }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#e1efe6',
+                            500: '#004d26', /* Exact corporate green from logo */
+                            600: '#003a1c',
+                            700: '#002613',
+                            900: '#00140a',
+                        },
+                        clinical: {
+                            50: '#f4f8f9',
+                            100: '#e2ecef',
+                            200: '#cbdfe5',
+                            500: '#004d26', 
+                            600: '#003a1c',
+                            900: '#1e2d31',
+                        }
+                    }
                 }
             }
         }
     </script>
+
     <style>
-        .medical-bg {
-            background-color: #f8fafc;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='42' viewBox='0 0 24 42'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.03'%3E%3Cpath d='M12 3L2 9v12l10 6 10-6V9zM2 33l10 6 10-6v-12l-10-6-10 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        body {
+            background-color: #f4f8f9;
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+        }
+        
+        /* High-fidelity replica of the vertical geometric pattern provided */
+        .medical-bg-subtle {
+            background-color: #f4f8f9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23004d26' stroke-opacity='0.025' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(225, 239, 230, 0.7);
+        }
+
+        .text-balance {
+            text-wrap: balance;
         }
     </style>
 </head>
-<body class="medical-bg text-slate-800 font-sans antialiased">
+<body class="text-slate-800 font-sans antialiased medical-bg-subtle min-h-screen flex flex-col">
 
-    <!-- Global Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+    <!-- 1. HEADER -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3">
-                <div class="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center text-white">
-                    <i class="fa-solid fa-house-medical text-lg"></i>
-                </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
-                    <span class="text-[9px] tracking-widest uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
-                </div>
+            
+            <!-- Logo Section -->
+            <a href="index.html" class="flex items-center group">
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
             </a>
-            <nav class="hidden lg:flex space-x-8 text-sm font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-brand-500 transition-colors">Home</a>
-                <a href="about.html" class="hover:text-brand-500 transition-colors">About Us</a>
-                <a href="products.html" class="hover:text-brand-500 transition-colors">Products</a>
-                <a href="resources.html" class="text-brand-500">Resources</a>
-                <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
-            </nav>
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="contact.html" class="bg-brand-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-600 transition-all">Enquiry</a>
+            
+            <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
+    <a href="index.html" class="hover:text-brand-500 transition-colors pb-1.5">Home</a>
+    <a href="about.html" class="hover:text-brand-500 transition-colors pb-1.5">About Us</a>
+    <a href="products.html" class="hover:text-brand-500 transition-colors pb-1.5">Products</a>
+    <a href="resources.html" class="text-brand-500 border-b-2 border-brand-500 pb-1.5 transition-all">Resources</a>
+    <a href="contact.html" class="hover:text-brand-500 transition-colors pb-1.5">Contact</a>
+    <a href="career.html" class="hover:text-brand-500 transition-colors pb-1.5">Career</a>
+</nav>
+
+            <div class="hidden lg:flex items-center">
+                <button onclick="openDrawer('General Inquiry')" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm shadow-brand-500/10">
+                    Inquiry Desk
+                </button>
             </div>
+
+            <!-- Mobile menu button -->
+            <button id="hamburger-btn" class="lg:hidden p-2 text-slate-500 hover:text-brand-500 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
         </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-brand-100 px-6 py-6 space-y-4 shadow-inner">
+    <a href="index.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Home</a>
+    <a href="about.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">About Us</a>
+    <a href="products.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Products</a>
+    <a href="resources.html" class="block text-brand-500 font-semibold uppercase tracking-wider text-xs">Resources</a>
+    <a href="contact.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Contact</a>
+    <a href="career.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Career</a>
+    <button onclick="openDrawer('General Inquiry')" class="w-full text-center bg-brand-500 text-white py-3 rounded-lg text-xs font-bold uppercase tracking-widest">
+        Inquiry Desk
+    </button>
+</div>
     </header>
 
-    <!-- Subpage Hero -->
-    <section class="bg-slate-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Healthcare Resources</h1>
-            <p class="text-sm text-slate-400 mt-2 font-light">Interactive safety dossiers, technical directories, and wellness resources.</p>
+    <!-- 2. SUBPAGE HERO SECTION -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-slate-950 to-brand-900 text-white py-12 sm:py-16 md:py-24 overflow-hidden border-b border-brand-900">
+        <!-- Overlay background layer -->
+        <div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80" alt="Laboratory Background" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center lg:text-left">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase bg-brand-500/20 text-brand-100 border border-brand-500/30 mb-4">
+                <i class="fa-solid fa-file-prescription mr-2 text-brand-500"></i> Medicine &amp; Clinical Information Center
+            </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display leading-tight">
+                Healthcare Resources
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mt-3 font-light leading-relaxed mx-auto lg:mx-0">
+                Access official medicine monographs, technical brochures, pharmacokinetic charts, and clinical storage protocols for our represented brand formulations [1, 2].
+            </p>
         </div>
     </section>
 
-    <!-- Resources Cards Layout -->
-    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
-            <div>
-                <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-file-medical"></i></div>
-                <h3 class="font-bold text-slate-900 text-lg mb-2">Physician Guidelines</h3>
-                <p class="text-xs text-slate-500 leading-relaxed font-light mb-6">Access chemical purity certifications, pharmacokinetic safety models, and formulation indexes designed for clinicians.</p>
-            </div>
-            <a href="contact.html" class="text-xs font-bold text-brand-600 hover:text-brand-700">Request Safety Guides &rarr;</a>
-        </div>
-        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
-            <div>
-                <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-book-open-reader"></i></div>
-                <h3 class="font-bold text-slate-900 text-lg mb-2">Wellness Publication Portal</h3>
-                <p class="text-xs text-slate-500 leading-relaxed font-light mb-6">Learn standard health management practices, dosage guidelines, structural bone density tracking, and gut health parameters.</p>
-            </div>
-            <a href="contact.html" class="text-xs font-bold text-brand-600 hover:text-brand-700">Explore Guides &rarr;</a>
-        </div>
-        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
-            <div>
-                <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                <h3 class="font-bold text-slate-900 text-lg mb-2">Dynamic Formulation Tool</h3>
-                <p class="text-xs text-slate-500 leading-relaxed font-light mb-6">Instantly navigate our certified 18 formulations to locate matching therapeutic solutions.</p>
-            </div>
-            <a href="products.html" class="text-xs font-bold text-brand-600 hover:text-brand-700">Launch Finder &rarr;</a>
-        </div>
-    </section>
-
-    <!-- Global Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+    <!-- 3. DETAILED RESOURCES GRID -->
+    <section class="py-12 sm:py-20 lg:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            
+            <!-- Resource Card 1: Therapeutic Index -->
+            <div onclick="openResourceDetail('therapeutic_index')" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition-all duration-300 group cursor-pointer">
                 <div class="space-y-4">
-                    <span class="text-white font-extrabold text-lg font-display">MERITORIOUS</span>
-                    <p class="text-xs font-light">Redefining standardized therapeutics across major Indian clinical zones.</p>
+                    <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-file-prescription"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg tracking-tight font-display group-hover:text-brand-500 transition-colors">Therapeutic Index &amp; Formulary</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        Download the comprehensive digital formulary detailing the pharmacopoeia standards (IP, BP, USP), packaging, and indications of all 18 represented medicine brands [1, 2].
+                    </p>
                 </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Navigations</h4>
-                    <ul class="space-y-2 text-xs font-light">
-                        <li><a href="about.html" class="hover:text-brand-400">About Our Company</a></li>
-                        <li><a href="products.html" class="hover:text-brand-400">Our Portfolio</a></li>
-                        <li><a href="resources.html" class="hover:text-brand-400">Healthcare Resources</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Contact Info</h4>
-                    <p class="text-xs font-light">info@meritoriouspharma.com<br>+91 (124) 456-7890</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Office Address</h4>
-                    <p class="text-xs font-light">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                <div class="mt-6 flex items-center text-xs font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4 w-full justify-between">
+                    <span>Inspect Document Outline</span>
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                 </div>
             </div>
-            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-light">
+
+            <!-- Resource Card 2: API Monographs -->
+            <div onclick="openResourceDetail('api_monographs')" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg tracking-tight font-display group-hover:text-brand-500 transition-colors">Active Ingredient Monographs</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        Technical briefs highlighting active pharmaceutical ingredients (APIs), including *Undenatured Collagen (UC-II)* in CL24 and *Tofacitinib* in Tofaday [2].
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4 w-full justify-between">
+                    <span>Inspect Document Outline</span>
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
+            </div>
+
+            <!-- Resource Card 3: Dosage Guidelines -->
+            <div onclick="openResourceDetail('dosage_guidelines')" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg tracking-tight font-display group-hover:text-brand-500 transition-colors">Dosage &amp; Administration Schedules</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        Clinician directions for specific complex therapies. Explains the ready-to-drink oral schedule for *D LOZY 60K Nano Shots* and food intervals for *ESO D SR* capsules [1, 2].
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4 w-full justify-between">
+                    <span>Inspect Document Outline</span>
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
+            </div>
+
+            <!-- Resource Card 4: Cold-Chain Storage -->
+            <div onclick="openResourceDetail('cold_chain_manual')" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-temperature-arrow-down"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg tracking-tight font-display group-hover:text-brand-500 transition-colors">Probiotic Stability &amp; Storage Manual</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        Warehouse guidelines for carrying-forward stockists storing sensitive probiotic capsules (*Streptolac IBS*) and oil-suspended nutrients (*CL Plus* softgels) [1, 2].
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4 w-full justify-between">
+                    <span>Inspect Document Outline</span>
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
+            </div>
+
+            <!-- Resource Card 5: Microbiota Research -->
+            <div onclick="openResourceDetail('microbiota_papers')" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-bacteria"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg tracking-tight font-display group-hover:text-brand-500 transition-colors">GI Microbiota &amp; Probiotic Papers</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        Technical summaries showing the bio-systemic action of Saccharomyces boulardii (used in *Streptolac IBS*) and lactic bacillus strains in managing intestinal flora [1, 2].
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4 w-full justify-between">
+                    <span>Inspect Document Outline</span>
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
+            </div>
+
+            <!-- Resource Card 6: Neuro Recovery -->
+            <div onclick="openResourceDetail('neuro_recovery')" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg tracking-tight font-display group-hover:text-brand-500 transition-colors">Neuromuscular &amp; Nerve Recovery</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        Clinical studies of neurotropic factors (*Zeptide*) and centrally acting skeletal relievers (*Tolbliss*) used in managing neuropathy and intense physical spasms [1, 2].
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4 w-full justify-between">
+                    <span>Inspect Document Outline</span>
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. GLOBAL FOOTER (OPTIMIZED FOR MOBILE WITH DUAL-LIST DIRECTORIES) -->
+    <footer class="mt-auto bg-brand-900 text-slate-400 py-8 sm:py-16 border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 pb-8 border-b border-brand-600/20 text-xs font-light">
+                
+                <!-- Column 1: Brand Typography (Paragraph hidden on mobile to reduce height) -->
+                <div class="space-y-2 sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <span class="text-white font-extrabold text-lg tracking-tight font-display block uppercase leading-none">
+                            MERITORIOUS
+                        </span>
+                        <span class="text-[8px] tracking-[0.25em] uppercase text-brand-500 font-semibold block mt-1 leading-none font-sans">
+                            PHARMACEUTICALS
+                        </span>
+                    </div>
+                    <p class="hidden sm:block leading-relaxed text-slate-400 text-[11px]">
+                        Certified pharmaceutical marketing and wholesale carrying-forward distribution across major Indian clinical zones.
+                    </p>
+                </div>
+                
+                <!-- Combined Column 2 & 3: Double list grid side-by-side on mobile, stacked on lg -->
+                <div class="grid grid-cols-2 gap-4 sm:col-span-2 lg:col-span-2">
+                    <div>
+                        <h4 class="text-white font-semibold mb-2 sm:mb-4 font-display uppercase tracking-wider text-[10px]">Formulations</h4>
+                        <ul class="space-y-1.5 sm:space-y-2">
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Women's Care</a></li>
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Orthopedics</a></li>
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Digestive Care</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-2 sm:mb-4 font-display uppercase tracking-wider text-[10px]">Corporate</h4>
+                        <ul class="space-y-1.5 sm:space-y-2">
+                            <li><a href="about.html" class="hover:text-brand-500 transition-colors text-slate-400">About Us</a></li>
+                            <li><a href="about.html#why-us" class="hover:text-brand-500 transition-colors text-slate-400">Standards</a></li>
+                            <li><a href="contact.html" class="hover:text-brand-500 transition-colors text-slate-400">Office Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Column 4: Address -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <h4 class="text-white font-semibold mb-2 sm:mb-4 font-display uppercase tracking-wider text-[10px]">Registered Address</h4>
+                    <p class="leading-relaxed text-slate-400">
+                        E-9, Lower Ground Floor,<br>
+                        Sushant Shopping Arcade, DLF Phase IV,<br>
+                        Gurugram, Haryana 122009
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer copyright bottom -->
+            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] text-slate-500 font-light text-center md:text-left">
                 <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+                <p class="max-w-md leading-normal md:text-right">
+                    Disclaimer: Corporate resources intended for healthcare trade professionals. Sourced products must follow direct medical diagnostics.
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- 5. REALISTIC RESOURCE DETAIL MODAL -->
+    <div id="resource-detail-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Modal overlay background -->
+            <div onclick="closeResourceDetail()" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"></div>
+
+            <!-- Spacing hack to center the modal content on desktop -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Modal Panel -->
+            <div class="inline-block transform overflow-hidden rounded-2xl bg-white text-left align-bottom shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:align-middle border border-slate-200">
+                
+                <!-- Header with corporate style -->
+                <div class="bg-slate-900 text-white px-6 py-5 flex items-center justify-between">
+                    <div>
+                        <span id="modal-format" class="text-[9px] font-bold text-brand-500 bg-brand-50/10 border border-brand-500/20 px-2 py-0.5 rounded font-display uppercase tracking-widest">Document Format</span>
+                        <h2 id="modal-title" class="text-xl font-extrabold mt-1.5 font-display tracking-tight">Resource Title</h2>
+                    </div>
+                    <button onclick="closeResourceDetail()" class="p-2 text-slate-400 hover:text-white rounded-lg transition-colors" aria-label="Close details">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Content -->
+                <div class="p-6 space-y-6">
+                    <!-- Informative Description Block -->
+                    <div>
+                        <h4 id="modal-tagline" class="text-xs font-semibold text-brand-500 uppercase tracking-wider mb-2">Resource Tagline Here</h4>
+                        <p id="modal-description" class="text-xs text-slate-600 leading-relaxed font-light">
+                            Detailed descriptive text about the pharmaceutical resource goes here.
+                        </p>
+                    </div>
+
+                    <!-- Chapters / Content Index -->
+                    <div>
+                        <h4 class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center">
+                            <i class="fa-solid fa-list-check mr-1.5 text-brand-500"></i> Document Chapter Index
+                        </h4>
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-xl p-4">
+                            <ul id="modal-chapters" class="space-y-3 text-xs text-slate-700">
+                                <!-- Dynamic chapter list items loaded here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Footer -->
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex flex-col sm:flex-row sm:justify-end gap-3">
+                    <button onclick="closeResourceDetail()" class="px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest text-slate-600 hover:bg-slate-100 transition-all">Close</button>
+                    <button id="modal-action-btn" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">Request Document Copy</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE SLIDE-OVER INQUIRY DRAWER -->
+    <div id="inquiry-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 overflow-hidden">
+            <div id="drawer-overlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"></div>
+            
+            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-6 sm:pl-10">
+                <div id="drawer-panel" class="pointer-events-auto w-screen max-w-md transform translate-x-full transition-transform duration-300 ease-in-out">
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-2xl">
+                        <div class="px-6 py-5 sm:py-6 border-b border-brand-100 flex items-center justify-between">
+                            <div>
+                                <h2 class="text-base font-bold text-slate-900 font-display">Commercial Inquiry</h2>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Product Formulation Desk</p>
+                            </div>
+                            <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-slate-500 rounded-lg">
+                                <i class="fa-solid fa-xmark text-lg"></i>
+                            </button>
+                        </div>
+                        
+                        <form onsubmit="handleDrawerSubmit(event)" class="flex-1 flex flex-col justify-between p-6 space-y-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Selected Subject / Product</label>
+                                    <input type="text" id="drawer-subject" readonly class="w-full bg-slate-50 border border-brand-100 text-slate-700 px-4 py-3 rounded-lg text-xs font-semibold focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Your Name</label>
+                                    <input type="text" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Corporate Email</label>
+                                    <input type="email" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Message / Requirements</label>
+                                    <textarea rows="4" placeholder="Mention volume requirements, C&F distribution queries, or desired PCD territories..." required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400"></textarea>
+                                </div>
+                            </div>
+                            <div class="border-t border-brand-100 pt-6">
+                                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">
+                                    Send Formulation Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Routing & Dynamic Details Modal Logic -->
+    <script>
+        // High-value corporate and clinical resource database
+        const resourcesDatabase = {
+            therapeutic_index: {
+                title: "Therapeutic Index & Formulary (v4.2)",
+                format: "Digital PDF Dossier / 42 Pages",
+                tagline: "Complete Regulatory & Pharmacopoeial Portfolio Directory",
+                description: "The official master formulary containing regulatory filing data, active pharmaceutical ingredient (API) indexes, and therapeutic classifications for all 18 marketed formulations of Meritorious Pharmaceuticals [1, 2].",
+                chapters: [
+                    "<strong>Section 1: DCGI Approval Indexes</strong> — National regulatory schedule filings and registered drug division approvals [1].",
+                    "<strong>Section 2: Pharmacopoeial Standards (IP, BP, USP)</strong> — Exact active chemical compositions, compound stability profiles, and assay parameters [1, 2].",
+                    "<strong>Section 3: Therapeutic Demands Map</strong> — Distribution indexes, recommended retail margins, and carrying-forward regional protocols."
+                ]
+            },
+            api_monographs: {
+                title: "Active Pharmaceutical Ingredient Monographs",
+                format: "Technical Monograph Collection / 18 Sheets",
+                tagline: "Molecular Profiles & Bio-Safety Verifications",
+                description: "Strict technical profiles verifying the quality metrics, chemical sourcing, and batch-wise stability parameters of our core active molecular ingredients [1, 2].",
+                chapters: [
+                    "<strong>Undenatured Collagen (UC-II):</strong> Structural verification and triple-helix assay metrics for joint care (used in CL24).",
+                    "<strong>Tofacitinib Citrate:</strong> High-purity small molecule JAK inhibitor pathways (used in Tofaday).",
+                    "<strong>Benfotiamine & ALA:</strong> Lipid-soluble thiamine bioavailability and antioxidant synergistic metrics (used in Zeptide)."
+                ]
+            },
+            dosage_guidelines: {
+                title: "Dosage & Administration Schedules",
+                format: "Clinical Advisory Sheet / 12 Pages",
+                tagline: "Clinical Administration & Bioavailability Manual",
+                description: "Instructional guides for clinical practitioners, pharmacies, and stockists on the optimal daily administration of complex molecular combinations to ensure peak bioavailability [1, 2].",
+                chapters: [
+                    "<strong>D LOZY 60K Nano Shots:</strong> Emulsified liquid D3 oral delivery timelines and systemic absorption notes.",
+                    "<strong>PYRORAFT Suspension:</strong> Precise post-prandial (after meals) and nocturnal administration schedules for rapid gastric barrier creation.",
+                    "<strong>ESO D SR Capsules:</strong> Fasting morning intervals relative to gastrointestinal motility."
+                ]
+            },
+            cold_chain_manual: {
+                title: "Probiotic Stability & Storage Manual",
+                format: "Standard Operating Procedure (SOP) / 8 Pages",
+                tagline: "Controlled-Temperature Logistics SOPs",
+                description: "Standard operating procedures (SOPs) for Carrying & Forwarding (C&F) warehouse associates on maintaining temperature thresholds for sensitive capsule shell lines [1, 2].",
+                chapters: [
+                    "<strong>Probiotic Strains (Streptolac IBS):</strong> Keeping humidity under 45% and temperatures below 25°C to preserve live spore counts [1, 2].",
+                    "<strong>Softgel Capsules (CL Plus):</strong> Gelatin shell protection parameters to prevent thermal melting, cross-linking, or leakage during transit [1].",
+                    "<strong>Ambient Transport Logs:</strong> Formats for continuous digital temperature tracking during regional dispatch."
+                ]
+            },
+            microbiota_papers: {
+                title: "GI Microbiota & Probiotic Research Papers",
+                format: "Academic Summary Dossier / 24 Pages",
+                tagline: "Clinical Briefs on Gastrointestinal Flora Restorers",
+                description: "A curated collection of peer-reviewed summaries detailing the therapeutic efficacy and biological activity of probiotic spore-formers and yeasts [1, 2].",
+                chapters: [
+                    "<strong>Saccharomyces boulardii (Streptolac IBS):</strong> Gastric acid resistance, safe transit through stomach acidity, and temporary colonization pathways [2].",
+                    "<strong>Lactic Acid Bacillus Spores:</strong> Lactic acid production in the gut and its competitive inhibition of opportunistic enteric pathogens.",
+                    "<strong>FOS Prebiotic Synergism:</strong> Clinical studies on dietary fibers enhancing probiotic reproduction speed."
+                ]
+            },
+            neuro_recovery: {
+                title: "Neuromuscular & Nerve Recovery Guides",
+                format: "Therapeutic Advisory Booklet / 16 Pages",
+                tagline: "Neurotropic Factors & Muscle Relaxation Profiles",
+                description: "Informative clinical reference files detailing advanced therapeutic strategies for nerve conduction management and painful muscle hypertonia [1, 2].",
+                chapters: [
+                    "<strong>Myelin Sheath Repair (Zeptide):</strong> High-dose Methylcobalamin (1500 mcg) synergistic trials with Alpha Lipoic Acid for peripheral nerve recovery [2].",
+                    "<strong>Neuropathic Modulation (Megaglim NT):</strong> Pregabalin combined with Nortriptyline for central spinal pain gating [2].",
+                    "<strong>Spasm Release (Tolbliss):</strong> Central Tolperisone reflex inhibition without systemic sleepiness or fatigue."
+                ]
+            }
+        };
+
+        // Open Resource Details Modal
+        function openResourceDetail(resourceId) {
+            const res = resourcesDatabase[resourceId];
+            if (!res) return;
+
+            // Map data dynamically to modal fields
+            document.getElementById('modal-title').innerText = res.title;
+            document.getElementById('modal-format').innerText = res.format;
+            document.getElementById('modal-tagline').innerText = res.tagline;
+            document.getElementById('modal-description').innerText = res.description;
+
+            // Clear and load dynamic chapters list
+            const chaptersUl = document.getElementById('modal-chapters');
+            chaptersUl.innerHTML = '';
+            res.chapters.forEach(chap => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start space-x-2.5';
+                li.innerHTML = `
+                    <span class="w-1.5 h-1.5 mt-1.5 rounded-full bg-brand-500 shrink-0"></span>
+                    <span class="leading-relaxed">${chap}</span>
+                `;
+                chaptersUl.appendChild(li);
+            });
+
+            // Set up trade inquiry redirect callback parameter
+            document.getElementById('modal-action-btn').setAttribute('onclick', `redirectToInquiry('${res.title}')`);
+
+            // Reveal Modal smoothly with transition rules
+            const modal = document.getElementById('resource-detail-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Lock background scrolling
+        }
+
+        function closeResourceDetail() {
+            const modal = document.getElementById('resource-detail-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        }
+
+        function redirectToInquiry(documentName) {
+            // Redirect with parameter routing directly to inquiry drawer
+            closeResourceDetail();
+            openDrawer(documentName);
+        }
+
+        // Global Slide-Over Inquiry Drawer Functions
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const drawer = document.getElementById('inquiry-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const drawerPanel = document.getElementById('drawer-panel');
+        const drawerSubject = document.getElementById('drawer-subject');
+        
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function openDrawer(subjectName) {
+            drawerSubject.value = subjectName;
+            drawer.classList.remove('hidden');
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+            setTimeout(() => {
+                drawerOverlay.classList.remove('opacity-0');
+                drawerOverlay.classList.add('opacity-100');
+                drawerPanel.classList.remove('translate-x-full');
+                drawerPanel.classList.add('translate-x-0');
+            }, 10);
+        }
+
+        function closeDrawer() {
+            drawerOverlay.classList.remove('opacity-100');
+            drawerOverlay.classList.add('opacity-0');
+            drawerPanel.classList.remove('translate-x-0');
+            drawerPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                drawer.classList.add('hidden');
+            }, 300);
+        }
+
+        drawerOverlay.addEventListener('click', closeDrawer);
+
+        async function handleDrawerSubmit(e) {
+    e.preventDefault();
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.innerText = "Submitting...";
+
+    const inputs = e.target.querySelectorAll('input, textarea');
+    const payload = {
+        formType: "inquiry",
+        sourceForm: "Slide-over Drawer",
+        subject: document.getElementById('drawer-subject').value,
+        name: inputs[1].value,
+        email: inputs[2].value,
+        phone: "N/A",
+        message: inputs[3].value
+    };
+
+    const success = await submitToBackend(payload);
+    if (success) {
+        alert(`Your request regarding ${payload.subject} has been securely logged to our trade desk.`);
+        e.target.reset();
+        closeDrawer();
+    } else {
+        alert("There was an error routing your request. Please try again.");
+    }
+    submitButton.disabled = false;
+    submitButton.innerText = "Send Formulation Request";
+}
+    </script>
 </body>
 </html>
