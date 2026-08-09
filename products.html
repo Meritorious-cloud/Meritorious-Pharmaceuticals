@@ -4,271 +4,1080 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products Portfolio | Meritorious Pharmaceuticals</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the certified product portfolio of Meritorious Pharmaceuticals. Strategic ethical marketing and C&F distribution across major Indian clinical sectors.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS with custom configurations -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
-                    colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#046132', 600: '#034e28', 700: '#023c1e', 900: '#012010' } }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#e1efe6',
+                            500: '#004d26', /* Exact corporate green from logo */
+                            600: '#003a1c',
+                            700: '#002613',
+                            900: '#00140a',
+                        },
+                        clinical: {
+                            50: '#f4f8f9',
+                            100: '#e2ecef',
+                            200: '#cbdfe5',
+                            500: '#004d26', 
+                            600: '#003a1c',
+                            900: '#1e2d31',
+                        }
+                    }
                 }
             }
         }
     </script>
+
     <style>
-        .medical-bg {
-            background-color: #f8fafc;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='42' viewBox='0 0 24 42'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.03'%3E%3Cpath d='M12 3L2 9v12l10 6 10-6V9zM2 33l10 6 10-6v-12l-10-6-10 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        body {
+            background-color: #f4f8f9;
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+        }
+        
+        /* High-fidelity replica of the vertical geometric pattern provided */
+        .medical-bg-subtle {
+            background-color: #f4f8f9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23004d26' stroke-opacity='0.025' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(225, 239, 230, 0.7);
+        }
+
+        .text-balance {
+            text-wrap: balance;
         }
     </style>
 </head>
-<body class="medical-bg text-slate-800 font-sans antialiased">
+<body class="text-slate-800 font-sans antialiased medical-bg-subtle min-h-screen flex flex-col">
 
-    <!-- Global Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+    <!-- 1. HEADER -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3">
-                <div class="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center text-white">
-                    <i class="fa-solid fa-house-medical text-lg"></i>
-                </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
-                    <span class="text-[9px] tracking-widest uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
-                </div>
+            
+            <!-- Logo Section using Hosting Image -->
+            <a href="index.html" class="flex items-center group">
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
             </a>
-            <nav class="hidden lg:flex space-x-8 text-sm font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-brand-500 transition-colors">Home</a>
-                <a href="about.html" class="hover:text-brand-500 transition-colors">About Us</a>
-                <a href="products.html" class="text-brand-500">Products</a>
-                <a href="resources.html" class="hover:text-brand-500 transition-colors">Resources</a>
-                <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
-            </nav>
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="contact.html" class="bg-brand-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-600 transition-all">Enquiry</a>
+            
+            <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
+    <a href="index.html" class="hover:text-brand-500 transition-colors pb-1.5">Home</a>
+    <a href="about.html" class="hover:text-brand-500 transition-colors pb-1.5">About Us</a>
+    <a href="products.html" class="text-brand-500 border-b-2 border-brand-500 pb-1.5 transition-all">Products</a>
+    <a href="resources.html" class="hover:text-brand-500 transition-colors pb-1.5">Resources</a>
+    <a href="contact.html" class="hover:text-brand-500 transition-colors pb-1.5">Contact</a>
+    <a href="career.html" class="hover:text-brand-500 transition-colors pb-1.5">Career</a>
+</nav>
+
+            <div class="hidden lg:flex items-center">
+                <button onclick="openDrawer('General Inquiry')" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm shadow-brand-500/10">
+                    Inquiry Desk
+                </button>
             </div>
+
+            <!-- Mobile menu button -->
+            <button id="hamburger-btn" class="lg:hidden p-2 text-slate-500 hover:text-brand-500 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
         </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-brand-100 px-6 py-6 space-y-4 shadow-inner">
+    <a href="index.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Home</a>
+    <a href="about.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">About Us</a>
+    <a href="products.html" class="block text-brand-500 font-semibold uppercase tracking-wider text-xs">Products</a>
+    <a href="resources.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Resources</a>
+    <a href="contact.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Contact</a>
+    <a href="career.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Career</a>
+    <button onclick="openDrawer('General Inquiry')" class="w-full text-center bg-brand-500 text-white py-3 rounded-lg text-xs font-bold uppercase tracking-widest">
+        Inquiry Desk
+    </button>
+</div>
     </header>
 
-    <!-- Subpage Hero -->
-    <section class="bg-slate-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
-            <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Certified Product Portfolio</h1>
-            <p class="text-sm text-slate-400 mt-2 font-light">Select from our 18 certified therapeutic formulations. Filter by therapeutic segment below.</p>
+    <!-- 2. SUBPAGE HERO SECTION -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-slate-950 to-brand-900 text-white py-12 sm:py-16 md:py-24 overflow-hidden border-b border-brand-900">
+        <!-- Overlay background layer -->
+        <div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80" alt="Laboratory Background" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center lg:text-left">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase bg-brand-500/20 text-brand-100 border border-brand-500/30 mb-4">
+                <i class="fa-solid fa-list-check mr-2 text-brand-500"></i> Quality Assured Portfolio Matrix
+            </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display leading-tight">
+                Certified Product Formulary
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mt-3 font-light leading-relaxed mx-auto lg:mx-0">
+                Explore our index of 18 highly specialized therapeutic formulations. Click on any product to view its precise chemical compositions, standards, and packaging.
+            </p>
         </div>
     </section>
 
-    <!-- Interactive Filtering UI -->
+    <!-- 3. INTERACTIVE FILTERING & PRODUCTS GRID -->
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Filter Tabs (Responsive horizontal layout) -->
         <div class="flex flex-wrap gap-2 justify-center mb-12">
-            <button onclick="filterProducts('all')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-500 text-white">All Segments</button>
-            <button onclick="filterProducts('gynecology')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Gynecology / Women's Care</button>
-            <button onclick="filterProducts('ortho')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Orthopedic</button>
-            <button onclick="filterProducts('gastro')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Gastroenterology</button>
-            <button onclick="filterProducts('neuro-general')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Neuro &amp; General Medicine</button>
-            <button onclick="filterProducts('nutra-wellness')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Nutra &amp; Wellness</button>
+            <button onclick="filterProducts('all')" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-brand-500 text-white">All Segments</button>
+            <button onclick="filterProducts('gynecology')" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Gynecology / Women's Care</button>
+            <button onclick="filterProducts('ortho')" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Orthopedic</button>
+            <button onclick="filterProducts('gastro')" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Gastroenterology</button>
+            <button onclick="filterProducts('neuro-general')" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Neuro &amp; General</button>
+            <button onclick="filterProducts('nutra-wellness')" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Nutra &amp; Wellness</button>
         </div>
 
-        <!-- Product Cards Grid (18 Formulations) -->
-        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- 1 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+        <!-- Dynamic Grid Layout (Highly Upgraded Medicine Cards) -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <!-- Card 1 -->
+            <div onclick="openProductDetail('cl24')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gynecology">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">CL24 Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Specialized clinical support formula matching women's health needs.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-person-pregnant text-[11px]"></i> Gynecology
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">CL24 Tablets</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Calcium Carbonate + UC-II + Vit. D3
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Specialized calcium complex formulation with Vitamin D3 co-factors to support maternal calcification.</p>
                 </div>
-                <button onclick="requestQuote('CL24 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 2 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+
+            <!-- Card 2 -->
+            <div onclick="openProductDetail('clk2')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gynecology">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">CLK2 Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Advanced bone health and premium calcium management formulation.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-person-pregnant text-[11px]"></i> Gynecology
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet USP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">CLK2 Tablets</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Calcium Carbonate + Calcitriol + Vit. K2-7
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Advanced bone health and premium calcium management formulation built for calcium pathway distribution.</p>
                 </div>
-                <button onclick="requestQuote('CLK2 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 3 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+
+            <!-- Card 3 -->
+            <div onclick="openProductDetail('stretch_bliss')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gynecology">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Cream</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Stretch Bliss Cream</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Dermatological tissue-hydration standard formulation.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-person-pregnant text-[11px]"></i> Gynecology
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-pump-medical"></i> Cream
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Stretch Bliss Cream</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Allium Cepa + Shea Butter + Vit. E
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Dermatological tissue-hydration formulation to significantly support maternal skin elasticity.</p>
                 </div>
-                <button onclick="requestQuote('Stretch Bliss Cream')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 4 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="nutra-wellness">
+
+            <!-- Card 4 -->
+            <div onclick="openProductDetail('polmanac')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="nutra-wellness">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Polmanac Capsules</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">High-potency immune system wellness formulation.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-heart-pulse text-[11px]"></i> Nutra
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-capsules"></i> Capsule
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Polmanac Capsules</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Acetyl L-Carnitine + CoQ10 + Zinc
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">High-potency immune system wellness formulation offering cellular energy support co-factors.</p>
                 </div>
-                <button onclick="requestQuote('Polmanac Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 5 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="nutra-wellness">
+
+            <!-- Card 5 -->
+            <div onclick="openProductDetail('cq_gem')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="nutra-wellness">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Softgel Capsule</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">CQ GEM Softgel Capsules</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Specialized antioxidant defense supplement.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-heart-pulse text-[11px]"></i> Nutra
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-capsules"></i> Softgel
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">CQ GEM Softgels</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        CoQ10 + EPA + DHA + Lycopene
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Specialized antioxidant defense and metabolic health supplement promoting cellular protection.</p>
                 </div>
-                <button onclick="requestQuote('CQ GEM Softgel Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 6 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+
+            <!-- Card 6 -->
+            <div onclick="openProductDetail('eso_d')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gastro">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">ESO D Capsules</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Gastric acid release control formula.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-prescription-bottle-medical text-[11px]"></i> Gastro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-capsules"></i> Capsule IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">ESO D Capsules</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Esomeprazole + Domperidone SR
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Sustained-release gastric acid control formula targeting GERD and gastric hyperacidity.</p>
                 </div>
-                <button onclick="requestQuote('ESO D Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 7 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+
+            <!-- Card 7 -->
+            <div onclick="openProductDetail('streptolac')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gastro">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Streptolac Capsules</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Standard gut microbial flora support capsule.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-prescription-bottle-medical text-[11px]"></i> Gastro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-capsules"></i> Capsule
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Streptolac Capsules</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Lactic Acid Bacillus 1.5B Spores
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Standard gut microbial flora support capsule indicated to replenish gut health.</p>
                 </div>
-                <button onclick="requestQuote('Streptolac Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 8 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+
+            <!-- Card 8 -->
+            <div onclick="openProductDetail('streptolac_ibs')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gastro">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Capsule</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Streptolac IBS Capsules</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Advanced targeted support for bowel balance.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-prescription-bottle-medical text-[11px]"></i> Gastro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-capsules"></i> Capsule USP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Streptolac IBS</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        L. Acid Bacillus + S. Boulardii + FOS
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">High-viability bacterial matrix optimized for intestinal wall integrity and bowel balance.</p>
                 </div>
-                <button onclick="requestQuote('Streptolac IBS Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 9 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gastro">
+
+            <!-- Card 9 -->
+            <div onclick="openProductDetail('pyroraft')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gastro">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Suspension</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">PYRORAFT Suspension</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Antacid formulation matching clinical specifications.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-prescription-bottle-medical text-[11px]"></i> Gastro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-prescription-bottle"></i> Suspension
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">PYRORAFT</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Sod. Alginate + Sod. Bicarbonate
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Antacid formulation offering a rapid raft-forming gel layer over gastric contents.</p>
                 </div>
-                <button onclick="requestQuote('PYRORAFT Suspension')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 10 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="ortho">
+
+            <!-- Card 10 -->
+            <div onclick="openProductDetail('axonac_mr')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="ortho">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Axonac MR Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Muscle relaxant and analgesic combination formula.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-bone text-[11px]"></i> Ortho
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Axonac MR Tablets</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Aceclofenac + Paracetamol + Muscle Relaxant
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Muscle relaxant and pain management combination formula targeting muscular spasms.</p>
                 </div>
-                <button onclick="requestQuote('Axonac MR Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 11 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="nutra-wellness">
+
+            <!-- Card 11 -->
+            <div onclick="openProductDetail('d_lozy')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="nutra-wellness">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Nano Shots</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">D LOZY Nano Shots</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">High-absorption Vitamin D supplement nano format.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-heart-pulse text-[11px]"></i> Nutra
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-vial"></i> Nano Shot
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">D LOZY Nano Shots</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Cholecalciferol (D3) 60K Emulsion
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">High-absorption Vitamin D3 supplement in an advanced, ready-to-drink nano format.</p>
                 </div>
-                <button onclick="requestQuote('D LOZY Nano Shots')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 12 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="gynecology">
+
+            <!-- Card 12 -->
+            <div onclick="openProductDetail('cl_plus')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="gynecology">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Softgel Capsule</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">CL Plus Softgel Capsules</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Standard prenatal nutrient complex formula.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-person-pregnant text-[11px]"></i> Gynecology
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-capsules"></i> Softgel
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">CL Plus Softgels</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Calcium Carbonate + DHA + Calcitriol
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Standard prenatal nutrient complex formula providing DHA, calcium, and mineral assets.</p>
                 </div>
-                <button onclick="requestQuote('CL Plus Softgel Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 13 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="ortho">
+
+            <!-- Card 13 -->
+            <div onclick="openProductDetail('mgbliss_d3')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="ortho">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">MGBLISS D3 Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Premium joint and calcium mineralization tablet.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-bone text-[11px]"></i> Ortho
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">MGBLISS D3</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Elemental Magnesium + Vit. D3 + Folate
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Focused magnesium &amp; D3 mineralization pathway supporting active bone integrity.</p>
                 </div>
-                <button onclick="requestQuote('MGBLISS D3 Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 14 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+
+            <!-- Card 14 -->
+            <div onclick="openProductDetail('zeptide')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="neuro-general">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Softgel Capsule</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Zeptide Softgel Capsules</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Neurological vitality and nerve conductivity supplement.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-stethoscope text-[11px]"></i> Neuro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-capsules"></i> Softgel IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-3 group-hover:text-brand-500 transition-colors tracking-tight font-display">Zeptide Softgels</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Methylcobalamin + ALA + Benfotiamine
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Neurotropic vitality formulation indicated to support conductivity and nerve recovery.</p>
                 </div>
-                <button onclick="requestQuote('Zeptide Softgel Capsules')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 15 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="ortho">
+
+            <!-- Card 15 -->
+            <div onclick="openProductDetail('tolbliss')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="ortho">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Tolbliss Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Osteo-skeletal muscle spasm release formulation.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-bone text-[11px]"></i> Ortho
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Tolbliss Tablets</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Tolperisone HCl IP 150mg
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">High-efficacy centrally acting muscle relaxant to aid musculoskeletal hypertonia.</p>
                 </div>
-                <button onclick="requestQuote('Tolbliss Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 16 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+
+            <!-- Card 16 -->
+            <div onclick="openProductDetail('abstat')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="neuro-general">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">ABstat Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Active chemical management for metabolic indices.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-stethoscope text-[11px]"></i> Neuro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">ABstat Tablets</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Azithromycin Dihydrate IP 500mg
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Broad-spectrum anti-microbial formulation targeting susceptible bacterial infections.</p>
                 </div>
-                <button onclick="requestQuote('ABstat Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 17 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+
+            <!-- Card 17 -->
+            <div onclick="openProductDetail('megaglim')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="neuro-general">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Megaglim NT Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Neuropathy management and glycemic comfort tablet.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-stethoscope text-[11px]"></i> Neuro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Megaglim NT</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Pregabalin + Nortriptyline + Mecobalamin
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Targeted neuropathy management and stable glycemic support compound.</p>
                 </div>
-                <button onclick="requestQuote('Megaglim NT Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
-            <!-- 18 -->
-            <div class="product-card bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all" data-category="neuro-general">
+
+            <!-- Card 18 -->
+            <div onclick="openProductDetail('tofaday')" class="product-card bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500/60 transition-all duration-300 cursor-pointer group flex flex-col justify-between" data-category="neuro-general">
                 <div>
-                    <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">Tablet</span>
-                    <h3 class="font-bold text-slate-900 text-base mt-2">Tofaday Tablets</h3>
-                    <p class="text-xs text-slate-400 mt-1 font-light">Specialized immune-support anti-rheumatic formulation.</p>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-semibold">
+                        <span class="text-brand-500 bg-brand-50 px-2.5 py-1 rounded-md font-display flex items-center gap-1.5">
+                            <i class="fa-solid fa-stethoscope text-[11px]"></i> Neuro
+                        </span>
+                        <span class="text-slate-400 font-mono flex items-center gap-1">
+                            <i class="fa-solid fa-tablets"></i> Tablet IP
+                        </span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg mt-4 group-hover:text-brand-500 transition-colors tracking-tight font-display">Tofaday Tablets</h3>
+                    <div class="mt-2 text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded inline-block">
+                        Tofacitinib Citrate 5mg
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-light leading-relaxed">Advanced Janus Kinase (JAK) inhibitor for the clinical management of arthritis.</p>
                 </div>
-                <button onclick="requestQuote('Tofaday Tablets')" class="mt-6 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all">Request Quote</button>
+                <div class="mt-6 flex items-center justify-between text-[11px] font-bold text-brand-500 uppercase tracking-widest border-t border-slate-100 pt-4">
+                    <span>View Composition</span>
+                    <i class="fa-solid fa-circle-chevron-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Global Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
-                <div class="space-y-4">
-                    <span class="text-white font-extrabold text-lg font-display">MERITORIOUS</span>
-                    <p class="text-xs font-light">Redefining standardized therapeutics across major Indian clinical zones.</p>
+    <!-- 4. GLOBAL FOOTER (OPTIMIZED FOR MOBILE WITH DUAL-LIST DIRECTORIES) -->
+    <footer class="mt-auto bg-brand-900 text-slate-400 py-8 sm:py-16 border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 pb-8 border-b border-brand-600/20 text-xs font-light">
+                
+                <!-- Column 1: Brand Typography (Paragraph hidden on mobile to reduce height) -->
+                <div class="space-y-2 sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <span class="text-white font-extrabold text-lg tracking-tight font-display block uppercase leading-none">
+                            MERITORIOUS
+                        </span>
+                        <span class="text-[8px] tracking-[0.25em] uppercase text-brand-500 font-semibold block mt-1 leading-none font-sans">
+                            PHARMACEUTICALS
+                        </span>
+                    </div>
+                    <p class="hidden sm:block leading-relaxed text-slate-400 text-[11px]">
+                        Certified pharmaceutical marketing and wholesale carrying-forward distribution across major Indian clinical zones.
+                    </p>
                 </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Navigations</h4>
-                    <ul class="space-y-2 text-xs font-light">
-                        <li><a href="about.html" class="hover:text-brand-400">About Our Company</a></li>
-                        <li><a href="products.html" class="hover:text-brand-400">Our Portfolio</a></li>
-                        <li><a href="resources.html" class="hover:text-brand-400">Healthcare Resources</a></li>
-                    </ul>
+                
+                <!-- Combined Column 2 & 3: Double list grid side-by-side on mobile, stacked on lg -->
+                <div class="grid grid-cols-2 gap-4 sm:col-span-2 lg:col-span-2">
+                    <div>
+                        <h4 class="text-white font-semibold mb-2 sm:mb-4 font-display uppercase tracking-wider text-[10px]">Formulations</h4>
+                        <ul class="space-y-1.5 sm:space-y-2">
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Women's Care</a></li>
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Orthopedics</a></li>
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Digestive Care</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-2 sm:mb-4 font-display uppercase tracking-wider text-[10px]">Corporate</h4>
+                        <ul class="space-y-1.5 sm:space-y-2">
+                            <li><a href="about.html" class="hover:text-brand-500 transition-colors text-slate-400">About Us</a></li>
+                            <li><a href="about.html#why-us" class="hover:text-brand-500 transition-colors text-slate-400">Standards</a></li>
+                            <li><a href="contact.html" class="hover:text-brand-500 transition-colors text-slate-400">Office Contacts</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Contact Info</h4>
-                    <p class="text-xs font-light">info@meritoriouspharma.com<br>+91 (124) 456-7890</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Office Address</h4>
-                    <p class="text-xs font-light">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                
+                <!-- Column 4: Address -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <h4 class="text-white font-semibold mb-2 sm:mb-4 font-display uppercase tracking-wider text-[10px]">Registered Address</h4>
+                    <p class="leading-relaxed text-slate-400">
+                        E-9, Lower Ground Floor,<br>
+                        Sushant Shopping Arcade, DLF Phase IV,<br>
+                        Gurugram, Haryana 122009
+                    </p>
                 </div>
             </div>
-            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-light">
+
+            <!-- Footer copyright bottom -->
+            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] text-slate-500 font-light text-center md:text-left">
                 <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+                <p class="max-w-md leading-normal md:text-right">
+                    Disclaimer: Corporate resources intended for healthcare trade professionals. Sourced products must follow direct medical diagnostics.
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- 5. DETAILED INSPECTION MODAL (Gives "Every Detail" of the selected product) -->
+    <div id="product-detail-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Modal overlay background -->
+            <div onclick="closeProductDetail()" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"></div>
+
+            <!-- Spacing hack to center the modal content on desktop -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Modal Panel -->
+            <div class="inline-block transform overflow-hidden rounded-2xl bg-white text-left align-bottom shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:align-middle border border-slate-200">
+                
+                <!-- Header with corporate style -->
+                <div class="bg-slate-900 text-white px-6 py-5 flex items-center justify-between">
+                    <div>
+                        <span id="modal-category" class="text-[9px] font-bold text-brand-500 bg-brand-50/10 border border-brand-500/20 px-2 py-0.5 rounded font-display uppercase tracking-widest">Therapeutic Area</span>
+                        <h2 id="modal-title" class="text-xl font-extrabold mt-1.5 font-display tracking-tight">Product Brand Name</h2>
+                    </div>
+                    <button onclick="closeProductDetail()" class="p-2 text-slate-400 hover:text-white rounded-lg transition-colors" aria-label="Close details">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Content -->
+                <div class="p-6 space-y-6">
+                    <!-- Standard Composition Block -->
+                    <div>
+                        <h4 class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center">
+                            <i class="fa-solid fa-flask-vial mr-1.5 text-brand-500"></i> Active Composition &amp; Standards
+                        </h4>
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden">
+                            <table class="w-full text-xs text-left">
+                                <thead class="bg-slate-100 text-slate-600 font-semibold uppercase text-[10px] tracking-wider border-b border-slate-200">
+                                    <tr>
+                                        <th class="px-4 py-2.5">Active Ingredient</th>
+                                        <th class="px-4 py-2.5 text-right">Strength</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modal-composition-body" class="divide-y divide-slate-100 text-slate-700">
+                                    <!-- Dynamic rows loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Advantages & C&F Packaging Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Key Clinical Advantages -->
+                        <div>
+                            <h4 class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center">
+                                <i class="fa-solid fa-shield-halved mr-1.5 text-brand-500"></i> Advantages &amp; Indication
+                            </h4>
+                            <ul id="modal-advantages" class="space-y-2 text-xs text-slate-600 font-light">
+                                <!-- Dynamic bullet points loaded here -->
+                            </ul>
+                        </div>
+                        <!-- C&F Packaging Info -->
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200/60 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1 flex items-center">
+                                    <i class="fa-solid fa-box-open mr-1.5 text-brand-500"></i> Packaging Metric
+                                </h4>
+                                <span id="modal-packaging-spec" class="text-xs font-mono font-semibold text-slate-800 block mt-1">Alu-Alu blister configurations</span>
+                                <p class="text-[10px] text-slate-400 font-light mt-1.5 leading-relaxed">
+                                    All packets are packed into high-grade climatic-stable boxes to prevent moisture absorption and temperature decay during C&amp;F transport.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-200/50 flex justify-between items-center text-[10px] font-mono tracking-wider text-slate-500 uppercase">
+                                <span>Pharmacopoeia</span>
+                                <span id="modal-pharmacopoeia" class="font-bold text-brand-500">IP Standard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Footer -->
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex flex-col sm:flex-row sm:justify-end gap-3">
+                    <button onclick="closeProductDetail()" class="px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest text-slate-600 hover:bg-slate-100 transition-all">Close</button>
+                    <button id="modal-action-btn" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">Request Trade terms</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE SLIDE-OVER INQUIRY DRAWER -->
+    <div id="inquiry-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 overflow-hidden">
+            <div id="drawer-overlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"></div>
+            
+            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-6 sm:pl-10">
+                <div id="drawer-panel" class="pointer-events-auto w-screen max-w-md transform translate-x-full transition-transform duration-300 ease-in-out">
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-2xl">
+                        <div class="px-6 py-5 sm:py-6 border-b border-brand-100 flex items-center justify-between">
+                            <div>
+                                <h2 class="text-base font-bold text-slate-900 font-display">Commercial Inquiry</h2>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Product Formulation Desk</p>
+                            </div>
+                            <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-slate-500 rounded-lg">
+                                <i class="fa-solid fa-xmark text-lg"></i>
+                            </button>
+                        </div>
+                        
+                        <form onsubmit="handleDrawerSubmit(event)" class="flex-1 flex flex-col justify-between p-6 space-y-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Selected Subject / Product</label>
+                                    <input type="text" id="drawer-subject" readonly class="w-full bg-slate-50 border border-brand-100 text-slate-700 px-4 py-3 rounded-lg text-xs font-semibold focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Your Name</label>
+                                    <input type="text" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Corporate Email</label>
+                                    <input type="email" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Message / Requirements</label>
+                                    <textarea rows="4" placeholder="Mention volume requirements, C&F distribution queries, or desired PCD territories..." required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400"></textarea>
+                                </div>
+                            </div>
+                            <div class="border-t border-brand-100 pt-6">
+                                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">
+                                    Send Formulation Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Database and Filtering / Modal Scripts -->
     <script>
+        // 18 Detailed Products Formulation Database
+        const productsDatabase = {
+            cl24: {
+                name: "CL24 Tablets",
+                category: "gynecology",
+                typeName: "Gynecology & Joint Care",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Calcium Carbonate IP", strength: "1250 mg" },
+                    { ingredient: "Undenatured Collagen (UC-II)", strength: "40 mg" },
+                    { ingredient: "Vitamin C IP", strength: "40 mg" },
+                    { ingredient: "Vitamin D3 IP", strength: "400 IU" }
+                ],
+                advantages: [
+                    "Promotes calcium pathway absorption for strong bone mineralization.",
+                    "Provides structural protection to joint cartilage and tissues.",
+                    "Optimized to support maternal bone density indexes safely."
+                ]
+            },
+            clk2: {
+                name: "CLK2 Tablets",
+                category: "gynecology",
+                typeName: "Osteo-Metabolic Supporter",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard USP",
+                composition: [
+                    { ingredient: "Calcium Carbonate IP", strength: "500 mg" },
+                    { ingredient: "Calcitriol USP", strength: "0.25 mcg" },
+                    { ingredient: "Vitamin K2-7 USP", strength: "45 mcg" }
+                ],
+                advantages: [
+                    "Supports complete calcium metabolism, preventing arterial calcification.",
+                    "Stimulates osteoblasts to elevate healthy skeletal density.",
+                    "Crucial maternal co-factor that targets healthy bone pathways."
+                ]
+            },
+            stretch_bliss: {
+                name: "Stretch Bliss Cream",
+                category: "gynecology",
+                typeName: "Gynecology & Dermatology",
+                packaging: "50g Clean-Dispense Squeeze Tube",
+                pharmacopoeia: "Dermatological Grade",
+                composition: [
+                    { ingredient: "Onion Extract (Allium cepa)", strength: "5%" },
+                    { ingredient: "Cocoa Butter & Shea Butter", strength: "Organic Base" },
+                    { ingredient: "Vitamin E Acetate IP", strength: "1.5%" },
+                    { ingredient: "Hyaluronic Acid Base", strength: "0.2%" }
+                ],
+                advantages: [
+                    "Deeply hydrates and restores cutaneous tissue elasticity.",
+                    "Helps significantly reduce striae gravidarum (maternal stretch marks).",
+                    "Promotes tissue healing and calms inflammation associated with skin stretching."
+                ]
+            },
+            polmanac: {
+                name: "Polmanac Capsules",
+                category: "nutra-wellness",
+                typeName: "Nutra & Wellness Immunity",
+                packaging: "10 x 1 x 10 Blister Pack",
+                pharmacopoeia: "Standard USP",
+                composition: [
+                    { ingredient: "Acetyl L-Carnitine", strength: "500 mg" },
+                    { ingredient: "Coenzyme Q10 (Ubiquinone)", strength: "100 mg" },
+                    { ingredient: "Zinc Oxide IP equivalent to Elemental Zinc", strength: "15 mg" },
+                    { ingredient: "Astaxanthin (Natural Extract)", strength: "8 mg" }
+                ],
+                advantages: [
+                    "Supports cellular energy production and ATP synthesis.",
+                    "Provides a potent antioxidant barrier against system-wide oxidative stress.",
+                    "Promotes general wellness, vitality, and cardiac cellular performance."
+                ]
+            },
+            cq_gem: {
+                name: "CQ GEM Softgel Capsules",
+                category: "nutra-wellness",
+                typeName: "Cardiovascular & Metabolic Shield",
+                packaging: "10 x 1 x 10 Softgel Blister",
+                pharmacopoeia: "Nutraceutical Standard",
+                composition: [
+                    { ingredient: "Coenzyme Q10 (Ubiquinol Formulation)", strength: "100 mg" },
+                    { ingredient: "Eicosapentaenoic Acid (EPA)", strength: "90 mg" },
+                    { ingredient: "Docosahexaenoic Acid (DHA)", strength: "60 mg" },
+                    { ingredient: "Lycopene (10% formulation)", strength: "5000 mcg" },
+                    { ingredient: "Selenium (as Sodium Selenite)", strength: "40 mcg" }
+                ],
+                advantages: [
+                    "Promotes robust cardiac parameters and stable vascular health.",
+                    "High-purity softgel protects nutrients from air oxidation.",
+                    "Neutralizes metabolic free radicals to boost tissue recovery."
+                ]
+            },
+            eso_d: {
+                name: "ESO D Capsules",
+                category: "gastro",
+                typeName: "Acid Suppression & Prokinetic",
+                packaging: "10 x 10 Alu-Alu Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Esomeprazole Magnesium IP (Sustained Release)", strength: "40 mg" },
+                    { ingredient: "Domperidone IP", strength: "30 mg" }
+                ],
+                advantages: [
+                    "Suppresses excessive gastric acid release with Esomeprazole block.",
+                    "Domperidone increases lower esophageal sphincter tone to control reflux.",
+                    "Sustained release ensures comfortable acid balance throughout the day."
+                ]
+            },
+            streptolac: {
+                name: "Streptolac Capsules",
+                category: "gastro",
+                typeName: "Gut Microbial Supporter",
+                packaging: "10 x 10 Blister Pack",
+                pharmacopoeia: "Clinical Probiotic",
+                composition: [
+                    { ingredient: "Lactic Acid Bacillus (Lactobacillus sporogenes)", strength: "1.5 Billion Spores" }
+                ],
+                advantages: [
+                    "Quickly replenishes beneficial gut bacteria after antibiotic regimens.",
+                    "Supports the protective mucosal barrier against gastrointestinal pathogens.",
+                    "Aids nutritional absorption and stabilizes digestion parameters."
+                ]
+            },
+            streptolac_ibs: {
+                name: "Streptolac IBS",
+                category: "gastro",
+                typeName: "Targeted Bowel Balancer",
+                packaging: "10 x 10 Blister Pack",
+                pharmacopoeia: "Standard USP",
+                composition: [
+                    { ingredient: "Lactic Acid Bacillus spores", strength: "2.0 Billion Spores" },
+                    { ingredient: "Saccharomyces boulardii", strength: "250 mg" },
+                    { ingredient: "Fructooligosaccharides (FOS)", strength: "100 mg" },
+                    { ingredient: "Zinc Oxide IP equivalent to Elemental Zinc", strength: "10 mg" }
+                ],
+                advantages: [
+                    "Specifically targets Irritable Bowel Syndrome (IBS) symptom profiles.",
+                    "Saccharomyces boulardii restores healthy stool frequency and consistency.",
+                    "FOS prebiotics feed and nourish deep intestinal bacterial flora."
+                ]
+            },
+            pyroraft: {
+                name: "PYRORAFT",
+                category: "gastro",
+                typeName: "Antacid & Gastric Raft Barrier",
+                packaging: "200ml High-Protection Amber Bottle",
+                pharmacopoeia: "Standard BP",
+                composition: [
+                    { ingredient: "Sodium Alginate", strength: "500 mg" },
+                    { ingredient: "Sodium Bicarbonate", strength: "267 mg" },
+                    { ingredient: "Calcium Carbonate", strength: "160 mg" }
+                ],
+                advantages: [
+                    "Reacts instantly with acid to form a protective physical raft barrier on top of stomach juices.",
+                    "Physically blocks acid reflux into the esophagus for long-lasting relief.",
+                    "Non-systemic, fast action that is safe for maternal heartburn management under supervision."
+                ]
+            },
+            axonac_mr: {
+                name: "Axonac MR Tablets",
+                category: "ortho",
+                typeName: "Musculoskeletal Pain Management",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Aceclofenac IP", strength: "100 mg" },
+                    { ingredient: "Paracetamol IP", strength: "325 mg" },
+                    { ingredient: "Thiocolchicoside IP (Muscle Relaxant)", strength: "4 mg" }
+                ],
+                advantages: [
+                    " Thiocolchicoside centers on CNS muscle relaxant pathways.",
+                    "Synergistic pain-relief matching painful spasm recovery.",
+                    "Reduces clinical systemic inflammation to restore mobility."
+                ]
+            },
+            d_lozy: {
+                name: "D LOZY Nano Shots",
+                category: "nutra-wellness",
+                typeName: "Cholecalciferol Liquid Emulsion",
+                packaging: "4 x 5ml Oral Solution Shots",
+                pharmacopoeia: "Vitamin Formulation IP",
+                composition: [
+                    { ingredient: "Cholecalciferol (Vitamin D3) (Nano-Emulsion Form)", strength: "60,000 IU" }
+                ],
+                advantages: [
+                    "Liquid nano-emulsion provides vastly superior gastrointestinal bioavailability.",
+                    "Quickly treats Vitamin D3 deficiencies and supports systemic calcium absorption.",
+                    "Extremely convenient weekly oral dose with pleasant taste profiles."
+                ]
+            },
+            cl_plus: {
+                name: "CL Plus Softgels",
+                category: "gynecology",
+                typeName: "Maternal Comprehensive Supporter",
+                packaging: "10 x 10 Softgel Blister",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Calcium Carbonate IP equivalent to Calcium", strength: "500 mg" },
+                    { ingredient: "Calcitriol USP (Vitamin D3 Active Metabolite)", strength: "0.25 mcg" },
+                    { ingredient: "Docosahexaenoic Acid (DHA) 10%", strength: "120 mg" },
+                    { ingredient: "Methylcobalamin IP", strength: "1500 mcg" },
+                    { ingredient: "L-Methylfolate Calcium", strength: "1 mg" }
+                ],
+                advantages: [
+                    "DHA aids fetal neurological and retinal development parameters.",
+                    "Stabilizes folic pathways, preventing neural tube defects (NTDs).",
+                    "Provides high bioavailability calcium support during lactation."
+                ]
+            },
+            mgbliss_d3: {
+                name: "MGBLISS D3",
+                category: "ortho",
+                typeName: "Osteo-Mineral Synergist",
+                packaging: "15 Tablets per Blister Strip",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Elemental Magnesium (as Magnesium Oxide)", strength: "300 mg" },
+                    { ingredient: "Cholecalciferol (Vitamin D3) IP", strength: "1000 IU" },
+                    { ingredient: "L-Methylfolate Calcium", strength: "1 mg" },
+                    { ingredient: "Pyridoxal-5-Phosphate", strength: "1.5 mg" }
+                ],
+                advantages: [
+                    "Magnesium coordinates with Vitamin D3 to control bone calcification pathways.",
+                    "Reduces muscle cramps and relaxes painful neuromuscular tissues.",
+                    "L-Methylfolate provides pure folate co-factors for nerve and blood wellness."
+                ]
+            },
+            zeptide: {
+                name: "Zeptide Softgels",
+                category: "neuro-general",
+                typeName: "Neurotropic conducts restorer",
+                packaging: "10 x 10 Softgel Blister",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Methylcobalamin IP", strength: "1500 mcg" },
+                    { ingredient: "Alpha Lipoic Acid USP", strength: "100 mg" },
+                    { ingredient: "Benfotiamine (Lipid-Soluble Vitamin B1)", strength: "150 mg" },
+                    { ingredient: "Pyridoxine Hydrochloride IP (Vitamin B6)", strength: "3 mg" },
+                    { ingredient: "Folic Acid IP", strength: "1.5 mg" }
+                ],
+                advantages: [
+                    "Stimulates healthy myelin sheath regeneration to support nerve tissue repair.",
+                    "Benfotiamine possesses superior cellular bioavailability over standard thiamine.",
+                    "Aids metabolic nerve parameters, directly targeting diabetic neuropathy symptoms."
+                ]
+            },
+            tolbliss: {
+                name: "Tolbliss Tablets",
+                category: "ortho",
+                typeName: "Centrally Acting Muscle Relaxant",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Tolperisone Hydrochloride IP", strength: "150 mg" }
+                ],
+                advantages: [
+                    "Controls skeletal muscle spasm without causing systemic sedation or drowsiness.",
+                    "Improves regional vascular circulation, aiding muscular recovery.",
+                    "High safety profile indicated for spinal and joint hypertonia cases."
+                ]
+            },
+            abstat: {
+                name: "ABstat Tablets",
+                category: "neuro-general",
+                typeName: "Broad-Spectrum Macrolide Antibiotic",
+                packaging: "3 Tablets per Blister Strip (10x3 Pack)",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Azithromycin Dihydrate IP equivalent to Anhydrous Azithromycin", strength: "500 mg" }
+                ],
+                advantages: [
+                    "High-potency single daily dose macrolide targeting respiratory tract infections.",
+                    "Active against susceptible intracellular atypical pathogens.",
+                    "Extremely comfortable short clinical course (often 3-5 days of supply)."
+                ]
+            },
+            megaglim: {
+                name: "Megaglim NT",
+                category: "neuro-general",
+                typeName: "Synergistic Neuropathic Pain Modulator",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Pregabalin IP", strength: "75 mg" },
+                    { ingredient: "Nortriptyline Hydrochloride IP equivalent to Nortriptyline", strength: "10 mg" },
+                    { ingredient: "Methylcobalamin IP", strength: "1500 mcg" }
+                ],
+                advantages: [
+                    "Pregabalin modulates voltage-gated calcium channels to lower hyper-excited nerve signals.",
+                    "Nortriptyline blocks neurotransmitter reuptake, lowering spinal pain signals.",
+                    "Methylcobalamin repairs damaged neural structural pathways."
+                ]
+            },
+            tofaday: {
+                name: "Tofaday Tablets",
+                category: "neuro-general",
+                typeName: "Janus Kinase (JAK) Inhibitor",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Tofacitinib Citrate IP equivalent to Tofacitinib", strength: "5 mg" }
+                ],
+                advantages: [
+                    "Orally active small molecule JAK inhibitor that blocks critical cytokine signaling.",
+                    "Specifically indicated to control joint destruction in severe Rheumatoid Arthritis.",
+                    "Proven clinical parameter reduction for active Ankylosing Spondylitis."
+                ]
+            }
+        };
+
+        // Filter Grid System
         function filterProducts(category) {
             const cards = document.querySelectorAll('.product-card');
             const buttons = document.querySelectorAll('.filter-btn');
@@ -293,10 +1102,129 @@
             });
         }
 
-        // Actionable routing redirect with parameters
-        function requestQuote(productName) {
-            window.location.href = `contact.html?product=${encodeURIComponent(productName)}`;
+        // Actionable Open Detailed Product Modal
+        function openProductDetail(productId) {
+            const product = productsDatabase[productId];
+            if (!product) return;
+
+            // Map data dynamically to modal fields
+            document.getElementById('modal-title').innerText = product.name;
+            document.getElementById('modal-category').innerText = product.typeName;
+            document.getElementById('modal-packaging-spec').innerText = product.packaging;
+            document.getElementById('modal-pharmacopoeia').innerText = product.pharmacopoeia;
+
+            // Clear and load dynamic compositions table
+            const compositionBody = document.getElementById('modal-composition-body');
+            compositionBody.innerHTML = '';
+            product.composition.forEach(comp => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-slate-100 hover:bg-slate-50';
+                row.innerHTML = `
+                    <td class="px-4 py-3 text-slate-800 font-semibold">${comp.ingredient}</td>
+                    <td class="px-4 py-3 text-right text-slate-600 font-mono">${comp.strength}</td>
+                `;
+                compositionBody.appendChild(row);
+            });
+
+            // Clear and load dynamic clinical advantages
+            const advantagesUl = document.getElementById('modal-advantages');
+            advantagesUl.innerHTML = '';
+            product.advantages.forEach(adv => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start space-x-2.5';
+                li.innerHTML = `
+                    <span class="w-1.5 h-1.5 mt-1.5 rounded-full bg-brand-500 shrink-0"></span>
+                    <span class="leading-relaxed">${adv}</span>
+                `;
+                advantagesUl.appendChild(li);
+            });
+
+            // Set up trade inquiry redirect callback parameter
+            document.getElementById('modal-action-btn').setAttribute('onclick', `redirectToInquiry('${product.name}')`);
+
+            // Reveal Modal smoothly with transition rules
+            const modal = document.getElementById('product-detail-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Lock background scrolling
         }
+
+        function closeProductDetail() {
+            const modal = document.getElementById('product-detail-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        }
+
+        function redirectToInquiry(productName) {
+            // Redirect with parameter routing directly to inquiry drawer
+            closeProductDetail();
+            openDrawer(productName);
+        }
+
+        // Global Slide-Over Inquiry Drawer Functions
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const drawer = document.getElementById('inquiry-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const drawerPanel = document.getElementById('drawer-panel');
+        const drawerSubject = document.getElementById('drawer-subject');
+        
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function openDrawer(subjectName) {
+            drawerSubject.value = subjectName;
+            drawer.classList.remove('hidden');
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+            setTimeout(() => {
+                drawerOverlay.classList.remove('opacity-0');
+                drawerOverlay.classList.add('opacity-100');
+                drawerPanel.classList.remove('translate-x-full');
+                drawerPanel.classList.add('translate-x-0');
+            }, 10);
+        }
+
+        function closeDrawer() {
+            drawerOverlay.classList.remove('opacity-100');
+            drawerOverlay.classList.add('opacity-0');
+            drawerPanel.classList.remove('translate-x-0');
+            drawerPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                drawer.classList.add('hidden');
+            }, 300);
+        }
+
+        drawerOverlay.addEventListener('click', closeDrawer);
+
+        async function handleDrawerSubmit(e) {
+    e.preventDefault();
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.innerText = "Submitting...";
+
+    const inputs = e.target.querySelectorAll('input, textarea');
+    const payload = {
+        formType: "inquiry",
+        sourceForm: "Slide-over Drawer",
+        subject: document.getElementById('drawer-subject').value,
+        name: inputs[1].value,
+        email: inputs[2].value,
+        phone: "N/A",
+        message: inputs[3].value
+    };
+
+    const success = await submitToBackend(payload);
+    if (success) {
+        alert(`Your request regarding ${payload.subject} has been securely logged to our trade desk.`);
+        e.target.reset();
+        closeDrawer();
+    } else {
+        alert("There was an error routing your request. Please try again.");
+    }
+    submitButton.disabled = false;
+    submitButton.innerText = "Send Formulation Request";
+}
     </script>
 </body>
 </html>
