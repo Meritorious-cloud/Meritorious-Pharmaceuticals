@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meritorious Pharmaceuticals | Premium Healthcare & Therapeutics</title>
+
+<!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" type="image/jpeg" href="1684119015028.jpg">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Meritorious Pharmaceuticals distributes high-quality pharmaceutical and nutraceutical formulations across India through certified WHO-GMP manufacturing partners.">
@@ -103,9 +106,20 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Section using Hosting Image -->
-            <a href="index.html" class="flex items-center group">
-                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+            <!-- Logo Section with Bamboo Column & Brand Typography -->
+            <a href="index.html" class="flex items-center group space-x-3">
+                <!-- Logo Image -->
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+                
+                <!-- Vertical "Bamboo" Divider & Text -->
+                <div class="h-8 sm:h-9 border-l-2 border-brand-500/40 pl-3 flex flex-col justify-center">
+                    <span class="text-xs sm:text-sm font-extrabold tracking-widest text-slate-900 block leading-none font-display uppercase">
+                        MERITORIOUS
+                    </span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-brand-500 font-bold block mt-1 leading-none font-sans">
+                        PHARMACEUTICALS
+                    </span>
+                </div>
             </a>
             
             <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
@@ -630,7 +644,7 @@
             submitButton.innerText = "Send Formulation Request";
         }
 
-        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwX-yiKYnZSP6zvcQGyoNjscyTF57hLnPjq6mLbSza2IhNz_BImuwGSjlrqHVip0cGM/exec";
+        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbz4eO3i5orjmJEgcy8XWeHGCOTD_9hG4yTZSjWVXhLS-WnI1QEzA7Mrut9JC7BVxOrY/exec";
 
         async function submitToBackend(payload) {
             try {
