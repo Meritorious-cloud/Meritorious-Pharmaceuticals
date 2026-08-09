@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Meritorious Pharmaceuticals</title>
+
+<!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" type="image/jpeg" href="1684119015028.jpg">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Learn about Meritorious Pharmaceuticals, India's premier pharmaceutical marketing and distribution enterprise. Sourcing exclusively from certified WHO-GMP partners.">
@@ -102,9 +105,20 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Section using Hosting Image -->
-            <a href="index.html" class="flex items-center group">
-                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+            <!-- Logo Section with Bamboo Column & Brand Typography -->
+            <a href="index.html" class="flex items-center group space-x-3">
+                <!-- Logo Image -->
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+                
+                <!-- Vertical "Bamboo" Divider & Text -->
+                <div class="h-8 sm:h-9 border-l-2 border-brand-500/40 pl-3 flex flex-col justify-center">
+                    <span class="text-xs sm:text-sm font-extrabold tracking-widest text-slate-900 block leading-none font-display uppercase">
+                        MERITORIOUS
+                    </span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-brand-500 font-bold block mt-1 leading-none font-sans">
+                        PHARMACEUTICALS
+                    </span>
+                </div>
             </a>
             
             <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
@@ -507,7 +521,6 @@
         function openDrawer(subjectName) {
             drawerSubject.value = subjectName;
             drawer.classList.remove('hidden');
-            // Close mobile menu if open
             mobileMenu.classList.add('hidden');
             setTimeout(() => {
                 drawerOverlay.classList.remove('opacity-0');
@@ -530,33 +543,51 @@
         drawerOverlay.addEventListener('click', closeDrawer);
 
         async function handleDrawerSubmit(e) {
-    e.preventDefault();
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.innerText = "Submitting...";
+            e.preventDefault();
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerText = "Submitting...";
 
-    const inputs = e.target.querySelectorAll('input, textarea');
-    const payload = {
-        formType: "inquiry",
-        sourceForm: "Slide-over Drawer",
-        subject: document.getElementById('drawer-subject').value,
-        name: inputs[1].value,
-        email: inputs[2].value,
-        phone: "N/A",
-        message: inputs[3].value
-    };
+            const inputs = e.target.querySelectorAll('input, textarea');
+            const payload = {
+                formType: "inquiry",
+                sourceForm: "Slide-over Drawer",
+                subject: document.getElementById('drawer-subject').value,
+                name: inputs[1].value,
+                email: inputs[2].value,
+                phone: "N/A",
+                message: inputs[3].value
+            };
 
-    const success = await submitToBackend(payload);
-    if (success) {
-        alert(`Your request regarding ${payload.subject} has been securely logged to our trade desk.`);
-        e.target.reset();
-        closeDrawer();
-    } else {
-        alert("There was an error routing your request. Please try again.");
-    }
-    submitButton.disabled = false;
-    submitButton.innerText = "Send Formulation Request";
-}
+            const success = await submitToBackend(payload);
+            if (success) {
+                alert(`Your request regarding ${payload.subject} has been securely logged.`);
+                e.target.reset();
+                closeDrawer();
+            } else {
+                alert("There was an error routing your request. Please try again.");
+            }
+            submitButton.disabled = false;
+            submitButton.innerText = "Send Formulation Request";
+        }
+
+        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbzfle-8iBO5t_UBt-eqwbIrjjLyOOlAFtTfs0fjfeKcjkTzYxuZ87P5olLha_xYgdau8A/exec";
+
+        async function submitToBackend(payload) {
+            try {
+                const response = await fetch(BACKEND_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    redirect: "follow",
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                return result.status === "success";
+            } catch (error) {
+                console.error("Transmission error:", error);
+                return false;
+            }
+        }
     </script>
 </body>
 </html>
