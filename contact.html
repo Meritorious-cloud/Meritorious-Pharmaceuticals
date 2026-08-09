@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Meritorious Pharmaceuticals</title>
+
+<!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" type="image/jpeg" href="1684119015028.jpg">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Connect with Meritorious Pharmaceuticals. Inquire about C&F wholesale distribution, PCD franchising, and bulk formulations.">
@@ -77,9 +80,20 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Section using Hosting Image -->
-            <a href="index.html" class="flex items-center group">
-                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+            <!-- Logo Section with Bamboo Column & Brand Typography -->
+            <a href="index.html" class="flex items-center group space-x-3">
+                <!-- Logo Image -->
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+                
+                <!-- Vertical "Bamboo" Divider & Text -->
+                <div class="h-8 sm:h-9 border-l-2 border-brand-500/40 pl-3 flex flex-col justify-center">
+                    <span class="text-xs sm:text-sm font-extrabold tracking-widest text-slate-900 block leading-none font-display uppercase">
+                        MERITORIOUS
+                    </span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-brand-500 font-bold block mt-1 leading-none font-sans">
+                        PHARMACEUTICALS
+                    </span>
+                </div>
             </a>
             
             <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
@@ -398,7 +412,6 @@
             }
         };
 
-        // Header Menu & Drawer Scripts
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const drawer = document.getElementById('inquiry-drawer');
@@ -435,77 +448,80 @@
         drawerOverlay.addEventListener('click', closeDrawer);
 
         async function handleDrawerSubmit(e) {
-    e.preventDefault();
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.innerText = "Submitting...";
+            e.preventDefault();
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerText = "Submitting...";
 
-    const inputs = e.target.querySelectorAll('input, textarea');
-    const payload = {
-        formType: "inquiry",
-        sourceForm: "Slide-over Drawer",
-        subject: document.getElementById('drawer-subject').value,
-        name: inputs[1].value,
-        email: inputs[2].value,
-        phone: "N/A",
-        message: inputs[3].value
-    };
+            const inputs = e.target.querySelectorAll('input, textarea');
+            const payload = {
+                formType: "inquiry",
+                sourceForm: "Slide-over Drawer",
+                subject: document.getElementById('drawer-subject').value,
+                name: inputs[1].value,
+                email: inputs[2].value,
+                phone: "N/A",
+                message: inputs[3].value
+            };
 
-    const success = await submitToBackend(payload);
-    if (success) {
-        alert(`Your request regarding ${payload.subject} has been securely logged to our trade desk.`);
-        e.target.reset();
-        closeDrawer();
-    } else {
-        alert("There was an error routing your request. Please try again.");
-    }
-    submitButton.disabled = false;
-    submitButton.innerText = "Send Formulation Request";
-}
-const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwX-yiKYnZSP6zvcQGyoNjscyTF57hLnPjq6mLbSza2IhNz_BImuwGSjlrqHVip0cGM/exec";
+            const success = await submitToBackend(payload);
+            if (success) {
+                alert(`Your request regarding ${payload.subject} has been securely logged.`);
+                e.target.reset();
+                closeDrawer();
+            } else {
+                alert("There was an error routing your request. Please try again.");
+            }
+            submitButton.disabled = false;
+            submitButton.innerText = "Send Formulation Request";
+        }
 
-async function submitToBackend(payload) {
-    try {
-        await fetch(BACKEND_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        return true;
-    } catch (error) {
-        console.error("Transmission error:", error);
-        return false;
-    }
-}
+        // Updated backend URL here to match the active deployment URL in other pages
+        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbzfle-8iBO5t_UBt-eqwbIrjjLyOOlAFtTfs0fjfeKcjkTzYxuZ87P5olLha_xYgdau8A/exec";
 
-async function handleContactSubmit(e) {
-    e.preventDefault();
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.innerText = "Submitting...";
+        async function submitToBackend(payload) {
+            try {
+                const response = await fetch(BACKEND_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    redirect: "follow",
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                return result.status === "success";
+            } catch (error) {
+                console.error("Transmission error:", error);
+                return false;
+            }
+        }
 
-    const inputs = e.target.querySelectorAll('input, select, textarea');
-    const payload = {
-        formType: "contact",
-        sourceForm: "Contact Us Page Form",
-        subject: inputs[4].value, // Subject
-        name: inputs[0].value + " " + inputs[1].value, // First + Last Name
-        email: inputs[2].value, // Email
-        phone: inputs[3].value, // Mobile Phone
-        message: inputs[5].value // Message Details
-    };
+        async function handleContactSubmit(e) {
+            e.preventDefault();
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerText = "Submitting...";
 
-    const success = await submitToBackend(payload);
-    if (success) {
-        alert("Your enquiry has been successfully logged to our central database.");
-        e.target.reset();
-    } else {
-        alert("Failed to submit enquiry. Please try again.");
-    }
-    submitButton.disabled = false;
-    submitButton.innerText = "Send Enquiry";
-}
+            const inputs = e.target.querySelectorAll('input, select, textarea');
+            const payload = {
+                formType: "contact",
+                sourceForm: "Contact Us Page Form",
+                subject: inputs[4].value, 
+                name: inputs[0].value + " " + inputs[1].value, 
+                email: inputs[2].value, 
+                phone: inputs[3].value, 
+                message: inputs[5].value 
+            };
+
+            const success = await submitToBackend(payload);
+            if (success) {
+                alert("Your enquiry has been successfully logged to our central database.");
+                e.target.reset();
+            } else {
+                alert("Failed to submit enquiry. Please try again.");
+            }
+            submitButton.disabled = false;
+            submitButton.innerText = "Send Enquiry";
+        }
     </script>
 </body>
 </html>
