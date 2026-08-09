@@ -781,8 +781,399 @@
 
     <!-- Product Database and Filtering / Modal Scripts -->
     <script>
-        // [Keep the entire productsDatabase object and filterProducts/openProductDetail functions here]
-        
+        // 18 Detailed Products Formulation Database
+        const productsDatabase = {
+            cl24: {
+                name: "CL24 Tablets",
+                category: "gynecology",
+                typeName: "Gynecology & Joint Care",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Calcium Carbonate IP", strength: "1250 mg" },
+                    { ingredient: "Undenatured Collagen (UC-II)", strength: "40 mg" },
+                    { ingredient: "Vitamin C IP", strength: "40 mg" },
+                    { ingredient: "Vitamin D3 IP", strength: "400 IU" }
+                ],
+                advantages: [
+                    "Promotes calcium pathway absorption for strong bone mineralization.",
+                    "Provides structural protection to joint cartilage and tissues.",
+                    "Optimized to support maternal bone density indexes safely."
+                ]
+            },
+            clk2: {
+                name: "CLK2 Tablets",
+                category: "gynecology",
+                typeName: "Osteo-Metabolic Supporter",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard USP",
+                composition: [
+                    { ingredient: "Calcium Carbonate IP", strength: "500 mg" },
+                    { ingredient: "Calcitriol USP", strength: "0.25 mcg" },
+                    { ingredient: "Vitamin K2-7 USP", strength: "45 mcg" }
+                ],
+                advantages: [
+                    "Supports complete calcium metabolism, preventing arterial calcification.",
+                    "Stimulates osteoblasts to elevate healthy skeletal density.",
+                    "Crucial maternal co-factor that targets healthy bone pathways."
+                ]
+            },
+            stretch_bliss: {
+                name: "Stretch Bliss Cream",
+                category: "gynecology",
+                typeName: "Gynecology & Dermatology",
+                packaging: "50g Clean-Dispense Squeeze Tube",
+                pharmacopoeia: "Dermatological Grade",
+                composition: [
+                    { ingredient: "Onion Extract (Allium cepa)", strength: "5%" },
+                    { ingredient: "Cocoa Butter & Shea Butter", strength: "Organic Base" },
+                    { ingredient: "Vitamin E Acetate IP", strength: "1.5%" },
+                    { ingredient: "Hyaluronic Acid Base", strength: "0.2%" }
+                ],
+                advantages: [
+                    "Deeply hydrates and restores cutaneous tissue elasticity.",
+                    "Helps significantly reduce striae gravidarum (maternal stretch marks).",
+                    "Promotes tissue healing and calms inflammation associated with skin stretching."
+                ]
+            },
+            polmanac: {
+                name: "Polmanac Capsules",
+                category: "nutra-wellness",
+                typeName: "Nutra & Wellness Immunity",
+                packaging: "10 x 1 x 10 Blister Pack",
+                pharmacopoeia: "Standard USP",
+                composition: [
+                    { ingredient: "Acetyl L-Carnitine", strength: "500 mg" },
+                    { ingredient: "Coenzyme Q10 (Ubiquinone)", strength: "100 mg" },
+                    { ingredient: "Zinc Oxide IP equivalent to Elemental Zinc", strength: "15 mg" },
+                    { ingredient: "Astaxanthin (Natural Extract)", strength: "8 mg" }
+                ],
+                advantages: [
+                    "Supports cellular energy production and ATP synthesis.",
+                    "Provides a potent antioxidant barrier against system-wide oxidative stress.",
+                    "Promotes general wellness, vitality, and cardiac cellular performance."
+                ]
+            },
+            cq_gem: {
+                name: "CQ GEM Softgel Capsules",
+                category: "nutra-wellness",
+                typeName: "Cardiovascular & Metabolic Shield",
+                packaging: "10 x 1 x 10 Softgel Blister",
+                pharmacopoeia: "Nutraceutical Standard",
+                composition: [
+                    { ingredient: "Coenzyme Q10 (Ubiquinol Formulation)", strength: "100 mg" },
+                    { ingredient: "Eicosapentaenoic Acid (EPA)", strength: "90 mg" },
+                    { ingredient: "Docosahexaenoic Acid (DHA)", strength: "60 mg" },
+                    { ingredient: "Lycopene (10% formulation)", strength: "5000 mcg" },
+                    { ingredient: "Selenium (as Sodium Selenite)", strength: "40 mcg" }
+                ],
+                advantages: [
+                    "Promotes robust cardiac parameters and stable vascular health.",
+                    "High-purity softgel protects nutrients from air oxidation.",
+                    "Neutralizes metabolic free radicals to boost tissue recovery."
+                ]
+            },
+            eso_d: {
+                name: "ESO D Capsules",
+                category: "gastro",
+                typeName: "Acid Suppression & Prokinetic",
+                packaging: "10 x 10 Alu-Alu Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Esomeprazole Magnesium IP (Sustained Release)", strength: "40 mg" },
+                    { ingredient: "Domperidone IP", strength: "30 mg" }
+                ],
+                advantages: [
+                    "Suppresses excessive gastric acid release with Esomeprazole block.",
+                    "Domperidone increases lower esophageal sphincter tone to control reflux.",
+                    "Sustained release ensures comfortable acid balance throughout the day."
+                ]
+            },
+            streptolac: {
+                name: "Streptolac Capsules",
+                category: "gastro",
+                typeName: "Gut Microbial Supporter",
+                packaging: "10 x 10 Blister Pack",
+                pharmacopoeia: "Clinical Probiotic",
+                composition: [
+                    { ingredient: "Lactic Acid Bacillus (Lactobacillus sporogenes)", strength: "1.5 Billion Spores" }
+                ],
+                advantages: [
+                    "Quickly replenishes beneficial gut bacteria after antibiotic regimens.",
+                    "Supports the protective mucosal barrier against gastrointestinal pathogens.",
+                    "Aids nutritional absorption and stabilizes digestion parameters."
+                ]
+            },
+            streptolac_ibs: {
+                name: "Streptolac IBS",
+                category: "gastro",
+                typeName: "Targeted Bowel Balancer",
+                packaging: "10 x 10 Blister Pack",
+                pharmacopoeia: "Standard USP",
+                composition: [
+                    { ingredient: "Lactic Acid Bacillus spores", strength: "2.0 Billion Spores" },
+                    { ingredient: "Saccharomyces boulardii", strength: "250 mg" },
+                    { ingredient: "Fructooligosaccharides (FOS)", strength: "100 mg" },
+                    { ingredient: "Zinc Oxide IP equivalent to Elemental Zinc", strength: "10 mg" }
+                ],
+                advantages: [
+                    "Specifically targets Irritable Bowel Syndrome (IBS) symptom profiles.",
+                    "Saccharomyces boulardii restores healthy stool frequency and consistency.",
+                    "FOS prebiotics feed and nourish deep intestinal bacterial flora."
+                ]
+            },
+            pyroraft: {
+                name: "PYRORAFT",
+                category: "gastro",
+                typeName: "Antacid & Gastric Raft Barrier",
+                packaging: "200ml High-Protection Amber Bottle",
+                pharmacopoeia: "Standard BP",
+                composition: [
+                    { ingredient: "Sodium Alginate", strength: "500 mg" },
+                    { ingredient: "Sodium Bicarbonate", strength: "267 mg" },
+                    { ingredient: "Calcium Carbonate", strength: "160 mg" }
+                ],
+                advantages: [
+                    "Reacts instantly with acid to form a protective physical raft barrier on top of stomach juices.",
+                    "Physically blocks acid reflux into the esophagus for long-lasting relief.",
+                    "Non-systemic, fast action that is safe for maternal heartburn management under supervision."
+                ]
+            },
+            axonac_mr: {
+                name: "Axonac MR Tablets",
+                category: "ortho",
+                typeName: "Musculoskeletal Pain Management",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Aceclofenac IP", strength: "100 mg" },
+                    { ingredient: "Paracetamol IP", strength: "325 mg" },
+                    { ingredient: "Thiocolchicoside IP (Muscle Relaxant)", strength: "4 mg" }
+                ],
+                advantages: [
+                    "Thiocolchicoside centers on CNS muscle relaxant pathways.",
+                    "Synergistic pain-relief matching painful spasm recovery.",
+                    "Reduces clinical systemic inflammation to restore mobility."
+                ]
+            },
+            d_lozy: {
+                name: "D LOZY Nano Shots",
+                category: "nutra-wellness",
+                typeName: "Cholecalciferol Liquid Emulsion",
+                packaging: "4 x 5ml Oral Solution Shots",
+                pharmacopoeia: "Vitamin Formulation IP",
+                composition: [
+                    { ingredient: "Cholecalciferol (Vitamin D3) (Nano-Emulsion Form)", strength: "60,000 IU" }
+                ],
+                advantages: [
+                    "Liquid nano-emulsion provides vastly superior gastrointestinal bioavailability.",
+                    "Quickly treats Vitamin D3 deficiencies and supports systemic calcium absorption.",
+                    "Extremely convenient weekly oral dose with pleasant taste profiles."
+                ]
+            },
+            cl_plus: {
+                name: "CL Plus Softgels",
+                category: "gynecology",
+                typeName: "Maternal Comprehensive Supporter",
+                packaging: "10 x 10 Softgel Blister",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Calcium Carbonate IP equivalent to Calcium", strength: "500 mg" },
+                    { ingredient: "Calcitriol USP (Vitamin D3 Active Metabolite)", strength: "0.25 mcg" },
+                    { ingredient: "Docosahexaenoic Acid (DHA) 10%", strength: "120 mg" },
+                    { ingredient: "Methylcobalamin IP", strength: "1500 mcg" },
+                    { ingredient: "L-Methylfolate Calcium", strength: "1 mg" }
+                ],
+                advantages: [
+                    "DHA aids fetal neurological and retinal development parameters.",
+                    "Stabilizes folic pathways, preventing neural tube defects (NTDs).",
+                    "Provides high bioavailability calcium support during lactation."
+                ]
+            },
+            mgbliss_d3: {
+                name: "MGBLISS D3",
+                category: "ortho",
+                typeName: "Osteo-Mineral Synergist",
+                packaging: "15 Tablets per Blister Strip",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Elemental Magnesium (as Magnesium Oxide)", strength: "300 mg" },
+                    { ingredient: "Cholecalciferol (Vitamin D3) IP", strength: "1000 IU" },
+                    { ingredient: "L-Methylfolate Calcium", strength: "1 mg" },
+                    { ingredient: "Pyridoxal-5-Phosphate", strength: "1.5 mg" }
+                ],
+                advantages: [
+                    "Magnesium coordinates with Vitamin D3 to control bone calcification pathways.",
+                    "Reduces muscle cramps and relaxes painful neuromuscular tissues.",
+                    "L-Methylfolate provides pure folate co-factors for nerve and blood wellness."
+                ]
+            },
+            zeptide: {
+                name: "Zeptide Softgels",
+                category: "neuro-general",
+                typeName: "Neurotropic conducts restorer",
+                packaging: "10 x 10 Softgel Blister",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Methylcobalamin IP", strength: "1500 mcg" },
+                    { ingredient: "Alpha Lipoic Acid USP", strength: "100 mg" },
+                    { ingredient: "Benfotiamine (Lipid-Soluble Vitamin B1)", strength: "150 mg" },
+                    { ingredient: "Pyridoxine Hydrochloride IP (Vitamin B6)", strength: "3 mg" },
+                    { ingredient: "Folic Acid IP", strength: "1.5 mg" }
+                ],
+                advantages: [
+                    "Stimulates healthy myelin sheath regeneration to support nerve tissue repair.",
+                    "Benfotiamine possesses superior cellular bioavailability over standard thiamine.",
+                    "Aids metabolic nerve parameters, directly targeting diabetic neuropathy symptoms."
+                ]
+            },
+            tolbliss: {
+                name: "Tolbliss Tablets",
+                category: "ortho",
+                typeName: "Centrally Acting Muscle Relaxant",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Tolperisone Hydrochloride IP", strength: "150 mg" }
+                ],
+                advantages: [
+                    "Controls skeletal muscle spasm without causing systemic sedation or drowsiness.",
+                    "Improves regional vascular circulation, aiding muscular recovery.",
+                    "High safety profile indicated for spinal and joint hypertonia cases."
+                ]
+            },
+            abstat: {
+                name: "ABstat Tablets",
+                category: "neuro-general",
+                typeName: "Broad-Spectrum Macrolide Antibiotic",
+                packaging: "3 Tablets per Blister Strip (10x3 Pack)",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Azithromycin Dihydrate IP equivalent to Anhydrous Azithromycin", strength: "500 mg" }
+                ],
+                advantages: [
+                    "High-potency single daily dose macrolide targeting respiratory tract infections.",
+                    "Active against susceptible intracellular atypical pathogens.",
+                    "Extremely comfortable short clinical course (often 3-5 days of supply)."
+                ]
+            },
+            megaglim: {
+                name: "Megaglim NT",
+                category: "neuro-general",
+                typeName: "Synergistic Neuropathic Pain Modulator",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Pregabalin IP", strength: "75 mg" },
+                    { ingredient: "Nortriptyline Hydrochloride IP equivalent to Nortriptyline", strength: "10 mg" },
+                    { ingredient: "Methylcobalamin IP", strength: "1500 mcg" }
+                ],
+                advantages: [
+                    "Pregabalin modulates voltage-gated calcium channels to lower hyper-excited nerve signals.",
+                    "Nortriptyline blocks neurotransmitter reuptake, lowering spinal pain signals.",
+                    "Methylcobalamin repairs damaged neural structural pathways."
+                ]
+            },
+            tofaday: {
+                name: "Tofaday Tablets",
+                category: "neuro-general",
+                typeName: "Janus Kinase (JAK) Inhibitor",
+                packaging: "10 x 10 Alu-Alu Strip Pack",
+                pharmacopoeia: "Standard IP",
+                composition: [
+                    { ingredient: "Tofacitinib Citrate IP equivalent to Tofacitinib", strength: "5 mg" }
+                ],
+                advantages: [
+                    "Orally active small molecule JAK inhibitor that blocks critical cytokine signaling.",
+                    "Specifically indicated to control joint destruction in severe Rheumatoid Arthritis.",
+                    "Proven clinical parameter reduction for active Ankylosing Spondylitis."
+                ]
+            }
+        };
+
+        // Filter Grid System
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('bg-brand-500', 'text-white');
+                    btn.classList.remove('bg-white', 'text-slate-600');
+                } else {
+                    btn.classList.remove('bg-brand-500', 'text-white');
+                    btn.classList.add('bg-white', 'text-slate-600');
+                }
+            });
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Actionable Open Detailed Product Modal
+        function openProductDetail(productId) {
+            const product = productsDatabase[productId];
+            if (!product) return;
+
+            // Map data dynamically to modal fields
+            document.getElementById('modal-title').innerText = product.name;
+            document.getElementById('modal-category').innerText = product.typeName;
+            document.getElementById('modal-packaging-spec').innerText = product.packaging;
+            document.getElementById('modal-pharmacopoeia').innerText = product.pharmacopoeia;
+
+            // Clear and load dynamic compositions table
+            const compositionBody = document.getElementById('modal-composition-body');
+            compositionBody.innerHTML = '';
+            product.composition.forEach(comp => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-slate-100 hover:bg-slate-50';
+                row.innerHTML = `
+                    <td class="px-4 py-3 text-slate-800 font-semibold">${comp.ingredient}</td>
+                    <td class="px-4 py-3 text-right text-slate-600 font-mono">${comp.strength}</td>
+                `;
+                compositionBody.appendChild(row);
+            });
+
+            // Clear and load dynamic clinical advantages
+            const advantagesUl = document.getElementById('modal-advantages');
+            advantagesUl.innerHTML = '';
+            product.advantages.forEach(adv => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start space-x-2.5';
+                li.innerHTML = `
+                    <span class="w-1.5 h-1.5 mt-1.5 rounded-full bg-brand-500 shrink-0"></span>
+                    <span class="leading-relaxed">${adv}</span>
+                `;
+                advantagesUl.appendChild(li);
+            });
+
+            // Set up trade inquiry redirect callback parameter
+            document.getElementById('modal-action-btn').setAttribute('onclick', `redirectToInquiry('${product.name}')`);
+
+            // Reveal Modal smoothly with transition rules
+            const modal = document.getElementById('product-detail-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Lock background scrolling
+        }
+
+        function closeProductDetail() {
+            const modal = document.getElementById('product-detail-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        }
+
+        function redirectToInquiry(productName) {
+            // Redirect with parameter routing directly to inquiry drawer
+            closeProductDetail();
+            openDrawer(productName);
+        }
+
         // Global Slide-Over Inquiry Drawer Functions
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -798,6 +1189,7 @@
         function openDrawer(subjectName) {
             drawerSubject.value = subjectName;
             drawer.classList.remove('hidden');
+            // Close mobile menu if open
             mobileMenu.classList.add('hidden');
             setTimeout(() => {
                 drawerOverlay.classList.remove('opacity-0');
