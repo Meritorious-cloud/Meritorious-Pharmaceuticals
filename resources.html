@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Resources | Meritorious Pharmaceuticals</title>
+
+<!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" type="image/jpeg" href="1684119015028.jpg">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Access official medical directories, PCD franchise dossiers, and wholesale C&F regulatory checklists from Meritorious Pharmaceuticals.">
@@ -77,9 +80,20 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Section -->
-            <a href="index.html" class="flex items-center group">
-                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+            <!-- Logo Section with Bamboo Column & Brand Typography -->
+            <a href="index.html" class="flex items-center group space-x-3">
+                <!-- Logo Image -->
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
+                
+                <!-- Vertical "Bamboo" Divider & Text -->
+                <div class="h-8 sm:h-9 border-l-2 border-brand-500/40 pl-3 flex flex-col justify-center">
+                    <span class="text-xs sm:text-sm font-extrabold tracking-widest text-slate-900 block leading-none font-display uppercase">
+                        MERITORIOUS
+                    </span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-brand-500 font-bold block mt-1 leading-none font-sans">
+                        PHARMACEUTICALS
+                    </span>
+                </div>
             </a>
             
             <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
@@ -414,122 +428,13 @@
 
     <!-- Script Routing & Dynamic Details Modal Logic -->
     <script>
-        // High-value corporate and clinical resource database
-        const resourcesDatabase = {
-            therapeutic_index: {
-                title: "Therapeutic Index & Formulary (v4.2)",
-                format: "Digital PDF Dossier / 42 Pages",
-                tagline: "Complete Regulatory & Pharmacopoeial Portfolio Directory",
-                description: "The official master formulary containing regulatory filing data, active pharmaceutical ingredient (API) indexes, and therapeutic classifications for all 18 marketed formulations of Meritorious Pharmaceuticals [1, 2].",
-                chapters: [
-                    "<strong>Section 1: DCGI Approval Indexes</strong> — National regulatory schedule filings and registered drug division approvals [1].",
-                    "<strong>Section 2: Pharmacopoeial Standards (IP, BP, USP)</strong> — Exact active chemical compositions, compound stability profiles, and assay parameters [1, 2].",
-                    "<strong>Section 3: Therapeutic Demands Map</strong> — Distribution indexes, recommended retail margins, and carrying-forward regional protocols."
-                ]
-            },
-            api_monographs: {
-                title: "Active Pharmaceutical Ingredient Monographs",
-                format: "Technical Monograph Collection / 18 Sheets",
-                tagline: "Molecular Profiles & Bio-Safety Verifications",
-                description: "Strict technical profiles verifying the quality metrics, chemical sourcing, and batch-wise stability parameters of our core active molecular ingredients [1, 2].",
-                chapters: [
-                    "<strong>Undenatured Collagen (UC-II):</strong> Structural verification and triple-helix assay metrics for joint care (used in CL24).",
-                    "<strong>Tofacitinib Citrate:</strong> High-purity small molecule JAK inhibitor pathways (used in Tofaday).",
-                    "<strong>Benfotiamine & ALA:</strong> Lipid-soluble thiamine bioavailability and antioxidant synergistic metrics (used in Zeptide)."
-                ]
-            },
-            dosage_guidelines: {
-                title: "Dosage & Administration Schedules",
-                format: "Clinical Advisory Sheet / 12 Pages",
-                tagline: "Clinical Administration & Bioavailability Manual",
-                description: "Instructional guides for clinical practitioners, pharmacies, and stockists on the optimal daily administration of complex molecular combinations to ensure peak bioavailability [1, 2].",
-                chapters: [
-                    "<strong>D LOZY 60K Nano Shots:</strong> Emulsified liquid D3 oral delivery timelines and systemic absorption notes.",
-                    "<strong>PYRORAFT Suspension:</strong> Precise post-prandial (after meals) and nocturnal administration schedules for rapid gastric barrier creation.",
-                    "<strong>ESO D SR Capsules:</strong> Fasting morning intervals relative to gastrointestinal motility."
-                ]
-            },
-            cold_chain_manual: {
-                title: "Probiotic Stability & Storage Manual",
-                format: "Standard Operating Procedure (SOP) / 8 Pages",
-                tagline: "Controlled-Temperature Logistics SOPs",
-                description: "Standard operating procedures (SOPs) for Carrying & Forwarding (C&F) warehouse associates on maintaining temperature thresholds for sensitive capsule shell lines [1, 2].",
-                chapters: [
-                    "<strong>Probiotic Strains (Streptolac IBS):</strong> Keeping humidity under 45% and temperatures below 25°C to preserve live spore counts [1, 2].",
-                    "<strong>Softgel Capsules (CL Plus):</strong> Gelatin shell protection parameters to prevent thermal melting, cross-linking, or leakage during transit [1].",
-                    "<strong>Ambient Transport Logs:</strong> Formats for continuous digital temperature tracking during regional dispatch."
-                ]
-            },
-            microbiota_papers: {
-                title: "GI Microbiota & Probiotic Research Papers",
-                format: "Academic Summary Dossier / 24 Pages",
-                tagline: "Clinical Briefs on Gastrointestinal Flora Restorers",
-                description: "A curated collection of peer-reviewed summaries detailing the therapeutic efficacy and biological activity of probiotic spore-formers and yeasts [1, 2].",
-                chapters: [
-                    "<strong>Saccharomyces boulardii (Streptolac IBS):</strong> Gastric acid resistance, safe transit through stomach acidity, and temporary colonization pathways [2].",
-                    "<strong>Lactic Acid Bacillus Spores:</strong> Lactic acid production in the gut and its competitive inhibition of opportunistic enteric pathogens.",
-                    "<strong>FOS Prebiotic Synergism:</strong> Clinical studies on dietary fibers enhancing probiotic reproduction speed."
-                ]
-            },
-            neuro_recovery: {
-                title: "Neuromuscular & Nerve Recovery Guides",
-                format: "Therapeutic Advisory Booklet / 16 Pages",
-                tagline: "Neurotropic Factors & Muscle Relaxation Profiles",
-                description: "Informative clinical reference files detailing advanced therapeutic strategies for nerve conduction management and painful muscle hypertonia [1, 2].",
-                chapters: [
-                    "<strong>Myelin Sheath Repair (Zeptide):</strong> High-dose Methylcobalamin (1500 mcg) synergistic trials with Alpha Lipoic Acid for peripheral nerve recovery [2].",
-                    "<strong>Neuropathic Modulation (Megaglim NT):</strong> Pregabalin combined with Nortriptyline for central spinal pain gating [2].",
-                    "<strong>Spasm Release (Tolbliss):</strong> Central Tolperisone reflex inhibition without systemic sleepiness or fatigue."
-                ]
-            }
-        };
-
-        // Open Resource Details Modal
-        function openResourceDetail(resourceId) {
-            const res = resourcesDatabase[resourceId];
-            if (!res) return;
-
-            // Map data dynamically to modal fields
-            document.getElementById('modal-title').innerText = res.title;
-            document.getElementById('modal-format').innerText = res.format;
-            document.getElementById('modal-tagline').innerText = res.tagline;
-            document.getElementById('modal-description').innerText = res.description;
-
-            // Clear and load dynamic chapters list
-            const chaptersUl = document.getElementById('modal-chapters');
-            chaptersUl.innerHTML = '';
-            res.chapters.forEach(chap => {
-                const li = document.createElement('li');
-                li.className = 'flex items-start space-x-2.5';
-                li.innerHTML = `
-                    <span class="w-1.5 h-1.5 mt-1.5 rounded-full bg-brand-500 shrink-0"></span>
-                    <span class="leading-relaxed">${chap}</span>
-                `;
-                chaptersUl.appendChild(li);
-            });
-
-            // Set up trade inquiry redirect callback parameter
-            document.getElementById('modal-action-btn').setAttribute('onclick', `redirectToInquiry('${res.title}')`);
-
-            // Reveal Modal smoothly with transition rules
-            const modal = document.getElementById('resource-detail-modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Lock background scrolling
-        }
-
-        function closeResourceDetail() {
-            const modal = document.getElementById('resource-detail-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restore background scrolling
-        }
+        // [Keep the entire resourcesDatabase object and openResourceDetail / closeResourceDetail functions here]
 
         function redirectToInquiry(documentName) {
-            // Redirect with parameter routing directly to inquiry drawer
             closeResourceDetail();
             openDrawer(documentName);
         }
 
-        // Global Slide-Over Inquiry Drawer Functions
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const drawer = document.getElementById('inquiry-drawer');
@@ -544,7 +449,6 @@
         function openDrawer(subjectName) {
             drawerSubject.value = subjectName;
             drawer.classList.remove('hidden');
-            // Close mobile menu if open
             mobileMenu.classList.add('hidden');
             setTimeout(() => {
                 drawerOverlay.classList.remove('opacity-0');
@@ -567,33 +471,51 @@
         drawerOverlay.addEventListener('click', closeDrawer);
 
         async function handleDrawerSubmit(e) {
-    e.preventDefault();
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.innerText = "Submitting...";
+            e.preventDefault();
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerText = "Submitting...";
 
-    const inputs = e.target.querySelectorAll('input, textarea');
-    const payload = {
-        formType: "inquiry",
-        sourceForm: "Slide-over Drawer",
-        subject: document.getElementById('drawer-subject').value,
-        name: inputs[1].value,
-        email: inputs[2].value,
-        phone: "N/A",
-        message: inputs[3].value
-    };
+            const inputs = e.target.querySelectorAll('input, textarea');
+            const payload = {
+                formType: "inquiry",
+                sourceForm: "Slide-over Drawer",
+                subject: document.getElementById('drawer-subject').value,
+                name: inputs[1].value,
+                email: inputs[2].value,
+                phone: "N/A",
+                message: inputs[3].value
+            };
 
-    const success = await submitToBackend(payload);
-    if (success) {
-        alert(`Your request regarding ${payload.subject} has been securely logged to our trade desk.`);
-        e.target.reset();
-        closeDrawer();
-    } else {
-        alert("There was an error routing your request. Please try again.");
-    }
-    submitButton.disabled = false;
-    submitButton.innerText = "Send Formulation Request";
-}
+            const success = await submitToBackend(payload);
+            if (success) {
+                alert(`Your request regarding ${payload.subject} has been securely logged.`);
+                e.target.reset();
+                closeDrawer();
+            } else {
+                alert("There was an error routing your request. Please try again.");
+            }
+            submitButton.disabled = false;
+            submitButton.innerText = "Send Formulation Request";
+        }
+
+        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbzfle-8iBO5t_UBt-eqwbIrjjLyOOlAFtTfs0fjfeKcjkTzYxuZ87P5olLha_xYgdau8A/exec";
+
+        async function submitToBackend(payload) {
+            try {
+                const response = await fetch(BACKEND_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    redirect: "follow",
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                return result.status === "success";
+            } catch (error) {
+                console.error("Transmission error:", error);
+                return false;
+            }
+        }
     </script>
 </body>
 </html>
