@@ -4,156 +4,559 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Meritorious Pharmaceuticals</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about Meritorious Pharmaceuticals, India's premier pharmaceutical marketing and distribution enterprise. Sourcing exclusively from certified WHO-GMP partners.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS with Logo Green & Premium Slate Config -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
-                    colors: { brand: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#046132', 600: '#034e28', 700: '#023c1e', 900: '#012010' } }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#e1efe6',
+                            500: '#004d26', /* Exact corporate green from logo */
+                            600: '#003a1c',
+                            700: '#002613',
+                            900: '#00140a',
+                        },
+                        clinical: {
+                            50: '#f4f8f9',
+                            100: '#e2ecef',
+                            200: '#cbdfe5',
+                            500: '#004d26', 
+                            600: '#003a1c',
+                            900: '#1e2d31',
+                        }
+                    }
                 }
             }
         }
     </script>
+
     <style>
-        .medical-bg {
-            background-color: #f8fafc;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='42' viewBox='0 0 24 42'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23046132' fill-opacity='0.03'%3E%3Cpath d='M12 3L2 9v12l10 6 10-6V9zM2 33l10 6 10-6v-12l-10-6-10 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        body {
+            background-color: #f4f8f9;
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+        }
+        
+        /* High-fidelity replica of the vertical geometric pattern from the index page */
+        .medical-bg-subtle {
+            background-color: #f4f8f9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23004d26' stroke-opacity='0.025' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(225, 239, 230, 0.7);
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* Soft animation keyframes */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1.5deg); }
+        }
+        @keyframes float-reverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(6px) rotate(-1.5deg); }
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.08); }
+        }
+
+        /* Animation Utility Classes */
+        .animate-float-slow {
+            animation: float-slow 10s ease-in-out infinite;
+        }
+        .animate-float-reverse {
+            animation: float-reverse 12s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="medical-bg text-slate-800 font-sans antialiased">
+<body class="text-slate-800 font-sans antialiased medical-bg-subtle min-h-screen flex flex-col">
 
-    <!-- Global Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+    <!-- 1. HEADER -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3">
-                <div class="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center text-white">
-                    <i class="fa-solid fa-house-medical text-lg"></i>
-                </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none font-display">MERITORIOUS</span>
-                    <span class="text-[9px] tracking-widest uppercase text-brand-600 font-bold block mt-1">Pharmaceuticals</span>
-                </div>
+            
+            <!-- Logo Section using Hosting Image -->
+            <a href="index.html" class="flex items-center group">
+                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
             </a>
-            <nav class="hidden lg:flex space-x-8 text-sm font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-brand-500 transition-colors">Home</a>
-                <a href="about.html" class="text-brand-500">About Us</a>
-                <a href="products.html" class="hover:text-brand-500 transition-colors">Products</a>
-                <a href="resources.html" class="hover:text-brand-500 transition-colors">Resources</a>
-                <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
-            </nav>
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="contact.html" class="bg-brand-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-600 transition-all">Enquiry</a>
+            
+            <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
+    <a href="index.html" class="hover:text-brand-500 transition-colors pb-1.5">Home</a>
+    <a href="about.html" class="text-brand-500 border-b-2 border-brand-500 pb-1.5 transition-all">About Us</a>
+    <a href="products.html" class="hover:text-brand-500 transition-colors pb-1.5">Products</a>
+    <a href="resources.html" class="hover:text-brand-500 transition-colors pb-1.5">Resources</a>
+    <a href="contact.html" class="hover:text-brand-500 transition-colors pb-1.5">Contact</a>
+    <a href="career.html" class="hover:text-brand-500 transition-colors pb-1.5">Career</a>
+</nav>
+
+            <div class="hidden lg:flex items-center">
+                <button onclick="openDrawer('General Inquiry')" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm shadow-brand-500/10">
+                    Inquiry Desk
+                </button>
             </div>
+
+            <!-- Mobile menu button -->
+            <button id="hamburger-btn" class="lg:hidden p-2 text-slate-500 hover:text-brand-500 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
         </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-brand-100 px-6 py-6 space-y-4 shadow-inner">
+    <a href="index.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Home</a>
+    <a href="about.html" class="block text-brand-500 font-semibold uppercase tracking-wider text-xs">About Us</a>
+    <a href="products.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Products</a>
+    <a href="resources.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Resources</a>
+    <a href="contact.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Contact</a>
+    <a href="career.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Career</a>
+    <button onclick="openDrawer('General Inquiry')" class="w-full text-center bg-brand-500 text-white py-3 rounded-lg text-xs font-bold uppercase tracking-widest">
+        Inquiry Desk
+    </button>
+</div>
     </header>
 
-    <!-- Subpage Hero -->
-    <section class="bg-slate-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Corporate Background</h1>
-            <p class="text-sm text-slate-400 mt-2 font-light">Established in 2021 with headquarters in Gurugram, India.</p>
+    <!-- 2. HERO SECTION -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-slate-950 to-brand-900 text-white py-10 sm:py-16 md:py-24 overflow-hidden border-b border-brand-900">
+        <!-- Overlay background layer -->
+        <div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80" alt="Laboratory Background" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+                
+                <!-- Left side text -->
+                <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
+                    <span class="inline-flex items-center px-3.5 py-1 rounded-full text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase bg-brand-500/20 text-brand-100 border border-brand-500/30">
+                        <i class="fa-solid fa-flask-vial mr-2 text-brand-500"></i> Est. 2021 | Indian Market &amp; Distribution Operations
+                    </span>
+                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display leading-tight">
+                        Corporate Background
+                    </h1>
+                    <p class="text-[11px] sm:text-sm text-slate-300 max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                        Learn about our meticulous approach to healthcare product positioning, quality management, and distribution networks.
+                    </p>
+                </div>
+                
+                <!-- Right side: Scaled-Down SVG Molecule for Mobile -->
+                <div class="lg:col-span-5 flex justify-center lg:justify-end mt-6 lg:mt-0 select-none">
+                    <div class="relative w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-48 flex items-center justify-center">
+                        
+                        <!-- Pulse Ring Background -->
+                        <div class="absolute w-16 h-16 sm:w-28 sm:h-28 bg-brand-500/5 rounded-full blur-2xl animate-pulse-slow"></div>
+                        
+                        <!-- Core SVG Molecule (Sized Compactly) -->
+                        <svg class="w-20 h-20 sm:w-32 sm:h-32 lg:w-44 lg:h-44 text-brand-500 animate-float-slow" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="50,20 75,35 75,65 50,80 25,65 25,35" class="stroke-brand-500/30" />
+                            <polygon points="50,50 75,65 50,80" class="stroke-brand-500/15" />
+                            <line x1="75" y1="35" x2="90" y2="26" class="stroke-brand-500/40" />
+                            <line x1="25" y1="35" x2="10" y2="26" class="stroke-brand-500/40" />
+                            <line x1="50" y1="20" x2="50" y2="5" class="stroke-brand-500/40" />
+                            <line x1="90" y1="26" x2="98" y2="35" class="stroke-brand-500/20" />
+                            <line x1="10" y1="26" x2="2" y2="35" class="stroke-brand-500/20" />
+                            
+                            <circle cx="50" cy="20" r="4" class="fill-white stroke-brand-500 stroke-[2.5]" />
+                            <circle cx="75" cy="35" r="4" class="fill-white stroke-brand-500 stroke-[2.5]" />
+                            <circle cx="75" cy="65" r="4" class="fill-white stroke-brand-500 stroke-[2.5]" />
+                            <circle cx="50" cy="80" r="4" class="fill-white stroke-brand-500 stroke-[2.5]" />
+                            <circle cx="25" cy="65" r="4" class="fill-white stroke-brand-500 stroke-[2.5]" />
+                            <circle cx="25" cy="35" r="4" class="fill-white stroke-brand-500 stroke-[2.5]" />
+                            
+                            <circle cx="50" cy="5" r="2.5" class="fill-brand-500" />
+                            <circle cx="90" cy="26" r="3" class="fill-brand-500 animate-pulse-slow" style="animation-delay: 1s;" />
+                            <circle cx="10" cy="26" r="3" class="fill-brand-500 animate-pulse-slow" style="animation-delay: 2s;" />
+                        </svg>
+                        
+                        <!-- Secondary small molecular accent (Hidden on mobile) -->
+                        <div class="absolute -bottom-1 -left-1 opacity-40 animate-float-reverse hidden sm:block">
+                            <svg class="w-12 h-12 text-brand-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <polygon points="50,25 75,40 75,70 50,85 25,70 25,40" class="stroke-brand-500/45" />
+                                <circle cx="50" cy="25" r="3" class="fill-white stroke-brand-500" />
+                                <circle cx="75" cy="40" r="3" class="fill-brand-500" />
+                                <circle cx="25" cy="70" r="3" class="fill-brand-500" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block mb-2">Our History</span>
-                <h2 class="text-3xl font-bold font-display text-slate-900 mb-6">Patient-Centricity and R&amp;D Innovation</h2>
-                <p class="text-slate-600 leading-relaxed font-light mb-4">
-                    Meritorious Pharmaceuticals specializes in high-quality pharmaceutical and nutraceutical products. Our core product classes focus on Gynecology, Orthopedics, Gastroenterology, Neurology, General Medicine, Dermatology, and Wellness.
+    <!-- 3. COMPREHENSIVE ABOUT SECTION -->
+    <section class="py-12 sm:py-20 lg:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            
+            <!-- Left Side: Narrative content -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center space-x-4">
+                    <div class="h-1 w-12 bg-brand-500 rounded"></div>
+                    <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.656 48.656 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3M4.5 12l3 3m-3-3l-3 3" />
+                    </svg>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-500 block">Who We Are</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display text-balance leading-tight">
+                    Patient-Centricity, Marketing, &amp; Distribution
+                </h2>
+                
+                <p class="text-sm text-slate-600 font-light leading-relaxed">
+                    <strong class="font-semibold text-slate-900">Meritorious Pharmaceuticals</strong> is a quality-driven pharmaceutical marketing and distribution enterprise committed to improving patient care through innovative, affordable, and evidence-based healthcare solutions. Since our establishment in 2021, we have focused on representing and distributing premium pharmaceutical and nutraceutical formulations that address the evolving needs of healthcare professionals and patients.
                 </p>
-                <p class="text-slate-600 leading-relaxed font-light">
-                    Every formulation is sourced from WHO-GMP-certified manufacturing partners to maintain standard safety regulations and robust clinical bio-availability.
+                
+                <p class="text-sm text-slate-600 font-light leading-relaxed">
+                    Our marketing portfolio spans multiple therapeutic segments, including Gynecology, Orthopedics, Neurology, Gastroenterology, General Medicine, Nutrition, and Women's Health. To ensure patient safety, consistent quality, and robust clinical bioavailability, <span class="font-semibold text-slate-900">we partner exclusively with certified third-party WHO-GMP manufacturing organizations</span> that produce these formulations under strict quality control and regulatory standards.
+                </p>
+
+                <p class="text-sm text-slate-600 font-light leading-relaxed">
+                    At Meritorious Pharmaceuticals, we believe that healthcare is built on trust. Our dedicated field representation and logistics teams work closely with doctors, hospitals, pharmacies, and healthcare institutions to supply scientifically supported products and provide dependable trade services. We continuously strive to introduce innovative formulations to local markets to improve treatment outcomes and enhance patients' quality of life.
                 </p>
             </div>
-            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block mb-6">Corporate Milestones</span>
-                <div class="relative pl-6 border-l border-brand-100 space-y-6">
+
+            <!-- Right Side: Stats & Milestones -->
+            <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28 w-full">
+                <div class="glass-panel p-6 sm:p-8 rounded-2xl shadow-sm border border-brand-100">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-6 font-display flex items-center">
+                        <i class="fa-solid fa-network-wired mr-2"></i> Corporate Milestones
+                    </h3>
+                    <div class="relative pl-5 border-l-2 border-brand-100 space-y-8">
+                        <!-- Timeline Point 1 -->
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1 bg-brand-500 border-4 border-white h-4 w-4 rounded-full shadow-sm"></div>
+                            <span class="text-[9px] font-bold text-brand-500 bg-brand-50 px-2 py-0.5 rounded font-display uppercase tracking-wider">2021</span>
+                            <h4 class="font-bold text-slate-900 text-sm mt-2 font-display">Corporate Office Established</h4>
+                            <p class="text-xs text-slate-500 font-light mt-1 leading-relaxed">Headquarters set up at Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana, establishing our core administrative and marketing operations.</p>
+                        </div>
+                        <!-- Timeline Point 2 -->
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1 bg-brand-500 border-4 border-white h-4 w-4 rounded-full shadow-sm"></div>
+                            <span class="text-[9px] font-bold text-brand-500 bg-brand-50 px-2 py-0.5 rounded font-display uppercase tracking-wider">Present Day</span>
+                            <h4 class="font-bold text-slate-900 text-sm mt-2 font-display">Active Distribution Network</h4>
+                            <p class="text-xs text-slate-500 font-light mt-1 leading-relaxed">Serving over 1,500+ clinics, pharmacies, and institutional distributors across major therapeutic segments pan-India.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sourcing Policy Highlight -->
+                <div class="bg-brand-500 p-6 sm:p-8 rounded-2xl text-white relative overflow-hidden shadow-xl shadow-brand-500/10">
+                    <!-- Molecular watermark overlay -->
+                    <div class="absolute right-0 bottom-0 translate-x-1/6 translate-y-1/6 text-white/5 pointer-events-none">
+                        <svg class="w-40 h-40 animate-float-reverse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 100">
+                            <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" />
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-brand-100 mb-2 font-display">Quality &amp; Sourcing Policy</h3>
+                    <p class="text-xs text-slate-200 font-light leading-relaxed">
+                        While our core operations reside in product marketing, market placement, and supply chain management, we strictly require that 100% of our sourced product classes originate from manufacturing partners holding valid, verified WHO-GMP credentials.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. CORE VALUES: MISSION & VISION -->
+    <section class="py-12 sm:py-16 md:py-20 bg-slate-50/80 border-y border-brand-100/50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Mission Card -->
+                <div class="bg-white p-6 sm:p-10 rounded-2xl border border-brand-100/60 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-50/30 rounded-bl-full -z-10 group-hover:bg-brand-500/5 transition-all"></div>
                     <div>
-                        <span class="text-xs font-bold text-brand-600">2021</span>
-                        <h4 class="font-bold text-slate-900 text-sm mt-0.5">Corporate Headquarters established in Gurugram, Haryana</h4>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-5 sm:mb-6">
+                            <i class="fa-solid fa-bullseye text-base sm:text-lg"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-brand-500 font-display mb-3">Our Mission</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed">
+                            To market and distribute safe, effective, and affordable medicines that contribute to healthier lives, while maintaining ethical business practices, scientific integrity, and prompt logistical delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="bg-white p-6 sm:p-10 rounded-2xl border border-brand-100/60 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-50/30 rounded-bl-full -z-10 group-hover:bg-brand-500/5 transition-all"></div>
+                    <div>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-5 sm:mb-6">
+                            <i class="fa-solid fa-eye text-base sm:text-lg"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-brand-500 font-display mb-3">Our Vision</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed">
+                            To be recognized as India's most dependable pharmaceutical marketing and distribution partner, known for absolute quality assurance in our sourcing and long-term professional partnerships.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. STRATEGIC VALUES & ETHICS (WHY CHOOSE US) -->
+    <section id="why-us" class="py-12 sm:py-20 lg:py-24 max-w-7xl mx-auto px-6 sm:px-8 relative overflow-hidden">
+        
+        <!-- Subtle Floating Molecules on background sides -->
+        <div class="absolute left-4 top-24 opacity-5 pointer-events-none">
+            <svg class="w-24 h-24 sm:w-32 sm:h-32 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 100">
+                <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" />
+                <circle cx="50" cy="10" r="6" fill="currentColor" />
+                <circle cx="85" cy="30" r="6" fill="currentColor" />
+                <circle cx="15" cy="70" r="6" fill="currentColor" />
+            </svg>
+        </div>
+        
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 relative z-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-500 block">Values &amp; Ethics</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display mt-2">Why Professionals Partner With Us</h2>
+            <p class="text-xs sm:text-sm text-slate-500 font-light mt-3 leading-relaxed">
+                We focus exclusively on efficient trade linkages, commercial integrity, and product stability throughout the distribution lifecycle.
+            </p>
+        </div>
+        
+        <!-- Fluid 1-col on Mobile, 2-col on Tablet, 3-col on Desktop -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10">
+            <!-- value 1 -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-sm hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                <span class="text-[10px] font-bold text-brand-500 bg-brand-50 px-2.5 py-0.5 rounded font-display uppercase font-mono">Standard 01</span>
+                <h4 class="font-bold text-brand-500 font-display text-sm mt-4 mb-2">Premium Quality Sourcing</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">We strictly review chemical stability and regulatory filings of all products before accepting them into our marketing portfolio.</p>
+            </div>
+            <!-- value 2 -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-sm hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                <span class="text-[10px] font-bold text-brand-500 bg-brand-50 px-2.5 py-0.5 rounded font-display uppercase font-mono">Standard 02</span>
+                <h4 class="font-bold text-brand-500 font-display text-sm mt-4 mb-2">Robust Distribution Network</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">Operating fully aligned warehousing systems to ensure safe, temperature-controlled delivery directly to stockists and institutions.</p>
+            </div>
+            <!-- value 3 -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-sm hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                <span class="text-[10px] font-bold text-brand-500 bg-brand-50 px-2.5 py-0.5 rounded font-display uppercase font-mono">Standard 03</span>
+                <h4 class="font-bold text-brand-500 font-display text-sm mt-4 mb-2">Innovative Therapeutics</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">Promoting advanced third-party formulations like nano-emulsions, specific vitamin complexes, and balanced softgel profiles.</p>
+            </div>
+            <!-- value 4 -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-sm hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                <span class="text-[10px] font-bold text-brand-500 bg-brand-50 px-2.5 py-0.5 rounded font-display uppercase font-mono">Standard 04</span>
+                <h4 class="font-bold text-brand-500 font-display text-sm mt-4 mb-2">Clinical Confidence</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">Providing doctors and healthcare units with fully documented clinical parameters, supporting confident medical distribution.</p>
+            </div>
+            <!-- value 5 -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-sm hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                <span class="text-[10px] font-bold text-brand-500 bg-brand-50 px-2.5 py-0.5 rounded font-display uppercase font-mono">Standard 05</span>
+                <h4 class="font-bold text-brand-500 font-display text-sm mt-4 mb-2">Dependable Supply Chain</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">Using optimized logistics pathways to protect inventory against climatic variances and to avoid supply shortages.</p>
+            </div>
+            <!-- value 6 -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-sm hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                <span class="text-[10px] font-bold text-brand-500 bg-brand-50 px-2.5 py-0.5 rounded font-display uppercase font-mono">Standard 06</span>
+                <h4 class="font-bold text-brand-500 font-display text-sm mt-4 mb-2">Ethical Trade Operations</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">We maintain transparent pricing, complete tax compliance, and reliable commercial agreements with all trade partners.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. COMPACT GLOBAL FOOTER -->
+    <footer class="mt-auto bg-brand-900 text-slate-400 py-8 sm:py-16 border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <!-- Footer Grid (Optimized mobile side-by-side links) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 pb-8 border-b border-brand-600/20 text-xs font-light">
+                
+                <!-- Column 1: Brand Typography (Paragraph hidden on mobile to reduce height) -->
+                <div class="space-y-2 sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <span class="text-white font-extrabold text-base sm:text-lg tracking-tight font-display block uppercase leading-none">
+                            MERITORIOUS
+                        </span>
+                        <span class="text-[8px] tracking-[0.25em] uppercase text-brand-500 font-semibold block mt-1 leading-none font-sans">
+                            PHARMACEUTICALS
+                        </span>
+                    </div>
+                    <p class="hidden sm:block leading-relaxed text-slate-400 text-[11px]">
+                        Distributing verified therapeutic and nutraceutical pathways across major Indian clinical zones.
+                    </p>
+                </div>
+                
+                <!-- Combined Column 2 & 3: Double list grid side-by-side on mobile, stacked on lg -->
+                <div class="grid grid-cols-2 gap-4 sm:col-span-2 lg:col-span-2">
+                    <div>
+                        <h4 class="text-white font-semibold mb-2 sm:mb-4">Formulations</h4>
+                        <ul class="space-y-1.5 sm:space-y-2">
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Women's Care</a></li>
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Orthopedics</a></li>
+                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Digestive Care</a></li>
+                        </ul>
                     </div>
                     <div>
-                        <span class="text-xs font-bold text-brand-600">Present</span>
-                        <h4 class="font-bold text-slate-900 text-sm mt-0.5">Over 1,500+ clinics and distributors served pan-India</h4>
+                        <h4 class="text-white font-semibold mb-2 sm:mb-4">Corporate</h4>
+                        <ul class="space-y-1.5 sm:space-y-2">
+                            <li><a href="about.html" class="hover:text-brand-500 transition-colors text-slate-400">About Us</a></li>
+                            <li><a href="about.html#why-us" class="hover:text-brand-500 transition-colors text-slate-400">Standards</a></li>
+                            <li><a href="contact.html" class="hover:text-brand-500 transition-colors text-slate-400">Office Contacts</a></li>
+                        </ul>
                     </div>
                 </div>
+                
+                <!-- Column 4: Address -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <h4 class="text-white font-semibold mb-2 sm:mb-4">Registered Address</h4>
+                    <p class="leading-relaxed text-slate-400">
+                        E-9, Lower Ground Floor,<br>
+                        Sushant Shopping Arcade, DLF Phase IV,<br>
+                        Gurugram, Haryana 122009
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Mission & Vision -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-slate-50 p-10 rounded-2xl border border-slate-200">
-                <h3 class="text-2xl font-bold text-slate-900 font-display mb-4">Our Mission</h3>
-                <p class="text-sm text-slate-500 leading-relaxed font-light">To improve lives through innovative, affordable, and high-quality healthcare solutions while maintaining ethics, scientific reliability, and standard clinical compliance.</p>
-            </div>
-            <div class="bg-slate-50 p-10 rounded-2xl border border-slate-200">
-                <h3 class="text-2xl font-bold text-slate-900 font-display mb-4">Our Vision</h3>
-                <p class="text-sm text-slate-500 leading-relaxed font-light">To become one of India's most trusted healthcare companies by delivering excellence in pharmaceuticals and making quality healthcare widely accessible.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section id="why-us" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block">Values &amp; Ethics</span>
-            <h2 class="text-3xl font-extrabold text-slate-900 font-display mt-2">Why Professionals Partner With Us</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-                <h4 class="font-bold text-brand-600 text-lg mb-2">Premium Quality</h4>
-                <p class="text-xs text-slate-500 leading-relaxed font-light">All chemical compounds undergo systematic biological assessments before final clinical distribution.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-                <h4 class="font-bold text-brand-600 text-lg mb-2">Scientific Integrity</h4>
-                <p class="text-xs text-slate-500 leading-relaxed font-light">Formulations are centered strictly around verified pharmacokinetic profiles to aid recovery pipelines.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-                <h4 class="font-bold text-brand-600 text-lg mb-2">Ethical Distribution</h4>
-                <p class="text-xs text-slate-500 leading-relaxed font-light">Complete transparency regarding commercial trade terms, pricing, and certified bio-safety standards.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
-                <div class="space-y-4">
-                    <span class="text-white font-extrabold text-lg font-display">MERITORIOUS</span>
-                    <p class="text-xs font-light">Redefining standardized therapeutics across major Indian clinical zones.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Navigations</h4>
-                    <ul class="space-y-2 text-xs font-light">
-                        <li><a href="about.html" class="hover:text-brand-400">About Our Company</a></li>
-                        <li><a href="products.html" class="hover:text-brand-400">Our Portfolio</a></li>
-                        <li><a href="resources.html" class="hover:text-brand-400">Healthcare Resources</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Contact Info</h4>
-                    <p class="text-xs font-light">info@meritoriouspharma.com<br>+91 (124) 456-7890</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Office Address</h4>
-                    <p class="text-xs font-light">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
-                </div>
-            </div>
-            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-light">
+            <!-- Footer copyright bottom -->
+            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] text-slate-500 font-light text-center md:text-left">
                 <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+                <p class="max-w-md leading-normal md:text-right">
+                    Disclaimer: Corporate resources intended for healthcare trade professionals. Sourced products must follow direct medical diagnostics.
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- INTERACTIVE SLIDE-OVER DRAWER -->
+    <div id="inquiry-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 overflow-hidden">
+            <div id="drawer-overlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"></div>
+            
+            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-6 sm:pl-10">
+                <div id="drawer-panel" class="pointer-events-auto w-screen max-w-md transform translate-x-full transition-transform duration-300 ease-in-out">
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-2xl">
+                        <div class="px-6 py-5 sm:py-6 border-b border-brand-100 flex items-center justify-between">
+                            <div>
+                                <h2 class="text-base font-bold text-slate-900 font-display">Commercial Inquiry</h2>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Product Formulation Desk</p>
+                            </div>
+                            <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-slate-500 rounded-lg">
+                                <i class="fa-solid fa-xmark text-lg"></i>
+                            </button>
+                        </div>
+                        
+                        <form onsubmit="handleDrawerSubmit(event)" class="flex-1 flex flex-col justify-between p-6 space-y-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Selected Subject / Product</label>
+                                    <input type="text" id="drawer-subject" readonly class="w-full bg-slate-50 border border-brand-100 text-slate-700 px-4 py-3 rounded-lg text-xs font-semibold focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Your Name</label>
+                                    <input type="text" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Corporate Email</label>
+                                    <input type="email" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Message / Requirements</label>
+                                    <textarea rows="4" placeholder="Mention volume requirements, therapeutic category focus..." required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400"></textarea>
+                                </div>
+                            </div>
+                            <div class="border-t border-brand-100 pt-6">
+                                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">
+                                    Send Formulation Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Routing & UI Logic -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const drawer = document.getElementById('inquiry-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const drawerPanel = document.getElementById('drawer-panel');
+        const drawerSubject = document.getElementById('drawer-subject');
+        
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function openDrawer(subjectName) {
+            drawerSubject.value = subjectName;
+            drawer.classList.remove('hidden');
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
+            setTimeout(() => {
+                drawerOverlay.classList.remove('opacity-0');
+                drawerOverlay.classList.add('opacity-100');
+                drawerPanel.classList.remove('translate-x-full');
+                drawerPanel.classList.add('translate-x-0');
+            }, 10);
+        }
+
+        function closeDrawer() {
+            drawerOverlay.classList.remove('opacity-100');
+            drawerOverlay.classList.add('opacity-0');
+            drawerPanel.classList.remove('translate-x-0');
+            drawerPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                drawer.classList.add('hidden');
+            }, 300);
+        }
+
+        drawerOverlay.addEventListener('click', closeDrawer);
+
+        async function handleDrawerSubmit(e) {
+    e.preventDefault();
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.innerText = "Submitting...";
+
+    const inputs = e.target.querySelectorAll('input, textarea');
+    const payload = {
+        formType: "inquiry",
+        sourceForm: "Slide-over Drawer",
+        subject: document.getElementById('drawer-subject').value,
+        name: inputs[1].value,
+        email: inputs[2].value,
+        phone: "N/A",
+        message: inputs[3].value
+    };
+
+    const success = await submitToBackend(payload);
+    if (success) {
+        alert(`Your request regarding ${payload.subject} has been securely logged to our trade desk.`);
+        e.target.reset();
+        closeDrawer();
+    } else {
+        alert("There was an error routing your request. Please try again.");
+    }
+    submitButton.disabled = false;
+    submitButton.innerText = "Send Formulation Request";
+}
+    </script>
 </body>
 </html>
