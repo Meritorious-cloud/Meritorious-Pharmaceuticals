@@ -284,7 +284,7 @@
                 <div class="lg:col-span-6">
                     <div class="bg-clinical-900 p-8 sm:p-10 rounded-[2rem] text-white shadow-2xl">
                         <h3 class="text-xs font-bold uppercase tracking-widest text-sky-400 mb-2">Request Commercial Dialogue</h3>
-                        <p class="text-[11px] text-slate-400 font-light mb-8">Submit your trade credentials to access our institutional pricing matrix.</p>
+                        <p class="text-[11px] text-slate-400 font-light mb-8">Submit your inquiry credentials to access our pricing matrix.</p>
                         
                         <form onsubmit="handleQuickSubmit(event)" class="space-y-4">
                             <input type="text" placeholder="Entity / Company Name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs outline-sky-500">
@@ -296,7 +296,7 @@
                                 <option value="franchise">PCD Franchise Partnership</option>
                                 <option value="wholesale">Wholesale Network</option>
                             </select>
-                            <button type="submit" class="w-full bg-sky-500 hover:bg-sky-400 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all mt-4">Submit Trade Application</button>
+                            <button type="submit" class="w-full bg-sky-500 hover:bg-sky-400 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all mt-4">Submit Inquiry</button>
                         </form>
                     </div>
                 </div>
@@ -404,7 +404,7 @@
 
         async function handleQuickSubmit(e) {
             e.preventDefault();
-            alert("Your trade application has been registered for portfolio curation.");
+            alert("Your inquiry has been registered for portfolio curation.");
             e.target.reset();
         }
     </script>
