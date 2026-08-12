@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -96,8 +95,8 @@
                     </nav>
 
                     <button onclick="openDrawer('General Inquiry')" class="hidden lg:block bg-white hover:bg-sky-50 text-clinical-800 px-7 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all shadow-xl shadow-white/10">
-    Inquiry Desk
-</button>
+                        Inquiry Desk
+                    </button>
 
                     <!-- Mobile Toggle -->
                     <button onclick="toggleMobileMenu()" class="lg:hidden text-white p-2 focus:outline-none">
@@ -125,9 +124,9 @@
         <div class="max-w-7xl mx-auto px-6 pt-12 pb-24 sm:pt-16 sm:pb-32 relative z-10 text-center lg:text-left">
             <span class="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[9px] font-bold text-sky-400 uppercase tracking-[0.2em] mb-6">Certified Formulary 2026</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white font-display tracking-tight leading-tight">
-    Advancing Science, <br class="hidden sm:block"> 
-    <span class="text-sky-400">Enhancing Care</span>
-</h1>
+                Advancing Science, <br class="hidden sm:block"> 
+                <span class="text-sky-400">Enhancing Care</span>
+            </h1>
             <p class="mt-6 text-slate-300 max-w-2xl text-sm sm:text-base leading-relaxed mx-auto lg:mx-0 font-light">Explore our scientifically-validated portfolio of 19 specialized therapeutic formulations.</p>
         </div>
     </div>
@@ -210,9 +209,14 @@
                         <span class="text-[9px] uppercase font-bold text-slate-400 block mb-1">Standard Packaging</span>
                         <span id="modal-pkg" class="text-xs font-bold text-clinical-800 font-mono tracking-wider"></span>
                     </div>
-                    <button onclick="redirectToInquiry()" class="w-full sm:w-auto bg-sky-500 text-white px-10 py-3.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-sky-400 transition-all shadow-lg">
-                        Submit Product Inquiry
-                    </button>
+                    <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+                        <a id="modal-buy-link" href="#" target="_blank" class="flex-1 text-center bg-orange-500 text-white px-6 py-3.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-orange-600 transition-all shadow-lg flex items-center justify-center">
+                            <i class="fa-solid fa-cart-shopping mr-2"></i> Buy on 1mg
+                        </a>
+                        <button onclick="redirectToInquiry()" class="flex-1 bg-sky-500 text-white px-6 py-3.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-sky-400 transition-all shadow-lg">
+                            Inquiry
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,25 +245,25 @@
 
     <script>
         const products = [
-            { id: 'mgbliss-d3', name: 'MGBLISS-D3', cat: 'ortho', tag: 'Magnesium + D3 Tablets', packaging: '10x1x10 Tablets', comp: [['Magnesium Glycine Complex', '250 mg'], ['Vitamin D3', '1000 IU']], benefits: ['Clinically reduces pregnancy-induced leg cramps frequency by 50%.', 'Chelated form ensures peak bioavailability.', 'Reduces risk of preeclampsia.'] },
-            { id: 'nervipam', name: 'Nervipam', cat: 'neuro', tag: 'PEA + Cytidine + Uridine', packaging: '10 CR Tablets', comp: [['PEA', '400 mg'], ['Cytidine', '15 mg'], ['Uridine', '9 mg'], ['Folic Acid', '64 mcg']], benefits: ['Effective adjuvant for chronic/neuropathic pain.', 'Stabilizes glial cells and reduces neuroinflammation.', 'Supports neuronal membrane repair.'] },
-            { id: 'tolbliss', name: 'TOLBLISS SR', cat: 'ortho', tag: 'Muscle Relaxant SR', packaging: '10x10 Alu-Alu', comp: [['Tolperisone HCl (SR)', '450 mg']], benefits: ['Non-sedating centrally acting muscle relaxant.', 'No alcohol interaction concerns.', 'High affinity for the spinal cord.'] },
-            { id: 'stretch-bliss', name: 'Stretch Bliss Cream', cat: 'gynecology', tag: 'Intensive Skin Repair', packaging: '75ml Squeeze Tube', comp: [['Marine Collagen Peptide', 'Active'], ['Sea Buckthorn', 'Active'], ['Allium Cepa', 'Active']], benefits: ['Minimizes stretch marks significantly.', 'Stimulates tissue elasticity during/after pregnancy.', 'Suitable for all sensitive skin types.'] },
-            { id: 'polmanac', name: 'Polmanac', cat: 'ortho', tag: 'Selective Cox-2 Inhibitor', packaging: '10x10 Capsules', comp: [['Polmacoxib', '2 mg']], benefits: ['Superior pain reduction in knee/hip Osteoarthritis.', 'Lower cardiovascular risk vs traditional NSAIDs.', 'Indicated for Rheumatoid joint pain.'] },
-            { id: 'axonac-mr', name: 'AXONAC-MR', cat: 'ortho', tag: 'Analgesic + Relaxant', packaging: '10x10 Tablets', comp: [['Etoricoxib', '60 mg'], ['Thiocolchicoside', '4 mg']], benefits: ['Relieves pain from musculoskeletal spasms.', 'Antagonist of GABAa receptors.', 'Indicated for acute pain and gouty arthritis.'] },
-            { id: 'zeptide', name: 'Zeptide', cat: 'ortho', tag: 'Bone Mineral Complex', packaging: '10x1x10 Softgels', comp: [['Calcium Carbonate', '600 mg'], ['Collagen Peptide II', '40 mg'], ['Vitamin C & D3', '30mg/1000IU']], benefits: ['Nourishing supplements managing OA health.', 'Regenerates articular cartilage.', 'Increases Bone Mineral Density.'] },
-            { id: 'cq-gem', name: 'CQ GEM', cat: 'neuro', tag: 'Coenzyme Q10 300mg', packaging: '10x1x10 Softgels', comp: [['Coenzyme Q10', '300 mg']], benefits: ['Enhances energy production and ATP synthesis.', 'Improves egg quality in IVF pretreatment.', 'Antioxidant activity protects cells.'] },
-            { id: 'd-lozy', name: 'D-Lozy Nano Shot', cat: 'neuro', tag: 'Vitamin D3 Nano Liquid', packaging: '5ml Ready-Shot', comp: [['Cholecalciferol (D3)', '60,000 IU']], benefits: ['Highest bioavailable nano-emulsion.', 'Sugar-free Butterscotch formulation.', 'Critical for diabetic patients.'] },
-            { id: 'cl24', name: 'CL24 Tablets', cat: 'gynecology', tag: 'Advanced Nutrient Combo', packaging: '10x1x10 Tablets', comp: [['Calcium Carbonate', '1250 mg'], ['Vitamin D3', '2000 IU'], ['Methylcobalamin', '1500 mcg'], ['L-Methylfolate', '1 mg']], benefits: ['Management of metabolic bone imbalances.', 'Supports nerve regeneration and anemia recovery.', 'Includes active P5P coenzyme.'] },
-            { id: 'clk2', name: 'CLK2 Tablets', cat: 'ortho', tag: 'Osteoporosis Specialist', packaging: '10x10 Tablets', comp: [['Calcium Citrate Malate', '1000 mg'], ['Calcitriol', '0.25 mcg'], ['Vitamin K27', '50 mcg']], benefits: ['Targets steroid-induced osteoporosis.', 'Directs calcium deposition strictly to bone matrix.', 'Highest CCM absorption rate.'] },
-            { id: 'cl-plus', name: 'CL Plus Capsules', cat: 'ortho', tag: 'Bone & Nerve Protector', packaging: '10x1x10 Alu-Alu', comp: [['Calcitriol', '0.25 mcg'], ['Calcium Carbonate', '500 mg'], ['EPA & DHA', '180/120mg']], benefits: ['Total osteo protection against fractures.', 'Significant improvement in Sciatica/Nerve injuries.', 'Decreases triglycerides levels.'] },
-            { id: 'eso-d', name: 'ESO-D SR', cat: 'gastro', tag: 'Acid Control SR', packaging: '10x10 Capsules', comp: [['Esomeprazole', '40 mg'], ['Domperidone (SR)', '30 mg']], benefits: ['Significantly longer acid suppression vs Pantoprazole.', 'Perfect for GERD, Hyperacidity, and Dyspepsia.', 'Prokinetic action prevents reflux.'] },
-            { id: 'tofaday', name: 'TOFADAY', cat: 'neuro', tag: 'JAK Inhibitor', packaging: '10x10 Tablets', comp: [['Tofacitinib', '5 mg']], benefits: ['Blocks immune activation in Rheumatoid Arthritis.', 'Proven for Ulcerative Colitis management.', 'Advanced treatment for Vitiligo.'] },
-            { id: 'abstat-200', name: 'ABstat SR-200', cat: 'neuro', tag: 'Bronchodilator SR', packaging: '10x10 SR Tablets', comp: [['Acebrophylline (SR)', '200 mg']], benefits: ['Dual mucolytic and bronchodilator action.', 'Relieves chest tightness and shortness of breath.', 'Thins and loosens mucus effectively.'] },
-            { id: 'pyroraft', name: 'PYRORAFT', cat: 'gastro', tag: 'Liquid Raft Barrier', packaging: '200ml Liquid', comp: [['Sodium Alginate', '250 mg'], ['Sodium Bicarbonate', '133.5 mg'], ['Calcium Carbonate', '80 mg']], benefits: ['Creates physical raft barrier to block reflux.', 'Double action: neutralizes acid and inhibits pepsin.', 'More effective than standard antacids.'] },
-            { id: 'streptolac', name: 'STREPTOLAC', cat: 'gastro', tag: 'Probiotic DR Capsules', packaging: '10x10 DR Capsules', comp: [['8-Strain Probiotics', '4.7 Billion'], ['FOS', '100 mg']], benefits: ['Restores healthy gut flora after antibiotics.', 'Inhibits G.I. pathogens.', 'DR technology survives gastric acid passage.'] },
-            { id: 'streptolac-ibs', name: 'STREPTOLAC-IBS', cat: 'gastro', tag: 'IBS Specialty DR', packaging: '10x10 DR Capsules', comp: [['Melatonin', '3 mg'], ['Probiotics', '4.4 Billion'], ['S. boulardii', '100 Million']], benefits: ['Includes Melatonin to manage gut-brain axis.', 'Reduces bloating, abdominal pain, and frequency.', 'Effective for chronic constipation.'] },
-            { id: 'megaglim-nt', name: 'Megaglim-NT', cat: 'neuro', tag: 'Nerve Pain Modulator', packaging: '10x10 Alu-Alu', comp: [['Pregabalin (SR)', '75 mg'], ['Nortriptyline', '10 mg']], benefits: ['Effective for sciatica and radiculopathy pain.', 'Addresses sleep disturbances in nerve-pain.', 'FDA approved first-medicine class.'] }
+            { id: 'mgbliss-d3', name: 'MGBLISS-D3', cat: 'ortho', tag: 'Magnesium + D3 Tablets', packaging: '10x1x10 Tablets', comp: [['Magnesium Glycine Complex', '250 mg'], ['Vitamin D3', '1000 IU']], benefits: ['Clinically reduces pregnancy-induced leg cramps frequency by 50%.', 'Chelated form ensures peak bioavailability.', 'Reduces risk of preeclampsia.'], link: 'https://www.1mg.com/otc/mgbliss-d3-tablet-otc1142891' },
+            { id: 'nervipam', name: 'Nervipam', cat: 'neuro', tag: 'PEA + Cytidine + Uridine', packaging: '10 CR Tablets', comp: [['PEA', '400 mg'], ['Cytidine', '15 mg'], ['Uridine', '9 mg'], ['Folic Acid', '64 mcg']], benefits: ['Effective adjuvant for chronic/neuropathic pain.', 'Stabilizes glial cells and reduces neuroinflammation.', 'Supports neuronal membrane repair.'], link: 'https://www.1mg.com/otc/nervipam-tablet-cr-otc1144526' },
+            { id: 'tolbliss', name: 'TOLBLISS SR', cat: 'ortho', tag: 'Muscle Relaxant SR', packaging: '10x10 Alu-Alu', comp: [['Tolperisone HCl (SR)', '450 mg']], benefits: ['Non-sedating centrally acting muscle relaxant.', 'No alcohol interaction concerns.', 'High affinity for the spinal cord.'], link: 'https://www.1mg.com/drugs/tolbliss-tablet-sr-1129224' },
+            { id: 'stretch-bliss', name: 'Stretch Bliss Cream', cat: 'gynecology', tag: 'Intensive Skin Repair', packaging: '75ml Squeeze Tube', comp: [['Marine Collagen Peptide', 'Active'], ['Sea Buckthorn', 'Active'], ['Allium Cepa', 'Active']], benefits: ['Minimizes stretch marks significantly.', 'Stimulates tissue elasticity during/after pregnancy.', 'Suitable for all sensitive skin types.'], link: 'https://www.1mg.com/otc/stretch-bliss-intensive-stretch-marks-cream-75gm-each-otc1092620' },
+            { id: 'polmanac', name: 'Polmanac', cat: 'ortho', tag: 'Selective Cox-2 Inhibitor', packaging: '10x10 Capsules', comp: [['Polmacoxib', '2 mg']], benefits: ['Superior pain reduction in knee/hip Osteoarthritis.', 'Lower cardiovascular risk vs traditional NSAIDs.', 'Indicated for Rheumatoid joint pain.'], link: 'https://www.1mg.com/drugs/polmanac-capsule-1087611' },
+            { id: 'axonac-mr', name: 'AXONAC-MR', cat: 'ortho', tag: 'Analgesic + Relaxant', packaging: '10x10 Tablets', comp: [['Etoricoxib', '60 mg'], ['Thiocolchicoside', '4 mg']], benefits: ['Relieves pain from musculoskeletal spasms.', 'Antagonist of GABAa receptors.', 'Indicated for acute pain and gouty arthritis.'], link: 'https://www.1mg.com/drugs/axonac-mr-tablet-823793' },
+            { id: 'zeptide', name: 'Zeptide', cat: 'ortho', tag: 'Bone Mineral Complex', packaging: '10x1x10 Softgels', comp: [['Calcium Carbonate', '600 mg'], ['Collagen Peptide II', '40 mg'], ['Vitamin C & D3', '30mg/1000IU']], benefits: ['Nourishing supplements managing OA health.', 'Regenerates articular cartilage.', 'Increases Bone Mineral Density.'], link: 'https://www.1mg.com/drugs/zeptide-softgel-capsule-823759' },
+            { id: 'cq-gem', name: 'CQ GEM', cat: 'neuro', tag: 'Coenzyme Q10 300mg', packaging: '10x1x10 Softgels', comp: [['Coenzyme Q10', '300 mg']], benefits: ['Enhances energy production and ATP synthesis.', 'Improves egg quality in IVF pretreatment.', 'Antioxidant activity protects cells.'], link: 'https://www.1mg.com/drugs/cq-gem-softgel-capsule-994086' },
+            { id: 'd-lozy', name: 'D-Lozy Nano Shot', cat: 'neuro', tag: 'Vitamin D3 Nano Liquid', packaging: '5ml Ready-Shot', comp: [['Cholecalciferol (D3)', '60,000 IU']], benefits: ['Highest bioavailable nano-emulsion.', 'Sugar-free Butterscotch formulation.', 'Critical for diabetic patients.'], link: 'https://www.1mg.com/drugs/d-lozy-nano-shot-5ml-each-825229' },
+            { id: 'cl24', name: 'CL24 Tablets', cat: 'gynecology', tag: 'Advanced Nutrient Combo', packaging: '10x1x10 Tablets', comp: [['Calcium Carbonate', '1250 mg'], ['Vitamin D3', '2000 IU'], ['Methylcobalamin', '1500 mcg'], ['L-Methylfolate', '1 mg']], benefits: ['Management of metabolic bone imbalances.', 'Supports nerve regeneration and anemia recovery.', 'Includes active P5P coenzyme.'], link: 'https://www.1mg.com/drugs/cl-24-tablet-898769' },
+            { id: 'clk2', name: 'CLK2 Tablets', cat: 'ortho', tag: 'Osteoporosis Specialist', packaging: '10x10 Tablets', comp: [['Calcium Citrate Malate', '1000 mg'], ['Calcitriol', '0.25 mcg'], ['Vitamin K27', '50 mcg']], benefits: ['Targets steroid-induced osteoporosis.', 'Directs calcium deposition strictly to bone matrix.', 'Highest CCM absorption rate.'], link: 'https://www.1mg.com/otc/cl-k2-tablet-otc506594' },
+            { id: 'cl-plus', name: 'CL Plus Capsules', cat: 'ortho', tag: 'Bone & Nerve Protector', packaging: '10x1x10 Alu-Alu', comp: [['Calcitriol', '0.25 mcg'], ['Calcium Carbonate', '500 mg'], ['EPA & DHA', '180/120mg']], benefits: ['Total osteo protection against fractures.', 'Significant improvement in Sciatica/Nerve injuries.', 'Decreases triglycerides levels.'], link: 'https://www.1mg.com/drugs/cl-plus-soft-gelatin-capsule-328140' },
+            { id: 'eso-d', name: 'ESO-D SR', cat: 'gastro', tag: 'Acid Control SR', packaging: '10x10 Capsules', comp: [['Esomeprazole', '40 mg'], ['Domperidone (SR)', '30 mg']], benefits: ['Significantly longer acid suppression vs Pantoprazole.', 'Perfect for GERD, Hyperacidity, and Dyspepsia.', 'Prokinetic action prevents reflux.'], link: 'https://www.1mg.com/drugs/eso-d-capsule-sr-823785' },
+            { id: 'tofaday', name: 'TOFADAY', cat: 'neuro', tag: 'JAK Inhibitor', packaging: '10x10 Tablets', comp: [['Tofacitinib', '5 mg']], benefits: ['Blocks immune activation in Rheumatoid Arthritis.', 'Proven for Ulcerative Colitis management.', 'Advanced treatment for Vitiligo.'], link: 'https://www.1mg.com/drugs/tofaday-tablet-898771' },
+            { id: 'abstat-200', name: 'ABstat SR-200', cat: 'neuro', tag: 'Bronchodilator SR', packaging: '10x10 SR Tablets', comp: [['Acebrophylline (SR)', '200 mg']], benefits: ['Dual mucolytic and bronchodilator action.', 'Relieves chest tightness and shortness of breath.', 'Thins and loosens mucus effectively.'], link: 'https://www.1mg.com/drugs/abstat-tablet-sr-898776' },
+            { id: 'pyroraft', name: 'PYRORAFT', cat: 'gastro', tag: 'Liquid Raft Barrier', packaging: '200ml Liquid', comp: [['Sodium Alginate', '250 mg'], ['Sodium Bicarbonate', '133.5 mg'], ['Calcium Carbonate', '80 mg']], benefits: ['Creates physical raft barrier to block reflux.', 'Double action: neutralizes acid and inhibits pepsin.', 'More effective than standard antacids.'], link: 'https://www.1mg.com/drugs/pyroraft-oral-suspension-mint-sugar-free-1087606' },
+            { id: 'streptolac', name: 'STREPTOLAC', cat: 'gastro', tag: 'Probiotic DR Capsules', packaging: '10x10 DR Capsules', comp: [['8-Strain Probiotics', '4.7 Billion'], ['FOS', '100 mg']], benefits: ['Restores healthy gut flora after antibiotics.', 'Inhibits G.I. pathogens.', 'DR technology survives gastric acid passage.'], link: 'https://www.1mg.com/otc/streptolac-capsule-otc823747' },
+            { id: 'streptolac-ibs', name: 'STREPTOLAC-IBS', cat: 'gastro', tag: 'IBS Specialty DR', packaging: '10x10 DR Capsules', comp: [['Melatonin', '3 mg'], ['Probiotics', '4.4 Billion'], ['S. boulardii', '100 Million']], benefits: ['Includes Melatonin to manage gut-brain axis.', 'Reduces bloating, abdominal pain, and frequency.', 'Effective for chronic constipation.'], link: 'https://www.1mg.com/otc/streptolac-ibs-capsule-otc823752' },
+            { id: 'megaglim-nt', name: 'Megaglim-NT', cat: 'neuro', tag: 'Nerve Pain Modulator', packaging: '10x10 Alu-Alu', comp: [['Pregabalin (SR)', '75 mg'], ['Nortriptyline', '10 mg']], benefits: ['Effective for sciatica and radiculopathy pain.', 'Addresses sleep disturbances in nerve-pain.', 'FDA approved first-medicine class.'], link: 'https://www.1mg.com/drugs/megaglim-nt-tablet-sr-968807' }
         ];
 
         function renderProducts(filter = 'all') {
@@ -280,7 +284,7 @@
                                 <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1.5">${p.tag}</p>
                             </div>
                             <div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center text-[10px] font-bold text-sky-600 uppercase tracking-wider">
-                                <span>View Inquiry Detail</span>
+                                <span>View Details</span>
                                 <i class="fa-solid fa-chevron-right text-[8px] group-hover:translate-x-1 transition-transform"></i>
                             </div>
                         </div>
@@ -303,6 +307,8 @@
             document.getElementById('modal-title').innerText = p.name;
             document.getElementById('modal-cat-label').innerText = p.cat + ' Indication';
             document.getElementById('modal-pkg').innerText = p.packaging;
+            document.getElementById('modal-buy-link').href = p.link;
+
             const compBody = document.getElementById('modal-comp-list');
             compBody.innerHTML = '';
             p.comp.forEach(c => {
