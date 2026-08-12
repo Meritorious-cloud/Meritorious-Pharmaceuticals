@@ -1,49 +1,34 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meritorious Pharmaceuticals | Premium Healthcare & Therapeutics</title>
 
-<!-- Favicon (Browser Tab Icon) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="1684119015028.jpg">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Meritorious Pharmaceuticals distributes high-quality pharmaceutical and nutraceutical formulations across India through certified WHO-GMP manufacturing partners.">
-    <meta name="keywords" content="Meritorious Pharmaceuticals, Gurugram, DLF Phase IV, pharma marketing India, nutraceuticals, gynecology, orthopedics, gastroenterology">
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind CSS with custom configurations -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'], 
+                        display: ['Montserrat', 'sans-serif'] 
                     },
                     colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#e1efe6',
-                            500: '#004d26', /* Exact corporate green from logo */
-                            600: '#003a1c',
-                            700: '#002613',
-                            900: '#00140a',
-                        },
                         clinical: {
-                            50: '#f4f8f9',
-                            100: '#e2ecef',
-                            200: '#cbdfe5',
-                            500: '#004d26', 
-                            600: '#003a1c',
-                            900: '#1e2d31',
+                            700: '#003a6d',
+                            800: '#001e3c', /* Oxford Blue */
+                            900: '#001329',
+                            500: '#0ea5e9'  /* Sky Blue Accent */
                         }
                     }
                 }
@@ -52,662 +37,371 @@
     </script>
 
     <style>
-        body {
-            background-color: #f4f8f9;
-            letter-spacing: -0.01em;
-            overflow-x: hidden;
+        /* Soft Medical Geometric Background */
+        body { 
+            background-color: #f4f8f9; 
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23003a6d' stroke-opacity='0.03' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+            letter-spacing: -0.01em; 
         }
         
-        /* High-fidelity replica of the vertical geometric pattern provided */
-        .medical-bg-subtle {
-            background-color: #f4f8f9;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23004d26' stroke-opacity='0.025' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+        .white-logo-filter { filter: brightness(0) invert(1); }
+
+        .combined-hero {
+            background: linear-gradient(145deg, #001329 0%, #001e3c 40%, #004e92 100%);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.9);
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(225, 239, 230, 0.7);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        .text-balance {
-            text-wrap: balance;
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30-30-30z' fill='%23ffffff' /%3E%3C/svg%3E");
         }
-
-        /* Soft animation keyframes */
-        @keyframes float-slow {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(1.5deg); }
-        }
-        @keyframes float-reverse {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(6px) rotate(-1.5deg); }
-        }
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.08); }
-        }
-
-        /* Animation Utility Classes */
-        .animate-float-slow {
-            animation: float-slow 10s ease-in-out infinite;
-        }
-        .animate-float-reverse {
-            animation: float-reverse 12s ease-in-out infinite;
-        }
-        .animate-pulse-slow {
-            animation: pulse-slow 4s ease-in-out infinite;
+        
+        .accent-line {
+            height: 3px;
+            width: 50px;
+            background: #0ea5e9;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
-<body class="text-slate-800 font-sans antialiased medical-bg-subtle min-h-screen flex flex-col">
+<body class="text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- 1. HEADER -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-100/50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo Section with Bamboo Column & Brand Typography -->
-            <a href="index.html" class="flex items-center group space-x-3">
-                <!-- Logo Image -->
-                <img src="1684119015028.jpg" alt="Meritorious Pharmaceuticals Logo" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]">
-                
-                <!-- Vertical "Bamboo" Divider & Text -->
-                <div class="h-8 sm:h-9 border-l-2 border-brand-500/40 pl-3 flex flex-col justify-center">
-                    <span class="text-xs sm:text-sm font-extrabold tracking-widest text-slate-900 block leading-none font-display uppercase">
-                        MERITORIOUS
-                    </span>
-                    <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-brand-500 font-bold block mt-1 leading-none font-sans">
-                        PHARMACEUTICALS
-                    </span>
+    <!-- 1. HEADER & HERO COMBINED -->
+    <div class="combined-hero border-b border-white/5">
+        <div class="hero-pattern"></div>
+        
+        <header class="relative z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20 sm:h-24">
+                    <!-- Logo Section -->
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="1684119015028.jpg" alt="Logo" class="h-10 sm:h-11 w-auto white-logo-filter">
+                        <div class="border-l border-white/20 pl-3">
+                            <span class="text-xs sm:text-sm font-extrabold tracking-widest text-white block leading-none font-display uppercase">MERITORIOUS</span>
+                            <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-sky-400 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+                        </div>
+                    </a>
+
+                    <!-- Navigation -->
+                    <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+                        <a href="index.html" class="text-white border-b-2 border-sky-400 pb-1">Home</a>
+                        <a href="about.html" class="hover:text-white transition-all">About Us</a>
+                        <a href="products.html" class="hover:text-white transition-all">Products</a>
+                        <a href="resources.html" class="hover:text-white transition-all">Resources</a>
+                        <a href="contact.html" class="hover:text-white transition-all">Contact</a>
+                        <a href="career.html" class="hover:text-white transition-all">Career</a>
+                    </nav>
+
+                    <button onclick="openDrawer('General Inquiry')" class="hidden lg:block bg-white hover:bg-sky-50 text-clinical-800 px-7 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all shadow-xl shadow-white/10">
+                        Inquiry Desk
+                    </button>
+
+                    <button onclick="toggleMobileMenu()" class="lg:hidden text-white p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
                 </div>
-            </a>
-            
-            <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
-                <a href="index.html" class="text-brand-500 border-b-2 border-brand-500 pb-1.5 transition-all">Home</a>
-                <a href="about.html" class="hover:text-brand-500 transition-colors pb-1.5">About Us</a>
-                <a href="products.html" class="hover:text-brand-500 transition-colors pb-1.5">Products</a>
-                <a href="resources.html" class="hover:text-brand-500 transition-colors pb-1.5">Resources</a>
-                <a href="contact.html" class="hover:text-brand-500 transition-colors pb-1.5">Contact</a>
-                <a href="career.html" class="hover:text-brand-500 transition-colors pb-1.5">Career</a>
-            </nav>
+            </div>
 
-            <div class="hidden lg:flex items-center">
-                <button onclick="openDrawer('General Inquiry')" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm shadow-brand-500/10">
+            <!-- Mobile Nav Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-8 space-y-5 shadow-2xl">
+                <a href="index.html" class="block text-sky-600 font-bold uppercase tracking-widest text-[10px]">Home</a>
+                <a href="about.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">About Us</a>
+                <a href="products.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Products</a>
+                <a href="resources.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Resources</a>
+                <a href="contact.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Contact</a>
+                <a href="career.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Career</a>
+                <hr class="border-slate-100">
+                <button onclick="openDrawer('General Inquiry')" class="w-full text-center bg-sky-500 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest">
                     Inquiry Desk
                 </button>
             </div>
+        </header>
 
-            <!-- Mobile menu button -->
-            <button id="hamburger-btn" class="lg:hidden p-2 text-slate-500 hover:text-brand-500 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+        <!-- Hero Content -->
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-24 sm:pt-16 sm:pb-32 relative z-10 text-center lg:text-left">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[9px] font-semibold tracking-widest uppercase bg-white/10 text-sky-300 border border-white/10 mb-8">
+                <i class="fa-solid fa-clipboard-check mr-2 text-sky-400"></i> Corporate Portfolio Representation
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white font-display tracking-tight leading-tight">
+                Strategic Marketing. <br><span class="text-sky-400 italic font-light">Seamless Distribution.</span>
+            </h1>
+            <p class="mt-6 text-slate-300 max-w-xl text-sm sm:text-base leading-relaxed mx-auto lg:mx-0 font-light">
+                Representing and marketing clinical-grade pharmaceutical and therapeutic formulations across India. Our distribution network relies strictly on pharmacopoeial metrics executed through WHO-GMP certified manufacturing alliances.
+            </p>
         </div>
+    </div>
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-brand-100 px-6 py-6 space-y-4 shadow-inner">
-            <a href="index.html" class="block text-brand-500 font-semibold uppercase tracking-wider text-xs">Home</a>
-            <a href="about.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">About Us</a>
-            <a href="products.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Products</a>
-            <a href="resources.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Resources</a>
-            <a href="contact.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Contact</a>
-            <a href="career.html" class="block text-slate-600 hover:text-brand-500 font-semibold uppercase tracking-wider text-xs">Career</a>
-            <button onclick="openDrawer('General Inquiry')" class="w-full text-center bg-brand-500 text-white py-3 rounded-lg text-xs font-bold uppercase tracking-widest">
-                Inquiry Desk
-            </button>
-        </div>
-    </header>
-
-    <!-- 2. HERO SECTION -->
-    <section class="relative bg-gradient-to-br from-slate-900 via-slate-950 to-brand-900 text-white py-10 sm:py-16 md:py-24 overflow-hidden border-b border-brand-900">
-        <!-- Overlay background layer -->
-        <div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1920&q=80" alt="Laboratory Background" class="w-full h-full object-cover">
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
-                
-                <!-- Left Column text -->
-                <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
-                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase bg-brand-50/20 text-brand-100 border border-brand-500/30">
-                        <i class="fa-solid fa-clipboard-check mr-2 text-brand-500"></i> Corporate Portfolio Representation
-                    </span>
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-display leading-tight text-balance">
-                        Strategic Marketing. <br><span class="italic font-light text-slate-300">Seamless Distribution.</span>
-                    </h1>
-                    <p class="text-[11px] sm:text-sm text-slate-300 max-w-xl leading-relaxed font-light mx-auto lg:mx-0">
-                        Representing and marketing clinical-grade pharmaceutical and therapeutic formulations across India. Our distribution network relies strictly on pharmacopoeial metrics executed through WHO-GMP certified manufacturing alliances.
-                    </p>
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
-                        <a href="products.html" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-3 rounded-lg font-bold text-xs uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">
-                            Explore Portfolio
-                        </a>
-                        <a href="contact.html" class="bg-white/5 hover:bg-white/10 text-white border border-white/15 px-5 py-3 rounded-lg font-bold text-xs uppercase tracking-widest transition-all">
-                            Partner With Us
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Column: Premium Quality Image -->
-                <div class="lg:col-span-5 flex justify-center lg:justify-end mt-6 lg:mt-0 select-none">
-                    <div class="relative w-full max-w-[360px] aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=800&q=80" alt="Pharmaceutical Marketing & Distribution" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4 p-4 glass-panel rounded-xl text-slate-900 border border-white/20">
-                            <p class="text-[9px] uppercase tracking-widest font-bold text-brand-600 mb-1">C&amp;F Logistics Hub</p>
-                            <p class="text-[11px] font-semibold leading-relaxed text-slate-800">Systematic distribution checks verify compliance from storage to wholesale dispatch.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. STRATEGIC AREAS OF FORMULATION -->
-    <section class="py-12 sm:py-20 lg:py-24 max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            <div class="lg:col-span-4 space-y-4 lg:sticky lg:top-28 text-center lg:text-left">
-                <div class="h-1 w-12 bg-brand-500 rounded mx-auto lg:mx-0"></div>
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-600 block">Therapeutic Verticals</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display text-balance">Strategic Areas of Formulation</h2>
-                <p class="text-sm text-slate-500 leading-relaxed font-light">
-                    We maintain structured alignments within vital chemical and physiological wellness systems across India, guaranteeing access to high-purity clinical compounds.
-                </p>
-                <div class="pt-2">
-                    <a href="products.html" class="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-600 uppercase tracking-widest">
-                        Open Full Catalog <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
-                    </a>
-                </div>
+    <!-- 2. STRATEGIC AREAS -->
+    <section class="py-12 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-4 space-y-4 text-center lg:text-left lg:sticky lg:top-28">
+                <div class="accent-line mx-auto lg:mx-0"></div>
+                <span class="text-xs font-bold uppercase tracking-widest text-clinical-700 block">Therapeutic Verticals</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 font-display">Focused Therapeutic Expertise</h2>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">We facilitate the availability of evidence-based formulations, ensuring each compound reaches the medical community with its clinical integrity intact.</p>
             </div>
 
-            <!-- Verticals Showcase -->
-            <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <!-- Vertical 1 -->
-                <div class="p-6 sm:p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-5 group-hover:bg-brand-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-person-pregnant text-lg"></i>
+            <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="glass-card p-8 rounded-3xl group hover:border-sky-500 transition-all duration-300">
+                    <div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-clinical-800 mb-6 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-person-pregnant text-xl"></i>
                     </div>
                     <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">Women's Health</h3>
-                    <p class="text-xs text-slate-500 font-light leading-relaxed">Formulations optimized for structural calcification, micro-nutrition, and maternal safety indexes.</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">Advanced prenatal support, maternal nutrition, and bone density management formulations for every stage of life.</p>
                 </div>
-                <!-- Vertical 2 -->
-                <div class="p-6 sm:p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-5 group-hover:bg-brand-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-bone text-lg"></i>
+                <div class="glass-card p-8 rounded-3xl group hover:border-sky-500 transition-all duration-300">
+                    <div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-clinical-800 mb-6 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-bone text-xl"></i>
                     </div>
                     <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">Orthopedic Care</h3>
-                    <p class="text-xs text-slate-500 font-light leading-relaxed">Skeletal care compounds oriented around joint mineralization, integrity, and calcium distribution pathways.</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">Mineralization complexes and vitamin co-factors designed to restore joint mobility and skeletal structural integrity.</p>
                 </div>
-                <!-- Vertical 3 -->
-                <div class="p-6 sm:p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-5 group-hover:bg-brand-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-prescription-bottle-medical text-lg"></i>
+                <div class="glass-card p-8 rounded-3xl group hover:border-sky-500 transition-all duration-300">
+                    <div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-clinical-800 mb-6 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-prescription-bottle-medical text-xl"></i>
                     </div>
                     <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">Gastroenterology</h3>
-                    <p class="text-xs text-slate-500 font-light leading-relaxed">Gut balance solutions, acid control complexes, and mucosal support suspensions designed for patient compliance.</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">Next-generation probiotics and acid-regulatory compounds focused on gut microbiome stabilization and mucosal health.</p>
                 </div>
-                <!-- Vertical 4 -->
-                <div class="p-6 sm:p-8 glass-panel rounded-2xl hover:border-brand-500 transition-all duration-300 group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-500 mb-5 group-hover:bg-brand-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-stethoscope text-lg"></i>
+                <div class="glass-card p-8 rounded-3xl group hover:border-sky-500 transition-all duration-300">
+                    <div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-clinical-800 mb-6 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-stethoscope text-xl"></i>
                     </div>
-                    <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">General &amp; Neuro</h3>
-                    <p class="text-xs text-slate-500 font-light leading-relaxed">Targeted compounds formulated to aid neuropathy management and stable glycemic parameters.</p>
+                    <h3 class="font-bold text-slate-900 text-sm mb-2 font-display">General & Neuro</h3>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">Targeted neuro-protective agents and therapeutic supplements designed for metabolic balance and neuropathy support.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. FEATURED FORMULATIONS SHOWCASE -->
-    <section class="py-12 sm:py-20 lg:py-24 bg-slate-50/50 border-y border-brand-100/50">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-8 sm:mb-12 text-center md:text-left">
+    <!-- NEW SECTION: QUALITY & COMPLIANCE -->
+    <section class="py-12 sm:py-24 bg-clinical-900 text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Formulations Highlight</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display mt-1">Featured Formulations</h2>
-                </div>
-                <div class="mt-4 md:mt-0">
-                    <a href="products.html" class="inline-flex items-center text-xs font-bold text-brand-500 hover:text-brand-600 uppercase tracking-widest transition-all">
-                        View All Formulations <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Responsive columns -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Highlight 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded uppercase tracking-wider font-display">Women's Health</span>
-                            <span class="text-[10px] text-slate-400 font-medium font-sans">Tablet</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-sky-400 mb-4 block">Quality & Compliance</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-display leading-tight mb-6">Uncompromising Standards in Every Batch</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light mb-8">
+                        Our commitment to healthcare starts with the manufacturing site. Meritorious Pharmaceuticals exclusively partners with facilities that maintain stringent WHO-GMP certifications, ensuring every formulation meets global pharmacopoeial standards.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-vial text-sky-400"></i></div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-wider mb-1">Batch Testing</h4>
+                                <p class="text-[11px] text-slate-500">Continuous stability testing and chemical analysis for purity.</p>
+                            </div>
                         </div>
-                        <h3 class="font-bold text-slate-900 text-lg font-display">CL24 Tablets</h3>
-                        <div class="my-4 border-t border-slate-100 pt-3 space-y-2">
-                            <p class="text-[11px] text-slate-500 font-light leading-relaxed">
-                                Specialized calcium complex formulation with Vitamin D3 co-factors to support maternal calcification.
-                            </p>
-                            <div class="flex items-center text-[10px] text-slate-400 space-x-2">
-                                <span class="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-medium">Standard IP</span>
-                                <span>• 10x10 Alu-Alu</span>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-shield-halved text-sky-400"></i></div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-wider mb-1">Regulatory Rigor</h4>
+                                <p class="text-[11px] text-slate-500">Strict adherence to Indian DCGI guidelines and international norms.</p>
                             </div>
                         </div>
                     </div>
-                    <button onclick="openDrawer('CL24 Tablets')" class="mt-4 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-3 rounded-xl text-xs font-bold transition-all duration-300 border border-slate-100 hover:shadow-md">
-                        Request Quote
-                    </button>
                 </div>
-                
-                <!-- Highlight 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded uppercase tracking-wider font-display">Gastro Care</span>
-                            <span class="text-[10px] text-slate-400 font-medium font-sans">Capsule</span>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-lg font-display">Streptolac IBS</h3>
-                        <div class="my-4 border-t border-slate-100 pt-3 space-y-2">
-                            <p class="text-[11px] text-slate-500 font-light leading-relaxed">
-                                High-viability bacterial matrix optimized for intestinal wall integrity and physiological gut balance.
-                            </p>
-                            <div class="flex items-center text-[10px] text-slate-400 space-x-2">
-                                <span class="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-medium">Standard USP</span>
-                                <span>• Alu-Alu Blister</span>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-sky-500/10 blur-3xl rounded-full"></div>
+                    <div class="glass-card bg-white/5 border-white/10 p-8 rounded-[2rem] relative z-20 backdrop-blur-md">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-end border-b border-white/10 pb-4">
+                                <span class="text-[10px] font-bold uppercase text-slate-400">Manufacturing Alliances</span>
+                                <span class="text-2xl font-bold text-sky-400">WHO-GMP</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-white/10 pb-4">
+                                <span class="text-[10px] font-bold uppercase text-slate-400">Compliance Index</span>
+                                <span class="text-2xl font-bold text-sky-400">100%</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-white/10 pb-4">
+                                <span class="text-[10px] font-bold uppercase text-slate-400">Batch Traceability</span>
+                                <span class="text-2xl font-bold text-sky-400">Secured</span>
                             </div>
                         </div>
                     </div>
-                    <button onclick="openDrawer('Streptolac IBS Capsules')" class="mt-4 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-3 rounded-xl text-xs font-bold transition-all duration-300 border border-slate-100 hover:shadow-md">
-                        Request Quote
-                    </button>
-                </div>
-                
-                <!-- Highlight 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-all duration-300 group sm:col-span-2 lg:col-span-1">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-[9px] font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded uppercase tracking-wider font-display">Orthopedic</span>
-                            <span class="text-[10px] text-slate-400 font-medium font-sans">Tablet</span>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-lg font-display">MGBLISS D3</h3>
-                        <div class="my-4 border-t border-slate-100 pt-3 space-y-2">
-                            <p class="text-[11px] text-slate-500 font-light leading-relaxed">
-                                Magnesium and Vitamin D3 co-factors promoting active calcium metabolic pathways and bone health.
-                            </p>
-                            <div class="flex items-center text-[10px] text-slate-400 space-x-2">
-                                <span class="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-medium">Standard BP</span>
-                                <span>• 15 Tablets / Strip</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="openDrawer('MGBLISS D3 Tablets')" class="mt-4 block w-full text-center bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 py-3 rounded-xl text-xs font-bold transition-all duration-300 border border-slate-100 hover:shadow-md">
-                        Request Quote
-                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. PORTFOLIO CURATION & TRADE LIAISON DESK -->
-    <section class="py-12 sm:py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="glass-panel rounded-3xl p-6 sm:p-10 md:p-12 lg:p-16 relative overflow-hidden border border-brand-100">
-            <!-- Subtle decorative background blob -->
-            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-50/40 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3"></div>
+    <!-- NEW SECTION: SUPPLY CHAIN EXCELLENCE -->
+    <section class="py-12 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold uppercase tracking-widest text-clinical-700 block mb-2">Operational Infrastructure</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 font-display">Seamless Supply Chain</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 text-center">
+                <i class="fa-solid fa-warehouse text-3xl text-sky-500 mb-6"></i>
+                <h3 class="font-bold text-slate-900 mb-3">Strategic C&F</h3>
+                <p class="text-xs text-slate-500 font-light leading-relaxed">Strategically located Carrying & Forwarding hubs to ensure rapid stock replenishment across regional markets.</p>
+            </div>
+            <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 text-center">
+                <i class="fa-solid fa-temperature-arrow-down text-3xl text-sky-500 mb-6"></i>
+                <h3 class="font-bold text-slate-900 mb-3">Cold Chain Management</h3>
+                <p class="text-xs text-slate-500 font-light leading-relaxed">Advanced thermal-sensitive logistics for specialized formulations requiring strict temperature controls.</p>
+            </div>
+            <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 text-center">
+                <i class="fa-solid fa-truck-fast text-3xl text-sky-500 mb-6"></i>
+                <h3 class="font-bold text-slate-900 mb-3">Last-Mile Integrity</h3>
+                <p class="text-xs text-slate-500 font-light leading-relaxed">A robust distributor network reaching clinics, hospitals, and pharmacies with zero-compromise timelines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TRADE LIAISON SECTION -->
+    <section class="py-12 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="glass-card rounded-[3rem] p-8 sm:p-16 border border-slate-200 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-sky-50 rounded-full blur-3xl opacity-50 -z-10 translate-x-1/2 -translate-y-1/2"></div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                
-                <!-- Left Column: Sourcing & Curation Copy -->
-                <div class="lg:col-span-6 space-y-4 sm:space-y-6 text-left">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 block">Sourcing &amp; Portfolio Curation</span>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight leading-tight">Liaisoning and Sourcing Integrity</h2>
-                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-light">
-                        As a dedicated pharmaceutical marketing and distribution enterprise, we select our represented therapeutic brands with absolute precision. We bridge localized healthcare requirements with specialized sourcing networks, managing the market pipeline and C&amp;F logistics while collaborating exclusively with accredited WHO-GMP certified manufacturing sites.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="space-y-1">
-                            <h4 class="text-slate-900 font-bold text-xs font-display flex items-center">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2"></span> Sourcing Alliances
-                            </h4>
-                            <p class="text-[11px] text-slate-400 font-light pl-3.5">Our commercial partnerships are strictly limited to manufacturing facilities holding valid WHO-GMP certifications.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-clinical-700 block">Sourcing & Portfolio Curation</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 font-display tracking-tight leading-tight">Liaisoning and Sourcing Integrity</h2>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">As a dedicated pharmaceutical marketing and distribution enterprise, we select our represented therapeutic brands with absolute precision. We bridge localized healthcare requirements with specialized sourcing networks, managing the market pipeline and C&F logistics while collaborating exclusively with accredited WHO-GMP certified manufacturing sites.</p>
+                    
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-sky-500 flex items-center justify-center text-white shrink-0 mt-1"><i class="fa-solid fa-check text-[10px]"></i></div>
+                            <p class="text-xs text-slate-600 font-medium">Sourcing Alliances: Partnerships strictly limited to WHO-GMP certified facilities.</p>
                         </div>
-                        <div class="space-y-1">
-                            <h4 class="text-slate-900 font-bold text-xs font-display flex items-center">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2"></span> Stability Verified
-                            </h4>
-                            <p class="text-[11px] text-slate-400 font-light pl-3.5">All marketed batches are checked against pharmacopoeial stability metrics before being introduced to trade stockists.</p>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-sky-500 flex items-center justify-center text-white shrink-0 mt-1"><i class="fa-solid fa-check text-[10px]"></i></div>
+                            <p class="text-xs text-slate-600 font-medium">Stability Verified: All batches checked against pharmacopoeial metrics.</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Right Column: Form -->
-                <div class="lg:col-span-6 w-full">
-                    <div class="relative bg-slate-950 p-6 sm:p-8 rounded-2xl border border-slate-800 text-white/90 shadow-xl">
-                        <h3 class="text-xs font-extrabold uppercase tracking-widest text-brand-500 mb-2 font-display">Request Commercial Dialogue</h3>
-                        <p class="text-[10px] sm:text-[11px] font-light text-slate-400 leading-relaxed mb-6">
-                            Are you a registered stockist, pharmacy chain, or institution seeking reliable sourcing across India? Submit your trade credentials to access our pricing matrix.
-                        </p>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-clinical-900 p-8 sm:p-10 rounded-[2rem] text-white shadow-2xl">
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-sky-400 mb-2">Request Commercial Dialogue</h3>
+                        <p class="text-[11px] text-slate-400 font-light mb-8">Submit your trade credentials to access our institutional pricing matrix.</p>
                         
                         <form onsubmit="handleQuickSubmit(event)" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="space-y-1.5">
-                                    <label class="block text-[9px] uppercase font-bold tracking-widest text-slate-400">Entity / Company Name</label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-500">
-                                            <i class="fa-solid fa-building text-xs"></i>
-                                        </span>
-                                        <input type="text" placeholder="e.g. Apex Medicos" required class="w-full bg-slate-900/80 border border-slate-800 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 focus:outline-none rounded-lg pl-10 pr-3.5 py-2.5 text-xs text-white placeholder-slate-600 transition-all">
-                                    </div>
-                                </div>
-                                <div class="space-y-1.5">
-                                    <label class="block text-[9px] uppercase font-bold tracking-widest text-slate-400">Contact Number</label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-500">
-                                            <i class="fa-solid fa-phone text-xs"></i>
-                                        </span>
-                                        <input type="tel" placeholder="e.g. +91 98765 43210" required class="w-full bg-slate-900/80 border border-slate-800 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 focus:outline-none rounded-lg pl-10 pr-3.5 py-2.5 text-xs text-white placeholder-slate-600 transition-all">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="space-y-1.5">
-                                    <label class="block text-[9px] uppercase font-bold tracking-widest text-slate-400">Corporate Email</label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-500">
-                                            <i class="fa-solid fa-envelope text-xs"></i>
-                                        </span>
-                                        <input type="email" placeholder="e.g. info@apexmedicos.com" required class="w-full bg-slate-900/80 border border-slate-800 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 focus:outline-none rounded-lg pl-10 pr-3.5 py-2.5 text-xs text-white placeholder-slate-600 transition-all">
-                                    </div>
-                                </div>
-                                <div class="space-y-1.5">
-                                    <label class="block text-[9px] uppercase font-bold tracking-widest text-slate-400">Liaison Type Required</label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-500">
-                                            <i class="fa-solid fa-handshake text-xs"></i>
-                                        </span>
-                                        <select required class="w-full bg-slate-900/80 border border-slate-800 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 focus:outline-none rounded-lg pl-10 pr-3.5 py-2.5 text-xs text-slate-400 transition-all cursor-pointer">
-                                            <option value="" disabled selected class="text-slate-600">Select Liaison Option</option>
-                                            <option value="cf" class="text-white bg-slate-900">Carrying &amp; Forwarding (C&amp;F)</option>
-                                            <option value="franchise" class="text-white bg-slate-900">PCD Franchise Partnership</option>
-                                            <option value="wholesale" class="text-white bg-slate-900">Wholesale Stockist Network</option>
-                                            <option value="institutional" class="text-white bg-slate-900">Institutional Supply</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="pt-2">
-                                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 hover:scale-[1.01] text-white py-3 sm:py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md shadow-brand-500/10">
-                                    Submit Trade Application
-                                </button>
-                            </div>
+                            <input type="text" placeholder="Entity / Company Name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs outline-sky-500">
+                            <input type="tel" placeholder="Contact Number" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs outline-sky-500">
+                            <input type="email" placeholder="Corporate Email" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs outline-sky-500">
+                            <select required class="w-full bg-clinical-900 border border-white/10 rounded-xl p-4 text-xs text-slate-400 outline-sky-500">
+                                <option value="" disabled selected>Select Liaison Option</option>
+                                <option value="cf">Carrying & Forwarding (C&F)</option>
+                                <option value="franchise">PCD Franchise Partnership</option>
+                                <option value="wholesale">Wholesale Network</option>
+                            </select>
+                            <button type="submit" class="w-full bg-sky-500 hover:bg-sky-400 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all mt-4">Submit Trade Application</button>
                         </form>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- 6. COMPACT GLOBAL FOOTER -->
-    <footer class="mt-auto bg-brand-900 text-slate-400 py-8 sm:py-16 border-t border-brand-900">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 pb-8 border-b border-brand-600/20 text-xs font-light">
-                <div class="space-y-2 sm:col-span-2 lg:col-span-1">
-                    <div>
-                        <span class="text-white font-extrabold text-lg tracking-tight font-display block uppercase leading-none">
-                            MERITORIOUS
-                        </span>
-                        <span class="text-[8px] tracking-[0.25em] uppercase text-brand-500 font-semibold block mt-1 leading-none font-sans">
-                            PHARMACEUTICALS
-                        </span>
+    <!-- 5. FOOTER -->
+    <footer class="bg-clinical-900 text-slate-400 py-16 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/5">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="1684119015028.jpg" alt="Logo" class="h-9 white-logo-filter">
+                        <span class="text-white font-extrabold text-sm tracking-widest font-display uppercase leading-none">MERITORIOUS</span>
                     </div>
-                    <p class="hidden sm:block leading-relaxed text-slate-400 text-[11px]">
-                        Distributing verified therapeutic and nutraceutical pathways across major Indian clinical zones.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4 sm:col-span-2 lg:col-span-2">
-                    <div>
-                        <h4 class="text-white font-semibold mb-2 sm:mb-4">Formulations</h4>
-                        <ul class="space-y-1.5 sm:space-y-2">
-                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Women's Care</a></li>
-                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Orthopedics</a></li>
-                            <li><a href="products.html" class="hover:text-brand-500 transition-colors text-slate-400">Digestive Care</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-2 sm:mb-4">Corporate</h4>
-                        <ul class="space-y-1.5 sm:space-y-2">
-                            <li><a href="about.html" class="hover:text-brand-500 transition-colors text-slate-400">About Us</a></li>
-                            <li><a href="about.html#why-us" class="hover:text-brand-500 transition-colors text-slate-400">Standards</a></li>
-                            <li><a href="contact.html" class="hover:text-brand-500 transition-colors text-slate-400">Office Contacts</a></li>
-                        </ul>
+                    <p class="text-[11px] leading-relaxed">Leading pharmaceutical marketing and distribution enterprise sourcing from WHO-GMP certified manufacturing sites across India.</p>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="hover:text-sky-400 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                        <a href="#" class="hover:text-sky-400 transition-colors"><i class="fa-brands fa-square-twitter text-lg"></i></a>
                     </div>
                 </div>
-                
-                <div class="sm:col-span-2 lg:col-span-1">
-                    <h4 class="text-white font-semibold mb-2 sm:mb-4">Registered Address</h4>
-                    <p class="leading-relaxed text-slate-400">
-                        E-9, Lower Ground Floor,<br>
-                        Sushant Shopping Arcade, DLF Phase IV,<br>
-                        Gurugram, Haryana 122009
-                    </p>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Segments</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="#" class="hover:text-sky-400">Nutraceuticals</a></li>
+                        <li><a href="#" class="hover:text-sky-400">Orthopedic Care</a></li>
+                        <li><a href="#" class="hover:text-sky-400">Gastroenterology</a></li>
+                        <li><a href="#" class="hover:text-sky-400">Gynecology Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Organization</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="about.html" class="hover:text-sky-400">About Organization</a></li>
+                        <li><a href="products.html" class="hover:text-sky-400">Products Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-sky-400">Contact Desk</a></li>
+                        <li><a href="career.html" class="hover:text-sky-400">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Registered Office</h4>
+                    <p class="text-[11px] leading-relaxed mb-4">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                    <p class="text-[11px] leading-relaxed"><i class="fa-solid fa-envelope mr-2"></i> info@meritoriouspharma.com</p>
                 </div>
             </div>
-
-            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] text-slate-500 font-light text-center md:text-left">
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-500 font-light">
                 <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
-                <p class="max-w-md leading-normal md:text-right">
-                    Disclaimer: Corporate resources intended for healthcare trade professionals. Sourced products must follow direct medical diagnostics.
-                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Trade</a>
+                    <a href="#" class="hover:text-white">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- INTERACTIVE SLIDE-OVER DRAWER -->
-    <div id="inquiry-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
-        <div class="absolute inset-0 overflow-hidden">
-            <div id="drawer-overlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"></div>
-            
-            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-6 sm:pl-10">
-                <div id="drawer-panel" class="pointer-events-auto w-screen max-w-md transform translate-x-full transition-transform duration-300 ease-in-out">
-                    <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-2xl">
-                        <div class="px-6 py-5 sm:py-6 border-b border-brand-100 flex items-center justify-between">
-                            <div>
-                                <h2 class="text-base font-bold text-slate-900 font-display">Commercial Inquiry</h2>
-                                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Product Formulation Desk</p>
-                            </div>
-                            <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-slate-500 rounded-lg">
-                                <i class="fa-solid fa-xmark text-lg"></i>
-                            </button>
-                        </div>
-                        
-                        <form onsubmit="handleDrawerSubmit(event)" class="flex-1 flex flex-col justify-between p-6 space-y-6">
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Selected Subject / Product</label>
-                                    <input type="text" id="drawer-subject" readonly class="w-full bg-slate-50 border border-brand-100 text-slate-700 px-4 py-3 rounded-lg text-xs font-semibold focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Your Name</label>
-                                    <input type="text" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
-                                </div>
-                                <div>
-                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Corporate Email</label>
-                                    <input type="email" required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400">
-                                </div>
-                                <div>
-                                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Message / Requirements</label>
-                                    <textarea rows="4" placeholder="Mention volume requirements, therapeutic category focus..." required class="w-full border border-brand-100 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none px-4 py-3 rounded-lg text-xs placeholder-slate-400"></textarea>
-                                </div>
-                            </div>
-                            <div class="border-t border-brand-100 pt-6">
-                                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-brand-500/10">
-                                    Send Formulation Request
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+    <!-- INQUIRY DRAWER -->
+    <div id="drawer" class="fixed inset-0 z-[60] overflow-hidden hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeDrawer()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-md w-full bg-white shadow-2xl flex flex-col transition-transform">
+            <div class="p-8 border-b flex justify-between items-center bg-slate-50">
+                <h3 class="font-bold font-display text-clinical-800 uppercase tracking-widest text-sm">Product Inquiry Desk</h3>
+                <button onclick="closeDrawer()" class="text-slate-400 hover:text-slate-900"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
+            <form class="p-8 space-y-6 flex-1">
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold uppercase text-slate-400">Selected Subject</label>
+                    <input type="text" id="drawer-subject" readonly class="w-full bg-slate-100 p-4 rounded-xl text-xs font-bold text-sky-600 outline-none">
+                </div>
+                <input type="text" placeholder="Full Contact Name" class="w-full p-4 rounded-xl border border-slate-200 text-sm outline-sky-500" required>
+                <input type="email" placeholder="Corporate/Hospital Email" class="w-full p-4 rounded-xl border border-slate-200 text-sm outline-sky-500" required>
+                <textarea rows="5" placeholder="Please specify your query or trade requirements..." class="w-full p-4 rounded-xl border border-slate-200 text-sm outline-sky-500" required></textarea>
+                <button type="submit" class="w-full bg-clinical-800 text-white py-4 rounded-2xl text-[11px] font-bold uppercase tracking-widest hover:bg-slate-900 transition-all shadow-lg">Submit Inquiry</button>
+            </form>
         </div>
     </div>
 
-    <!-- NEW: FORCED PAYMENT PENDING POPUP -->
-    <div id="payment-popup" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden" role="dialog" aria-modal="true">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl border-2 border-red-500/20 relative animate-float-slow">
-            <!-- Close Button -->
-            <button onclick="closePaymentPopup()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none" aria-label="Close Notification">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            <div class="text-center">
-                <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-red-50 text-red-600 mb-4">
-                    <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-900 font-display mb-2">Account Status: Action Required</h3>
-                <p class="text-xs text-slate-500 font-light leading-relaxed mb-6">
-                    A pending transaction or outstanding balance has been flagged on this project. Please settle the invoice to disable this notice and restore full service.
-                </p>
-                <div class="flex flex-col gap-2">
-                    <button onclick="closePaymentPopup()" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md shadow-red-600/10">
-                        Acknowledge &amp; Dismiss
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script Routing & UI Logic -->
     <script>
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const drawer = document.getElementById('inquiry-drawer');
-        const drawerOverlay = document.getElementById('drawer-overlay');
-        const drawerPanel = document.getElementById('drawer-panel');
-        const drawerSubject = document.getElementById('drawer-subject');
-        
-        hamburgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        }
 
-        function openDrawer(subjectName) {
-            drawerSubject.value = subjectName;
-            drawer.classList.remove('hidden');
-            mobileMenu.classList.add('hidden');
-            setTimeout(() => {
-                drawerOverlay.classList.remove('opacity-0');
-                drawerOverlay.classList.add('opacity-100');
-                drawerPanel.classList.remove('translate-x-full');
-                drawerPanel.classList.add('translate-x-0');
-            }, 10);
+        function openDrawer(subject) {
+            document.getElementById('drawer-subject').value = subject;
+            document.getElementById('drawer').classList.remove('hidden');
         }
 
         function closeDrawer() {
-            drawerOverlay.classList.remove('opacity-100');
-            drawerOverlay.classList.add('opacity-0');
-            drawerPanel.classList.remove('translate-x-0');
-            drawerPanel.classList.add('translate-x-full');
-            setTimeout(() => {
-                drawer.classList.add('hidden');
-            }, 300);
-        }
-
-        drawerOverlay.addEventListener('click', closeDrawer);
-
-        async function handleDrawerSubmit(e) {
-            e.preventDefault();
-            const submitButton = e.target.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.innerText = "Submitting...";
-
-            const inputs = e.target.querySelectorAll('input, textarea');
-            const payload = {
-                formType: "inquiry",
-                sourceForm: "Slide-over Drawer",
-                subject: document.getElementById('drawer-subject').value,
-                name: inputs[1].value,
-                email: inputs[2].value,
-                phone: "N/A",
-                message: inputs[3].value
-            };
-
-            const success = await submitToBackend(payload);
-            if (success) {
-                alert(`Your request regarding ${payload.subject} has been securely logged to our trade desk.`);
-                e.target.reset();
-                closeDrawer();
-            } else {
-                alert("There was an error routing your request. Please try again.");
-            }
-            submitButton.disabled = false;
-            submitButton.innerText = "Send Formulation Request";
-        }
-
-        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbz4eO3i5orjmJEgcy8XWeHGCOTD_9hG4yTZSjWVXhLS-WnI1QEzA7Mrut9JC7BVxOrY/exec";
-
-        async function submitToBackend(payload) {
-            try {
-                await fetch(BACKEND_URL, {
-                    method: "POST",
-                    mode: "no-cors",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
-                });
-                return true;
-            } catch (error) {
-                console.error("Transmission error:", error);
-                return false;
-            }
+            document.getElementById('drawer').classList.add('hidden');
         }
 
         async function handleQuickSubmit(e) {
             e.preventDefault();
-            const submitButton = e.target.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.innerText = "Submitting...";
-
-            const inputs = e.target.querySelectorAll('input, select');
-            const payload = {
-                formType: "liaison",
-                sourceForm: "Homepage Liaison Section",
-                subject: inputs[3].value, 
-                name: inputs[0].value,    
-                phone: inputs[1].value,   
-                email: inputs[2].value,   
-                message: "Liaison Opportunity requested for: " + inputs[3].value
-            };
-
-            const success = await submitToBackend(payload);
-            if (success) {
-                alert("Your trade application has been registered for portfolio curation.");
-                e.target.reset();
-            } else {
-                alert("Submission failed. Please check your network connection.");
-            }
-            submitButton.disabled = false;
-            submitButton.innerText = "Submit Trade Application";
+            alert("Your trade application has been registered for portfolio curation.");
+            e.target.reset();
         }
-
-        // --- PAYMENT POPUP SCRIPTING ---
-        const paymentPopup = document.getElementById('payment-popup');
-        let paymentTimer;
-
-        function showPaymentPopup() {
-            paymentPopup.classList.remove('hidden');
-        }
-
-        function closePaymentPopup() {
-            paymentPopup.classList.add('hidden');
-            // Clear any outstanding timers and queue the popup to show again in 30 seconds (30000ms)
-            clearTimeout(paymentTimer);
-            paymentTimer = setTimeout(showPaymentPopup, 30000);
-        }
-
-        // Show the popup 2 seconds after the page loads
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(showPaymentPopup, 2000);
-        });
     </script>
 </body>
 </html>
