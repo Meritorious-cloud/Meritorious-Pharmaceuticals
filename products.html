@@ -30,21 +30,14 @@
     </script>
 
     <style>
-        body { 
-            background-color: #fafaf9; 
-            background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
-            background-size: 24px 24px;
-            letter-spacing: -0.01em; 
-        }
-
-        /* THE ADDED BACKGROUND PATTERN FOR PRODUCT SECTION */
-        .product-section-pattern {
+        /* THE GEOMETRIC TRELLIS PATTERN BACKGROUND */
+        .trellis-pattern {
             background-color: #fafaf9;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23003a6d' stroke-opacity='0.04' stroke-width='1'%3E%3Cpath d='M0 50 L25 25 L50 50 L75 25 L100 50 L100 100 L0 100 Z'/%3E%3Cpath d='M0 0 L25 25 L50 0 L75 25 L100 0'/%3E%3Cpath d='M50 0 L50 100'/%3E%3Cpath d='M25 25 L25 75'/%3E%3Cpath d='M75 25 L75 75'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='120' viewBox='0 0 80 120'%3E%3Cg fill='none' stroke='%232d4f3e' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M0 30 L20 0 L40 30 L20 60 Z'/%3E%3Cpath d='M40 30 L60 0 L80 30 L60 60 Z'/%3E%3Cpath d='M0 90 L20 60 L40 90 L20 120 Z'/%3E%3Cpath d='M40 90 L60 60 L80 90 L60 120 Z'/%3E%3Cpath d='M20 60 L40 30 L60 60 L40 90 Z'/%3E%3C/g%3E%3C/svg%3E");
         }
 
-        .white-logo-filter { 
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); 
+        body { 
+            letter-spacing: -0.01em; 
         }
 
         .combined-hero {
@@ -81,7 +74,7 @@
             position: absolute;
             inset: 0;
             opacity: 0.4;
-            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2352b788' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3C/g%3E%3C/svg%3E");
+            /* Applying trellis overlay on hero */
         }
 
         .product-image-main { filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08)); }
@@ -98,20 +91,22 @@
             background: linear-gradient(135deg, #2d4f3e 0%, #1a3026 100%);
             color: white;
         }
+
+        .white-logo-filter { filter: brightness(0) invert(1); }
     </style>
 </head>
-<body class="text-slate-700 font-sans antialiased min-h-screen flex flex-col">
+<body class="text-slate-700 font-sans antialiased min-h-screen flex flex-col trellis-pattern">
 
     <!-- HEADER & HERO COMBINED -->
     <div class="combined-hero border-b border-slate-100">
-        <div class="hero-pattern"></div>
+        <div class="absolute inset-0 trellis-pattern opacity-40"></div>
 
         <header class="relative z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20 sm:h-28">
                     <!-- Logo -->
                     <a href="index.html" class="flex items-center space-x-2 sm:space-x-4 min-w-0">
-                        <img src="168411901502.png" alt="Logo" class="h-10 sm:h-14 w-auto white-logo-filter shrink-0">
+                        <img src="168411901502.png" alt="Logo" class="h-10 sm:h-14 w-auto shrink-0">
                         <div class="border-l border-slate-200 pl-3 sm:pl-4 min-w-0">
                             <span class="text-[11px] sm:text-[15px] font-extrabold tracking-[0.2em] text-clinical-800 block leading-none font-display uppercase truncate">MERITORIOUS</span>
                             <span class="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans truncate">PHARMACEUTICALS</span>
@@ -128,7 +123,7 @@
                         <a href="career.html" class="hover:text-clinical-500 transition-all">Career</a>
                     </nav>
 
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 relative z-50">
                         <button onclick="window.location.hash=''" id="back-button" class="hidden border-2 border-clinical-800 text-clinical-800 px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-clinical-800 hover:text-white transition-all">
                             <i class="fa-solid fa-arrow-left mr-2"></i> Back
                         </button>
@@ -171,9 +166,9 @@
         </div>
     </div>
 
-    <!-- FILTER BAR + PRODUCTS GRID (Pattern Applied Here) -->
-    <div id="view-grid-body" class="product-section-pattern">
-        <section class="py-16 relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- FILTER BAR + PRODUCTS GRID -->
+    <div id="view-grid-body" class="relative z-10">
+        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/80 backdrop-blur-md p-3 rounded-full shadow-2xl shadow-slate-200/50 flex flex-wrap justify-center gap-2 mb-16 border border-white">
                 <button onclick="filterProducts('all', this)" class="filter-btn px-8 py-3.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest transition-all bg-clinical-800 text-white shadow-xl">All Segments</button>
                 <button onclick="filterProducts('ortho', this)" class="filter-btn px-8 py-3.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest transition-all text-slate-500 hover:bg-slate-50">Orthopedic</button>
@@ -189,310 +184,284 @@
     </div>
 
     <!-- DETAIL VIEW -->
-    <div id="view-detail" class="hidden flex-grow py-16 px-4 sm:px-6">
+    <div id="view-detail" class="hidden flex-grow py-16 px-4 sm:px-6 relative z-10">
         <div id="detail-container" class="max-w-6xl mx-auto">
             <!-- Dynamic Content -->
         </div>
     </div>
 
-    <!-- UPDATED FOOTER: Restored size and style from 1st code, updated to Sage theme -->
-<footer class="bg-clinical-900 text-slate-400 py-16 mt-auto border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/5">
-            
-            <!-- Column 1: Brand & Bio -->
-            <div class="space-y-4">
-                <div class="flex items-center space-x-3">
-                    <!-- white-logo-filter makes your green logo appear white for the dark footer -->
-                    <img src="168411901502.png" alt="Logo" class="h-9 white-logo-filter">
-                    <div class="flex flex-col border-l-2 border-clinical-500 pl-3">
-                        <span class="text-white font-extrabold text-sm tracking-widest font-display uppercase leading-none">MERITORIOUS</span>
-                        <span class="text-[8px] tracking-[0.25em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+    <!-- FOOTER -->
+    <footer class="bg-clinical-900 text-slate-400 py-16 mt-auto border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/5">
+                
+                <!-- Logo and Bio -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="168411901502.png" alt="Logo" class="h-9 white-logo-filter">
+                        <div class="flex flex-col border-l-2 border-clinical-500 pl-3">
+                            <span class="text-white font-extrabold text-sm tracking-widest font-display uppercase leading-none">MERITORIOUS</span>
+                            <span class="text-[8px] tracking-[0.25em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+                        </div>
                     </div>
+                    <p class="text-[11px] leading-relaxed">Leading pharmaceutical marketing and distribution enterprise sourcing from WHO-GMP certified manufacturing sites across India.</p>
                 </div>
-                <p class="text-[11px] leading-relaxed">Leading pharmaceutical marketing and distribution enterprise sourcing from WHO-GMP certified manufacturing sites across India.</p>
-                <div class="flex space-x-4 pt-4">
-                    <a href="#" class="hover:text-clinical-500 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
-                    <a href="#" class="hover:text-clinical-500 transition-colors"><i class="fa-brands fa-square-twitter text-lg"></i></a>
+
+                <!-- Segments -->
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Segments</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="products.html#ortho" class="hover:text-clinical-500 transition-colors">Orthopedic Care</a></li>
+                        <li><a href="products.html#gynecology" class="hover:text-clinical-500 transition-colors">Gynecology</a></li>
+                        <li><a href="products.html#gastro" class="hover:text-clinical-500 transition-colors">Gastroenterology</a></li>
+                        <li><a href="products.html#neuro" class="hover:text-clinical-500 transition-colors">Neuro Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Organization (Updated with Sitemap and Terms) -->
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Organization</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="about.html" class="hover:text-clinical-500 transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-clinical-500 transition-colors">Contact Desk</a></li>
+                        <li><a href="career.html" class="hover:text-clinical-500 transition-colors">Careers</a></li>
+                        <li><a href="sitemap.html" class="hover:text-clinical-500 transition-colors">Sitemap</a></li>
+                        <li><a href="terms.html" class="hover:text-clinical-500 transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Office -->
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Office</h4>
+                    <p class="text-[11px] leading-relaxed mb-4">DLF Phase IV, Gurugram, Haryana 122009</p>
+                    <p class="text-[11px] flex items-center leading-relaxed"><i class="fa-solid fa-envelope mr-2 text-clinical-500"></i> meritoriouspharmaceuticals2021@gmail.com</p>
                 </div>
             </div>
 
-            <!-- Column 2: Segments -->
-            <div>
-                <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Segments</h4>
-                <ul class="space-y-3 text-[11px]">
-                    <li><a href="#" class="hover:text-clinical-500 transition-colors">Nutraceuticals</a></li>
-                    <li><a href="#" class="hover:text-clinical-500 transition-colors">Orthopedic Care</a></li>
-                    <li><a href="#" class="hover:text-clinical-500 transition-colors">Gastroenterology</a></li>
-                    <li><a href="#" class="hover:text-clinical-500 transition-colors">Gynecology Support</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Organization -->
-            <div>
-                <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Organization</h4>
-                <ul class="space-y-3 text-[11px]">
-                    <li><a href="about.html" class="hover:text-clinical-500 transition-colors">About Organization</a></li>
-                    <li><a href="products.html" class="hover:text-clinical-500 transition-colors">Products Portfolio</a></li>
-                    <li><a href="contact.html" class="hover:text-clinical-500 transition-colors">Contact Desk</a></li>
-                    <li><a href="career.html" class="hover:text-clinical-500 transition-colors">Careers</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Address -->
-            <div>
-                <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Registered Office</h4>
-                <p class="text-[11px] leading-relaxed mb-4">E-9, Lower Ground Floor, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
-                <p class="text-[11px] leading-relaxed"><i class="fa-solid fa-envelope mr-2 text-clinical-500"></i> meritoriouspharmaceuticals2021@gmail.com</p>
+            <!-- Bottom Copyright Bar (Updated with Legal Links) -->
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Bottom Bar -->
-        <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-widest">
-            <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white transition-colors">Terms of Trade</a>
-                <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-    <!-- INQUIRY DRAWER (Right Side Desktop / Popup Mobile) -->
+    <!-- INQUIRY DRAWER -->
 <div id="drawer" class="fixed inset-0 z-[60] hidden flex items-center justify-center lg:items-stretch lg:justify-end">
-    <!-- Backdrop -->
     <div class="absolute inset-0 bg-clinical-900/60 backdrop-blur-md" onclick="closeDrawer()"></div>
-    
-    <!-- Drawer/Popup Box -->
-    <div class="relative bg-white shadow-2xl rounded-[2rem] flex flex-col transition-all duration-300 
-                w-[92%] max-w-lg h-auto max-h-[90vh] 
-                lg:h-[calc(100%-2rem)] lg:w-full lg:max-w-md lg:m-4 lg:rounded-[2.5rem] overflow-hidden">
-        
-        <div class="p-8 lg:p-10 border-b flex justify-between items-center bg-white">
+    <div class="relative bg-white shadow-2xl rounded-[2rem] flex flex-col transition-all duration-300 w-[92%] max-w-lg lg:h-[calc(100%-2rem)] lg:max-w-md lg:m-4 lg:rounded-[2.5rem] overflow-hidden">
+        <div class="p-8 border-b flex justify-between items-center bg-white">
             <h3 class="font-black font-display text-clinical-800 uppercase tracking-widest text-xs">Product Inquiry</h3>
-            <button onclick="closeDrawer()" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-clinical-800 transition-colors">
+            <button onclick="closeDrawer()" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-clinical-800">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-        
-        <form id="inquiryForm" class="p-8 lg:p-10 space-y-5 flex-1 overflow-y-auto">
+        <form id="inquiryForm" class="p-8 space-y-5 flex-1 overflow-y-auto">
             <div class="space-y-2">
-                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Selected Formulation</label>
-                <input type="text" id="drawer-subject" name="Medicine" readonly class="w-full bg-slate-50 p-5 rounded-2xl text-xs font-bold text-clinical-500 outline-none border border-slate-100">
+                <label class="text-[10px] font-black uppercase text-slate-400">Medicine Formulation</label>
+                <input type="text" id="drawer-subject" name="Medicine" readonly class="w-full bg-slate-50 p-5 rounded-2xl text-xs font-bold text-clinical-500 border border-slate-100 outline-none">
             </div>
-            
-            <input type="text" id="userName" name="Name" placeholder="Your Name" class="w-full p-5 rounded-2xl bg-slate-50 border border-transparent focus:border-clinical-500 focus:bg-white text-sm outline-none transition-all" required>
-            <input type="email" id="userEmail" name="Email" placeholder="Email Address" class="w-full p-5 rounded-2xl bg-slate-50 border border-transparent focus:border-clinical-500 focus:bg-white text-sm outline-none transition-all" required>
-            <textarea id="userMessage" name="Message" rows="4" placeholder="Specify your requirements..." class="w-full p-5 rounded-2xl bg-slate-50 border border-transparent focus:border-clinical-500 focus:bg-white text-sm outline-none transition-all" required></textarea>
-            
-            <button type="submit" id="submitBtn" class="w-full btn-premium py-6 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] hover:scale-[1.02] active:scale-95 transition-all">
-                Send Inquiry
-            </button>
+            <input type="text" name="Name" placeholder="Your Name" class="w-full p-5 rounded-2xl bg-slate-50 border border-transparent focus:border-clinical-500 outline-none transition-all" required>
+            <input type="email" name="Email" placeholder="Email Address" class="w-full p-5 rounded-2xl bg-slate-50 border border-transparent focus:border-clinical-500 outline-none transition-all" required>
+            <textarea name="Message" rows="4" placeholder="Specify your trade requirements..." class="w-full p-5 rounded-2xl bg-slate-50 border border-transparent focus:border-clinical-500 outline-none transition-all" required></textarea>
+            <button type="submit" id="submitBtn" class="w-full btn-premium py-6 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] transition-all">Send Inquiry</button>
         </form>
     </div>
 </div>
 
     <script>
-    const products = [
-        { id: 'mgbliss-d3', name: 'MGBLISS-D3', image: 'MGBLISS-D3.png', cat: 'ortho', tag: 'Magnesium + D3 Tablets', packaging: '10x1x10 Tablets', comp: [['Magnesium Glycine Complex', '250 mg'], ['Vitamin D3', '1000 IU']], benefits: ['Reduces pregnancy-induced leg cramps.', 'Optimizes bone health and calcium absorption.'], link: 'https://www.1mg.com/otc/mgbliss-d3-tablet-otc1142891' },
-        { id: 'd-lozy', name: 'D-LOZY Nano Shot', image: 'D-LOZY.png', cat: 'neuro', tag: 'Cholecalciferol 60K', packaging: '4x5ml Ready-Shot', comp: [['Vitamin D3 (Cholecalciferol)', '60,000 IU']], benefits: ['Highest bioavailability nano-emulsion.', 'Sugar-free Butterscotch formulation.'], link: 'https://www.1mg.com/drugs/d-lozy-nano-shot-5ml-each-825229' },
-        { id: 'eso-d', name: 'ESO-D SR', image: 'ESO-D.png', cat: 'gastro', tag: 'Esomeprazole + Domperidone', packaging: '10x10 Capsules', comp: [['Esomeprazole', '40 mg'], ['Domperidone (SR)', '30 mg']], benefits: ['Effective GERD and acidity control.', 'Prokinetic action for improved digestion.'], link: 'https://www.1mg.com/drugs/eso-d-capsule-sr-823785' },
-        { id: 'cl-24', name: 'CL 24', image: 'CL 24.png', cat: 'gynecology', tag: 'Advanced Nutrient Combo', packaging: '10x1x15 Tablets', comp: [['Calcium Carbonate', '1250 mg'], ['Vitamin D3', '2000 IU'], ['Methylcobalamin', '1500 mcg'], ['L-Methylfolate Calcium', '1 mg'], ['Pyridoxal-5-Phosphate', '20 mg']], benefits: ['Comprehensive metabolic bone support.', 'Active folate and B12 for nerve health.'], link: 'https://www.1mg.com/drugs/cl-24-tablet-898769' },
-        { id: 'streptolac-ibs', name: 'STREPTOLAC-IBS', image: 'STREPTOLAC-IBS.png', cat: 'gastro', tag: 'IBS Specialty', packaging: '10x10 Capsules', comp: [['Melatonin', '3 mg'], ['Pre-biotics & Pro-biotics', '4.4 Billion']], benefits: ['Manages Gut-Brain axis disturbances.', 'Relieves chronic bloating and abdominal pain.'], link: 'https://www.1mg.com/otc/streptolac-ibs-capsule-otc823752' },
-        { id: 'stretch-bliss', name: 'STRETCH BLISS', image: 'STRETCH BLISS.png', cat: 'gynecology', tag: 'Stretch Marks Cream', packaging: '75ml Squeeze Tube', comp: [['Marine Collagen Peptide', 'Active'], ['Sea Buckthorn & Red Algae', 'Extract'], ['Shea Butter & Primrose Oil', 'Active'], ['Vitamin A & E', 'Active']], benefits: ['Minimizes stretch marks visibility.', 'Enhances skin elasticity during pregnancy.'], link: 'https://www.1mg.com/otc/stretch-bliss-intensive-stretch-marks-cream-75gm-each-otc1092620' },
-        { id: 'axonac-mr', name: 'AXONAC-MR', image: 'Axonac-MR.png', cat: 'ortho', tag: 'Etoricoxib + Thiocolchicoside', packaging: '10x10 Tablets', comp: [['Etoricoxib', '60 mg'], ['Thiocolchicoside', '4 mg']], benefits: ['Rapid relief from musculoskeletal spasms.', 'Potent anti-inflammatory action.'], link: 'https://www.1mg.com/drugs/axonac-mr-tablet-823793' },
-        { id: 'polmanac', name: 'Polmanac', image: 'Polmanac.png', cat: 'ortho', tag: 'Polmacoxib 2 mg', packaging: '10x10 Capsules', comp: [['Polmacoxib', '2 mg']], benefits: ['Selective Cox-2 Inhibitor.', 'Superior OA pain management.'], link: 'https://www.1mg.com/drugs/polmanac-capsule-1087611' },
-        { id: 'cl-plus', name: 'CL Plus', image: 'CL Plus.png', cat: 'ortho', tag: 'Bone & Nerve Protector', packaging: '10x1x10 Softgels', comp: [['Calcium Carbonate', '500 mg'], ['Calcitriol', '0.25 mcg'], ['Omega-3 Fatty Acids (EPA/DHA)', '180/120 mg'], ['Methylcobalamin', '1500 mcg'], ['Folic Acid', '800 mcg'], ['Boron', '1.5 mg']], benefits: ['Fracture protection and bone density.', 'Nerve repair and antioxidant support.'], link: 'https://www.1mg.com/drugs/cl-plus-soft-gelatin-capsule-328140' },
-        { id: 'clk2', name: 'CLK2', image: 'CLK2.png', cat: 'ortho', tag: 'Osteoporosis Specialist', packaging: '10x10 Tablets', comp: [['Calcium Citrate Malate', '1000 mg'], ['Calcitriol', '0.25 mcg'], ['Vitamin K2-7', '50 mcg'], ['Magnesium Hydroxide', '100 mg'], ['Zinc', '7.5 mg']], benefits: ['Directs calcium to bone matrix.', 'Optimizes bone mineralization.'], link: 'https://www.1mg.com/otc/cl-k2-tablet-otc506594' },
-        { id: 'nervipam', name: 'Nervipam', image: 'Nervipam.png', cat: 'neuro', tag: 'PEA + Nucleotides', packaging: '10 CR Tablets', comp: [['Palmitoylethanolamide (PEA)', '400 mg'], ['Cytidine-5-Monophosphate', '15 mg'], ['Uridine-5-Monophosphate', '9 mg'], ['Folic Acid', '64 mcg']], benefits: ['Addresses neuropathic pain.', 'Stabilizes glia and reduces inflammation.'], link: 'https://www.1mg.com/otc/nervipam-tablet-cr-otc1144526' },
-        { id: 'tolbliss', name: 'Tolbliss', image: 'Tolbliss.jpeg', cat: 'ortho', tag: 'Tolperisone Hydrochloride', packaging: '10x10 Alu-Alu', comp: [['Tolperisone Hydrochloride', '450 mg SR']], benefits: ['Centrally acting muscle relaxant.', 'Non-sedating formulation.'], link: 'https://www.1mg.com/drugs/tolbliss-tablet-sr-1129224' },
-        { id: 'zeptide', name: 'Zeptide', image: 'Zeptide.png', cat: 'ortho', tag: 'Bone Mineral Complex', packaging: '10x1x10 Softgels', comp: [['Calcium Carbonate', '600 mg'], ['Collagen Peptide-II', '40 mg'], ['Vitamin C', '30 mg'], ['Vitamin D3', '1000 IU'], ['Magnesium', '30 mg'], ['Zinc', '7.5 mg'], ['Manganese', '1.8 mg'], ['Copper', '0.5 mg']], benefits: ['Regenerates articular cartilage.', 'Improves joint mobility.'], link: 'https://www.1mg.com/drugs/zeptide-softgel-capsule-823759' },
-        { id: 'pyroraft', name: 'Pyroraft Suspension', image: 'Pyroraft Suspension.png', cat: 'gastro', tag: 'Alginate Raft Barrier', packaging: '200ml Suspension', comp: [['Sodium Alginate', '250 mg'], ['Sodium Bicarbonate', '133.5 mg'], ['Calcium Carbonate', '80 mg']], benefits: ['Instant acid reflux relief.', 'Creates physical raft barrier.'], link: 'https://www.1mg.com/drugs/pyroraft-oral-suspension-mint-sugar-free-1087606' },
-        { id: 'abstat', name: 'Abstat', image: 'Abstat.png', cat: 'neuro', tag: 'Acebrophylline 200 SR', packaging: '10x10 SR Tablets', comp: [['Acebrophylline', '200 mg SR']], benefits: ['Dual mucolytic and bronchodilator.', 'Relieves chest congestion.'], link: 'https://www.1mg.com/drugs/abstat-tablet-sr-898776' },
-        { id: 'tofaday', name: 'Tofaday', image: 'Tofaday.png', cat: 'ortho', tag: 'JAK Inhibitor', packaging: '10x10 Tablets', comp: [['Tofacitinib', '5 mg']], benefits: ['Advanced Rheumatoid Arthritis treatment.', 'Blocks JAK signaling pathway.'], link: 'https://www.1mg.com/drugs/tofaday-tablet-898771' }
-    ];
+        const products = [
+            { id: 'mgbliss-d3', name: 'MGBLISS-D3', image: 'MGBLISS-D3.png', cat: 'ortho', tag: 'Magnesium + D3 Tablets', packaging: '10x1x10 Tablets', comp: [['Magnesium Glycine Complex', '250 mg'], ['Vitamin D3', '1000 IU']], benefits: ['Reduces pregnancy-induced leg cramps.', 'Optimizes bone health and calcium absorption.'], link: 'https://www.1mg.com/otc/mgbliss-d3-tablet-otc1142891' },
+            { id: 'd-lozy', name: 'D-LOZY Nano Shot', image: 'D-LOZY.png', cat: 'neuro', tag: 'Cholecalciferol 60K', packaging: '4x5ml Ready-Shot', comp: [['Vitamin D3 (Cholecalciferol)', '60,000 IU']], benefits: ['Highest bioavailability nano-emulsion.', 'Sugar-free Butterscotch formulation.'], link: 'https://www.1mg.com/drugs/d-lozy-nano-shot-5ml-each-825229' },
+            { id: 'eso-d', name: 'ESO-D SR', image: 'ESO-D.png', cat: 'gastro', tag: 'Esomeprazole + Domperidone', packaging: '10x10 Capsules', comp: [['Esomeprazole', '40 mg'], ['Domperidone (SR)', '30 mg']], benefits: ['Effective GERD and acidity control.', 'Prokinetic action for improved digestion.'], link: 'https://www.1mg.com/drugs/eso-d-capsule-sr-823785' },
+            { id: 'cl-24', name: 'CL 24', image: 'CL 24.png', cat: 'gynecology', tag: 'Advanced Nutrient Combo', packaging: '10x1x15 Tablets', comp: [['Calcium Carbonate', '1250 mg'], ['Vitamin D3', '2000 IU'], ['Methylcobalamin', '1500 mcg'], ['L-Methylfolate Calcium', '1 mg'], ['Pyridoxal-5-Phosphate', '20 mg']], benefits: ['Comprehensive metabolic bone support.', 'Active folate and B12 for nerve health.'], link: 'https://www.1mg.com/drugs/cl-24-tablet-898769' },
+            { id: 'streptolac-ibs', name: 'STREPTOLAC-IBS', image: 'STREPTOLAC-IBS.png', cat: 'gastro', tag: 'IBS Specialty', packaging: '10x10 Capsules', comp: [['Melatonin', '3 mg'], ['Pre-biotics & Pro-biotics', '4.4 Billion']], benefits: ['Manages Gut-Brain axis disturbances.', 'Relieves chronic bloating and abdominal pain.'], link: 'https://www.1mg.com/otc/streptolac-ibs-capsule-otc823752' },
+            { id: 'stretch-bliss', name: 'STRETCH BLISS', image: 'STRETCH BLISS.png', cat: 'gynecology', tag: 'Stretch Marks Cream', packaging: '75ml Squeeze Tube', comp: [['Marine Collagen Peptide', 'Active'], ['Sea Buckthorn & Red Algae', 'Extract'], ['Shea Butter & Primrose Oil', 'Active'], ['Vitamin A & E', 'Active']], benefits: ['Minimizes stretch marks visibility.', 'Enhances skin elasticity during pregnancy.'], link: 'https://www.1mg.com/otc/stretch-bliss-intensive-stretch-marks-cream-75gm-each-otc1092620' },
+            { id: 'axonac-mr', name: 'AXONAC-MR', image: 'Axonac-MR.png', cat: 'ortho', tag: 'Etoricoxib + Thiocolchicoside', packaging: '10x10 Tablets', comp: [['Etoricoxib', '60 mg'], ['Thiocolchicoside', '4 mg']], benefits: ['Rapid relief from musculoskeletal spasms.', 'Potent anti-inflammatory action.'], link: 'https://www.1mg.com/drugs/axonac-mr-tablet-823793' },
+            { id: 'polmanac', name: 'Polmanac', image: 'Polmanac.png', cat: 'ortho', tag: 'Polmacoxib 2 mg', packaging: '10x10 Capsules', comp: [['Polmacoxib', '2 mg']], benefits: ['Selective Cox-2 Inhibitor.', 'Superior OA pain management.'], link: 'https://www.1mg.com/drugs/polmanac-capsule-1087611' },
+            { id: 'cl-plus', name: 'CL Plus', image: 'CL Plus.png', cat: 'ortho', tag: 'Bone & Nerve Protector', packaging: '10x1x10 Softgels', comp: [['Calcium Carbonate', '500 mg'], ['Calcitriol', '0.25 mcg'], ['Omega-3 Fatty Acids (EPA/DHA)', '180/120 mg'], ['Methylcobalamin', '1500 mcg'], ['Folic Acid', '800 mcg'], ['Boron', '1.5 mg']], benefits: ['Fracture protection and bone density.', 'Nerve repair and antioxidant support.'], link: 'https://www.1mg.com/drugs/cl-plus-soft-gelatin-capsule-328140' },
+            { id: 'clk2', name: 'CLK2', image: 'CLK2.png', cat: 'ortho', tag: 'Osteoporosis Specialist', packaging: '10x10 Tablets', comp: [['Calcium Citrate Malate', '1000 mg'], ['Calcitriol', '0.25 mcg'], ['Vitamin K2-7', '50 mcg'], ['Magnesium Hydroxide', '100 mg'], ['Zinc', '7.5 mg']], benefits: ['Directs calcium to bone matrix.', 'Optimizes bone mineralization.'], link: 'https://www.1mg.com/otc/cl-k2-tablet-otc506594' },
+            { id: 'nervipam', name: 'Nervipam', image: 'Nervipam.png', cat: 'neuro', tag: 'PEA + Nucleotides', packaging: '10 CR Tablets', comp: [['Palmitoylethanolamide (PEA)', '400 mg'], ['Cytidine-5-Monophosphate', '15 mg'], ['Uridine-5-Monophosphate', '9 mg'], ['Folic Acid', '64 mcg']], benefits: ['Addresses neuropathic pain.', 'Stabilizes glia and reduces inflammation.'], link: 'https://www.1mg.com/otc/nervipam-tablet-cr-otc1144526' },
+            { id: 'tolbliss', name: 'Tolbliss', image: 'Tolbliss.jpeg', cat: 'ortho', tag: 'Tolperisone Hydrochloride', packaging: '10x10 Alu-Alu', comp: [['Tolperisone Hydrochloride', '450 mg SR']], benefits: ['Centrally acting muscle relaxant.', 'Non-sedating formulation.'], link: 'https://www.1mg.com/drugs/tolbliss-tablet-sr-1129224' },
+            { id: 'zeptide', name: 'Zeptide', image: 'Zeptide.png', cat: 'ortho', tag: 'Bone Mineral Complex', packaging: '10x1x10 Softgels', comp: [['Calcium Carbonate', '600 mg'], ['Collagen Peptide-II', '40 mg'], ['Vitamin C', '30 mg'], ['Vitamin D3', '1000 IU'], ['Magnesium', '30 mg'], ['Zinc', '7.5 mg'], ['Manganese', '1.8 mg'], ['Copper', '0.5 mg']], benefits: ['Regenerates articular cartilage.', 'Improves joint mobility.'], link: 'https://www.1mg.com/drugs/zeptide-softgel-capsule-823759' },
+            { id: 'pyroraft', name: 'Pyroraft Suspension', image: 'Pyroraft Suspension.png', cat: 'gastro', tag: 'Alginate Raft Barrier', packaging: '200ml Suspension', comp: [['Sodium Alginate', '250 mg'], ['Sodium Bicarbonate', '133.5 mg'], ['Calcium Carbonate', '80 mg']], benefits: ['Instant acid reflux relief.', 'Creates physical raft barrier.'], link: 'https://www.1mg.com/drugs/pyroraft-oral-suspension-mint-sugar-free-1087606' },
+            { id: 'abstat', name: 'Abstat', image: 'Abstat.png', cat: 'neuro', tag: 'Acebrophylline 200 SR', packaging: '10x10 SR Tablets', comp: [['Acebrophylline', '200 mg SR']], benefits: ['Dual mucolytic and bronchodilator.', 'Relieves chest congestion.'], link: 'https://www.1mg.com/drugs/abstat-tablet-sr-898776' },
+            { id: 'tofaday', name: 'Tofaday', image: 'Tofaday.png', cat: 'ortho', tag: 'JAK Inhibitor', packaging: '10x10 Tablets', comp: [['Tofacitinib', '5 mg']], benefits: ['Advanced Rheumatoid Arthritis treatment.', 'Blocks JAK signaling pathway.'], link: 'https://www.1mg.com/drugs/tofaday-tablet-898771' }
+        ];
 
-    // MOBILE MENU TOGGLE
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        menu.classList.toggle('hidden');
-        if(menu.classList.contains('hidden')) {
-            icon.classList.replace('fa-xmark', 'fa-bars');
-        } else {
-            icon.classList.replace('fa-bars', 'fa-xmark');
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')) icon.classList.replace('fa-xmark', 'fa-bars');
+            else icon.classList.replace('fa-bars', 'fa-xmark');
         }
-    }
 
-    // INQUIRY DRAWER LOGIC
-function openDrawer(subject = 'General Inquiry') {
-    document.getElementById('drawer-subject').value = subject;
-    const drawer = document.getElementById('drawer');
-    drawer.classList.remove('hidden');
-    drawer.classList.add('flex'); // Ensures centering works on mobile
-    document.body.style.overflow = 'hidden'; 
-}
+        function openDrawer(subject = 'General Inquiry') {
+            document.getElementById('drawer-subject').value = subject;
+            const drawer = document.getElementById('drawer');
+            drawer.classList.remove('hidden');
+            drawer.classList.add('flex'); 
+            document.body.style.overflow = 'hidden'; 
+        }
 
-function closeDrawer() {
-    const drawer = document.getElementById('drawer');
-    drawer.classList.add('hidden');
-    drawer.classList.remove('flex');
-    document.body.style.overflow = 'auto';
-}
+        function closeDrawer() {
+            const drawer = document.getElementById('drawer');
+            drawer.classList.add('hidden');
+            drawer.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
 
-    // PRODUCT RENDERING
-    function renderGrid(filter = 'all') {
-    const grid = document.getElementById('products-grid');
-    grid.innerHTML = '';
-    products.forEach(p => {
-        if(filter === 'all' || p.cat === filter) {
-            grid.innerHTML += `
-                <div onclick="window.location.hash = '${p.id}'" class="glass-card p-8 rounded-[2.5rem] cursor-pointer group relative">
-                    <div class="absolute top-8 right-8 h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-clinical-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </div>
-                    <span class="text-[9px] font-black uppercase text-clinical-500 tracking-widest mb-6 block">${p.cat}</span>
-                    <h3 class="text-xl font-black text-clinical-800 font-display leading-tight">${p.name}<sup>™</sup></h3>
-                    <p class="text-[10px] font-bold text-slate-400 uppercase mt-2 tracking-widest">${p.tag}</p>
-                    
-                    <!-- FIXED SECTION BELOW: Removed opacity-0 and group-hover:opacity-100 -->
-                    <div class="mt-10 flex items-center text-[10px] font-black text-clinical-800 uppercase tracking-[0.2em]">
-                        <span>Explore Details</span>
-                        <div class="ml-3 h-px w-8 bg-clinical-500 transition-all group-hover:w-12"></div>
+        function renderGrid(filter = 'all') {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+            products.forEach(p => {
+                if(filter === 'all' || p.cat === filter) {
+                    grid.innerHTML += `
+                        <div onclick="window.location.hash = '${p.id}'" class="glass-card p-8 rounded-[2.5rem] cursor-pointer group relative">
+                            <div class="absolute top-8 right-8 h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-clinical-500 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </div>
+                            <span class="text-[9px] font-black uppercase text-clinical-500 tracking-widest mb-6 block">${p.cat}</span>
+                            <h3 class="text-xl font-black text-clinical-800 font-display leading-tight">${p.name}<sup>™</sup></h3>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase mt-2 tracking-widest">${p.tag}</p>
+                            <div class="mt-10 flex items-center text-[10px] font-black text-clinical-800 uppercase tracking-[0.2em]">
+                                <span>Details</span>
+                                <div class="ml-3 h-px w-8 bg-clinical-500 transition-all group-hover:w-12"></div>
+                            </div>
+                        </div>`;
+                }
+            });
+        }
+
+        function filterProducts(cat, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('bg-clinical-800', 'text-white', 'shadow-xl');
+                b.classList.add('text-slate-500', 'hover:bg-slate-50');
+            });
+            btn.classList.add('bg-clinical-800', 'text-white', 'shadow-xl');
+            renderGrid(cat);
+        }
+
+        function showDetail(id) {
+            const p = products.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('view-grid').classList.add('hidden');
+            document.getElementById('view-grid-body').classList.add('hidden');
+            document.getElementById('view-detail').classList.remove('hidden');
+            document.getElementById('nav-links').classList.add('hidden');
+            document.getElementById('back-button').classList.remove('hidden');
+            document.getElementById('inquiry-desk-btn').classList.add('hidden');
+
+            const compHtml = p.comp.map(c => `<tr><td class="px-8 py-5 font-bold text-slate-700">${c[0]}</td><td class="px-8 py-5 text-right font-mono font-bold text-clinical-500">${c[1]}</td></tr>`).join('');
+            const benefitsHtml = p.benefits.map(b => `<li class="flex items-start bg-slate-50 p-5 rounded-2xl"><i class="fa-solid fa-circle-check text-clinical-500 mr-4 mt-1"></i><span class="text-slate-600 font-medium">${b}</span></li>`).join('');
+
+            document.getElementById('detail-container').innerHTML = `
+                <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
+                    <div class="grid grid-cols-1 lg:grid-cols-12">
+                        <div class="lg:col-span-5 bg-slate-50/50 p-12 flex items-center justify-center border-r">
+                            <img src="${p.image}" alt="${p.name}" class="product-image-main max-h-[450px] w-auto">
+                        </div>
+                        <div class="lg:col-span-7 p-8 sm:p-20">
+                            <span class="text-[10px] font-black tracking-[0.4em] uppercase text-clinical-500 block mb-4">${p.cat}</span>
+                            <h2 class="text-3xl sm:text-6xl font-black font-display text-clinical-800 leading-tight">${p.name}<sup>™</sup></h2>
+                            <div class="mt-14 space-y-14">
+                                <div><table class="w-full text-sm bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm">${compHtml}</table></div>
+                                <div><ul class="grid grid-cols-1 gap-4 text-[15px] leading-relaxed">${benefitsHtml}</ul></div>
+                            </div>
+                            <div class="mt-16 pt-12 border-t flex flex-col sm:flex-row items-center justify-between gap-10">
+                                <div>
+                                    <span class="text-[10px] uppercase font-black tracking-widest text-slate-300 block mb-2">Package Unit</span>
+                                    <span class="text-lg font-black text-clinical-800 font-mono tracking-tighter">${p.packaging}</span>
+                                </div>
+                                <div class="flex gap-4 w-full sm:w-auto">
+                                    <a href="${p.link}" target="_blank" class="flex-1 sm:flex-none border-2 border-orange-500 text-orange-500 px-10 py-5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-orange-500 hover:text-white transition-all text-center">Buy on 1mg</a>
+                                    <button onclick="openDrawer('${p.name}')" class="flex-1 sm:flex-none btn-premium px-10 py-5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">Inquire</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>`;
+            window.scrollTo(0,0);
         }
-    });
-}
 
-    function filterProducts(cat, btn) {
-        document.querySelectorAll('.filter-btn').forEach(b => {
-            b.classList.remove('bg-clinical-800', 'text-white', 'shadow-xl');
-            b.classList.add('text-slate-500', 'hover:bg-slate-50');
-        });
-        btn.classList.add('bg-clinical-800', 'text-white', 'shadow-xl');
-        btn.classList.remove('text-slate-500', 'hover:bg-slate-50');
-        renderGrid(cat);
-    }
+        function handleRoute() {
+            const hash = window.location.hash.substring(1);
+            const navLinks = document.getElementById('nav-links');
+            const inquiryBtn = document.getElementById('inquiry-desk-btn');
+            const backBtn = document.getElementById('back-button');
 
-    function showDetail(id) {
-        const p = products.find(item => item.id === id);
-        if (!p) return;
-
-        document.getElementById('view-grid').classList.add('hidden');
-        document.getElementById('view-grid-body').classList.add('hidden');
-        document.getElementById('view-detail').classList.remove('hidden');
-        document.getElementById('nav-links').classList.add('hidden');
-        document.getElementById('mobile-menu').classList.add('hidden');
-        document.getElementById('back-button').classList.remove('hidden');
-
-        const compHtml = p.comp.map(c => `<tr><td class="px-8 py-5 font-bold text-slate-700">${c[0]}</td><td class="px-8 py-5 text-right font-mono font-bold text-clinical-500">${c[1]}</td></tr>`).join('');
-        const benefitsHtml = p.benefits.map(b => `<li class="flex items-start bg-slate-50 p-5 rounded-2xl"><i class="fa-solid fa-shield-halved text-clinical-500 mr-4 mt-1 shrink-0"></i><span class="text-slate-600 font-medium">${b}</span></li>`).join('');
-
-        document.getElementById('detail-container').innerHTML = `
-            <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
-                <div class="grid grid-cols-1 lg:grid-cols-12">
-                    <div class="lg:col-span-5 bg-slate-50/50 p-12 flex items-center justify-center border-r border-slate-100">
-                        <img src="${p.image}" alt="${p.name}" class="product-image-main max-h-[450px] w-auto">
-                    </div>
-                    <div class="lg:col-span-7 p-8 sm:p-20">
-                        <span class="text-[10px] font-black tracking-[0.4em] uppercase text-clinical-500 block mb-4">${p.cat} Division</span>
-                        <h2 class="text-3xl sm:text-6xl font-black font-display text-clinical-800 leading-tight">${p.name}<sup>™</sup></h2>
-                        <p class="text-slate-400 mt-6 font-bold uppercase tracking-[0.2em] text-xs pb-10 border-b border-slate-100">${p.tag}</p>
-                        
-                        <div class="mt-14 space-y-14">
-                            <div>
-                                <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-300 mb-8 flex items-center">Scientific Formulation</h4>
-                                <table class="w-full text-sm bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm">${compHtml}</table>
-                            </div>
-                            <div>
-                                <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-300 mb-8 flex items-center">Clinical Advantages</h4>
-                                <ul class="grid grid-cols-1 gap-4 text-[15px] leading-relaxed">${benefitsHtml}</ul>
-                            </div>
-                        </div>
-
-                        <div class="mt-16 pt-12 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-10">
-                            <div class="text-left">
-                                <span class="text-[10px] uppercase font-black tracking-widest text-slate-300 block mb-2">Package Unit</span>
-                                <span class="text-lg font-black text-clinical-800 font-mono tracking-tighter">${p.packaging}</span>
-                            </div>
-                            <div class="flex gap-4 w-full sm:w-auto">
-                                <a href="${p.link}" target="_blank" class="flex-1 sm:flex-none border-2 border-orange-500 text-orange-500 px-10 py-5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-orange-500 hover:text-white transition-all text-center">Buy on 1mg</a>
-                                <button onclick="openDrawer('${p.name}')" class="flex-1 sm:flex-none btn-premium px-10 py-5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl text-center">Inquire</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
-        window.scrollTo(0,0);
-    }
-
-    function handleRoute() {
-        const hash = window.location.hash.substring(1);
-        const navLinks = document.getElementById('nav-links');
-        const inquiryBtn = document.getElementById('inquiry-desk-btn');
-        const backBtn = document.getElementById('back-button');
-
-        if (hash) {
-            showDetail(hash);
-            navLinks.classList.add('hidden');
-            if (inquiryBtn) inquiryBtn.classList.add('hidden');
-            backBtn.classList.remove('hidden');
-        } else {
-            document.getElementById('view-grid').classList.remove('hidden');
-            document.getElementById('view-grid-body').classList.remove('hidden');
-            document.getElementById('view-detail').classList.add('hidden');
-            navLinks.classList.add('hidden'); 
-            if (inquiryBtn) inquiryBtn.classList.add('hidden'); 
-            backBtn.classList.add('hidden');
+            if (hash) {
+                showDetail(hash);
+                navLinks.classList.add('hidden');
+                if(inquiryBtn) inquiryBtn.classList.add('hidden');
+                backBtn.classList.remove('hidden');
+            } else {
+                document.getElementById('view-grid').classList.remove('hidden');
+                document.getElementById('view-grid-body').classList.remove('hidden');
+                document.getElementById('view-detail').classList.add('hidden');
+                navLinks.classList.remove('hidden'); 
+                if(inquiryBtn) inquiryBtn.classList.remove('hidden'); 
+                backBtn.classList.add('hidden');
+            }
         }
-    }
 
-    window.addEventListener('hashchange', handleRoute);
-    window.addEventListener('load', () => { renderGrid(); handleRoute(); });
-// --- GOOGLE SHEETS STORAGE LOGIC ---
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzfle-8iBO5t_UBt-eqwbIrjjLyOOlAFtTfs0fjfeKcjkTzYxuZ87P5olLha_xYgdau8A/exec'; 
-const form = document.getElementById('inquiryForm');
-const btn = document.getElementById('submitBtn');
+        window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('load', () => { renderGrid(); handleRoute(); });
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    // Change button text to show progress
-    btn.disabled = true;
-    btn.innerText = "SENDING TO SYSTEM...";
-    btn.style.opacity = "0.7";
+        // konsolidacja logic dla Google Sheet
+        async function sendDataToSheet(e) {
+            e.preventDefault();
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfle-8iBO5t_UBt-eqwbIrjjLyOOlAFtTfs0fjfeKcjkTzYxuZ87P5olLha_xYgdau8A/exec";
+            const form = document.getElementById('inquiryForm');
+            const btn = document.getElementById('submitBtn');
+            
+            const payload = {
+                formType: "Inquiry",
+                sourceForm: "Products Page",
+                name: form.Name.value,
+                email: form.Email.value,
+                phone: "N/A",
+                subject: "Product Inquiry: " + form.Medicine.value,
+                message: form.Message.value
+            };
 
-    // Create the data object to send
-    const formData = new FormData(form);
+            btn.innerText = "SENDING...";
+            btn.disabled = true;
 
-    fetch(scriptURL, { 
-        method: 'POST', 
-        body: formData
-    })
-    .then(response => {
-        // Success State
-        btn.innerText = "SENT SUCCESSFULLY!";
-        btn.style.background = "#52b788"; // Green success color
-        
-        setTimeout(() => {
-            closeDrawer();
-            form.reset();
-            btn.disabled = false;
-            btn.innerText = "SEND INQUIRY";
-            btn.style.opacity = "1";
-            btn.style.background = ""; // Resets to theme color
-        }, 2500);
-    })
-    .catch(error => {
-        // Error State
-        console.error('Error!', error.message);
-        btn.innerText = "SYSTEM ERROR. TRY AGAIN.";
-        btn.style.background = "#ff4d4d";
-        btn.disabled = false;
-    });
-});
-</script>
+            try {
+                // We use no-cors if the app script isn't returning specific CORS headers
+                await fetch(SCRIPT_URL, {
+                    method: "POST",
+                    mode: 'no-cors', 
+                    body: JSON.stringify(payload)
+                });
+                
+                btn.innerText = "SENT SUCCESSFULLY!";
+                btn.style.background = "#52b788";
+                setTimeout(() => { 
+                    closeDrawer(); 
+                    form.reset(); 
+                    btn.disabled = false; 
+                    btn.innerText = "SEND INQUIRY"; 
+                    btn.style.background = ""; 
+                }, 2500);
+
+            } catch (error) {
+                console.error("Error!", error);
+                alert("Something went wrong. Please try again.");
+                btn.disabled = false;
+                btn.innerText = "SEND INQUIRY";
+            }
+        }
+
+        document.getElementById('inquiryForm').addEventListener('submit', sendDataToSheet);
+    </script>
 </body>
 </html>
