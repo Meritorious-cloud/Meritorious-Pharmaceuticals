@@ -4,77 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Meritorious Pharmaceuticals</title>
-    <link rel="icon" type="image/png" href="168411901502.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/jpeg" href="168411901502.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
-                    colors: { clinical: { 700: '#003a6d', 800: '#001e3c', 900: '#001329', 500: '#0ea5e9' } }
+                    colors: { 
+                        clinical: { 
+                            700: '#2d4f3e', /* Deep Sage */
+                            800: '#1a3026', /* Forest Charcoal */
+                            900: '#0f1c16', /* Dark Moss */
+                            500: '#52b788'  /* Vibrant Mint */
+                        }
+                    }
                 }
             }
         }
     </script>
+
     <style>
-        body { 
-            background-color: #f4f8f9; 
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23003a6d' stroke-opacity='0.03' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+        .trellis-pattern {
+            background-color: #fafaf9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='120' viewBox='0 0 80 120'%3E%3Cg fill='none' stroke='%232d4f3e' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M0 30 L20 0 L40 30 L20 60 Z'/%3E%3Cpath d='M40 30 L60 0 L80 30 L60 60 Z'/%3E%3Cpath d='M0 90 L20 60 L40 90 L20 120 Z'/%3E%3Cpath d='M40 90 L60 60 L80 90 L60 120 Z'/%3E%3Cpath d='M20 60 L40 30 L60 60 L40 90 Z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .combined-hero { background: #ffffff; position: relative; overflow: hidden; }
+        .combined-hero::before {
+            content: ''; position: absolute; top: -50%; left: -10%; width: 70%; height: 200%;
+            background: radial-gradient(circle, rgba(82, 183, 136, 0.08) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(-15deg);
+        }
+        .glass-card {
+            background: #ffffff; border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04);
         }
         .white-logo-filter { filter: brightness(0) invert(1); }
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .accent-line { height: 3px; width: 50px; background: #52b788; margin-bottom: 1.5rem; }
     </style>
 </head>
-<body class="text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+<body class="text-slate-700 font-sans antialiased min-h-screen flex flex-col trellis-pattern">
 
-    <!-- Header & Hero -->
-    <div class="bg-clinical-900 border-b border-white/5 pb-20">
-        <header class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                <img src="1684119015028.png" alt="Logo" class="h-10 white-logo-filter">
-                <div class="border-l border-white/20 pl-3">
-                    <span class="text-white font-extrabold text-xs tracking-widest font-display uppercase block">MERITORIOUS</span>
-                    <span class="text-[8px] tracking-[0.25em] uppercase text-sky-400 font-bold block">PHARMACEUTICALS</span>
+    <!-- HEADER & HERO -->
+    <div class="combined-hero border-b border-slate-100">
+        <div class="absolute inset-0 trellis-pattern opacity-40"></div>
+        <header class="relative z-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between h-20 sm:h-28">
+                    <a href="index.html" class="flex items-center space-x-4">
+                        <img src="168411901502.png" alt="Logo" class="h-10 sm:h-14 w-auto">
+                        <div class="border-l border-slate-200 pl-4">
+                            <span class="text-[11px] sm:text-[15px] font-extrabold tracking-[0.2em] text-clinical-800 block leading-none font-display uppercase">MERITORIOUS</span>
+                            <span class="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+                        </div>
+                    </a>
+                    <nav class="hidden lg:flex space-x-8 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                        <a href="index.html" class="hover:text-clinical-500 transition-all">Home</a>
+                        <a href="about.html" class="hover:text-clinical-500 transition-all">About Us</a>
+                        <a href="products.html" class="hover:text-clinical-500 transition-all">Products</a>
+                        <a href="contact.html" class="hover:text-clinical-500 transition-all">Contact</a>
+                    </nav>
                 </div>
-            </a>
-            <a href="index.html" class="text-white text-[10px] font-bold uppercase tracking-widest hover:text-sky-400">Back to Home</a>
+            </div>
         </header>
 
-        <div class="max-w-3xl mx-auto px-6 pt-12 text-center">
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-display uppercase tracking-tight">Privacy <span class="text-sky-400 italic font-light">Policy</span></h1>
-            <p class="text-slate-400 text-sm mt-4 font-light">Last Updated: August 2026</p>
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-24 relative z-10 text-center lg:text-left">
+            <div class="accent-line mx-auto lg:mx-0"></div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-clinical-800 font-display tracking-tight leading-tight uppercase">
+                Privacy <br><span class="text-clinical-500 italic font-light">Policy.</span>
+            </h1>
+            <p class="mt-4 text-slate-500 text-xs font-bold uppercase tracking-widest">Last Updated: August 2026</p>
         </div>
     </div>
 
-    <!-- Content -->
-    <main class="max-w-4xl mx-auto px-6 -mt-12 mb-24 flex-grow">
-        <div class="glass-card p-8 sm:p-12 rounded-[2.5rem] shadow-xl space-y-10">
+    <!-- CONTENT -->
+    <main class="max-w-4xl mx-auto px-6 -mt-12 mb-24 relative z-20 flex-grow">
+        <div class="glass-card p-8 sm:p-16 rounded-[3rem] shadow-2xl space-y-12">
+            
             <section>
-                <h2 class="text-clinical-800 font-display font-bold text-lg mb-4">1. Data Collection</h2>
-                <p class="text-slate-600 text-sm leading-relaxed">Meritorious Pharmaceuticals collects minimal personal information through our Inquiry Desk and Career portal. This includes names, contact numbers, and professional details necessary to process pharmaceutical inquiries and job applications.</p>
+                <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                    <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4">01</span>
+                    Information Collection
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed font-light">
+                    Meritorious Pharmaceuticals collects essential information provided by users through our digital interfaces, including the Inquiry Desk and Career portals. This may include personal identifiers (name, email, phone number) and professional background details required for trade liaisoning or recruitment evaluation.
+                </p>
             </section>
 
             <section>
-                <h2 class="text-clinical-800 font-display font-bold text-lg mb-4">2. Usage of Information</h2>
-                <p class="text-slate-600 text-sm leading-relaxed">Your data is strictly used for commercial communication regarding our products, distribution logistics, and recruitment. We do not sell or trade user data to third-party marketing agencies.</p>
+                <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                    <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4">02</span>
+                    Data Usage Protocols
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed font-light">
+                    The data collected is utilized strictly for professional communication regarding product distribution, PCD franchise queries, and employment opportunities. We operate a strictly zero-spam policy and do not share, sell, or lease your information to third-party marketing entities.
+                </p>
             </section>
 
             <section>
-                <h2 class="text-clinical-800 font-display font-bold text-lg mb-4">3. Data Security</h2>
-                <p class="text-slate-600 text-sm leading-relaxed">All information received via the website is stored on secure servers with restricted access. We employ SSL encryption and follow WHO-GMP ethical guidelines for handling sensitive healthcare-related information.</p>
+                <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                    <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4">03</span>
+                    Security & Encryption
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed font-light">
+                    As a strategic pharmaceutical partner, we value data integrity. Our website employs industry-standard SSL encryption to secure data in transit. Information stored within our internal systems is protected by restricted access protocols in compliance with ethical pharmaceutical business standards.
+                </p>
             </section>
+
+            <div class="pt-8 border-t border-slate-100">
+                <p class="text-[11px] text-slate-400 italic">For any privacy-related concerns or data removal requests, please contact our administrative desk at meritoriouspharmaceuticals2021@gmail.com.</p>
+            </div>
         </div>
     </main>
 
-    <!-- Footer Copy-Paste from your main pages -->
-    <footer class="bg-clinical-900 text-slate-500 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 text-center text-[10px] font-bold uppercase tracking-widest">
-            <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+    <!-- FOOTER -->
+    <footer class="bg-clinical-900 text-slate-400 py-16 mt-auto border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/5">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="168411901502.png" alt="Logo" class="h-9 white-logo-filter">
+                        <div class="flex flex-col border-l-2 border-clinical-500 pl-3">
+                            <span class="text-white font-extrabold text-sm tracking-widest font-display uppercase leading-none">MERITORIOUS</span>
+                            <span class="text-[8px] tracking-[0.25em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] leading-relaxed">Leading pharmaceutical marketing enterprise committed to ethical distribution and clinical excellence.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Segments</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="products.html" class="hover:text-clinical-500 transition-colors">Orthopedic Care</a></li>
+                        <li><a href="products.html" class="hover:text-clinical-500 transition-colors">Gynecology</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Organization</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="about.html" class="hover:text-clinical-500 transition-colors">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-clinical-500 transition-colors">Careers</a></li>
+                        <li><a href="sitemap.html" class="hover:text-clinical-500 transition-colors">Sitemap</a></li>
+                        <li><a href="terms.html" class="hover:text-clinical-500 transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Registered Office</h4>
+                    <p class="text-[11px] leading-relaxed">E-9, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="dev-alert.js"></script>
 </body>
 </html>
