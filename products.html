@@ -102,57 +102,65 @@
         <div class="absolute inset-0 trellis-pattern opacity-40"></div>
 
         <header class="relative z-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20 sm:h-28">
-                    <!-- Logo -->
-                    <a href="index.html" class="flex items-center space-x-2 sm:space-x-4 min-w-0">
-                        <img src="168411901502.png" alt="Logo" class="h-10 sm:h-14 w-auto shrink-0">
-                        <div class="border-l border-slate-200 pl-3 sm:pl-4 min-w-0">
-                            <span class="text-[11px] sm:text-[15px] font-extrabold tracking-[0.2em] text-clinical-800 block leading-none font-display uppercase truncate">MERITORIOUS</span>
-                            <span class="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans truncate">PHARMACEUTICALS</span>
-                        </div>
-                    </a>
-
-                    <!-- Desktop Navigation -->
-                    <nav id="nav-links" class="hidden xl:flex items-center space-x-10 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                        <a href="index.html" class="hover:text-clinical-500 transition-all">Home</a>
-                        <a href="about.html" class="hover:text-clinical-500 transition-all">About Us</a>
-                        <a href="products.html" class="text-clinical-800 border-b-2 border-clinical-500 pb-1">Products</a>
-                        <a href="resources.html" class="hover:text-clinical-500 transition-all">Resources</a>
-                        <a href="contact.html" class="hover:text-clinical-500 transition-all">Contact</a>
-                        <a href="career.html" class="hover:text-clinical-500 transition-all">Career</a>
-                    </nav>
-
-                    <div class="flex items-center space-x-4 relative z-50">
-                        <button onclick="window.location.hash=''" id="back-button" class="hidden border-2 border-clinical-800 text-clinical-800 px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-clinical-800 hover:text-white transition-all">
-                            <i class="fa-solid fa-arrow-left mr-2"></i> Back
-                        </button>
-
-                        <button onclick="openDrawer('General Inquiry')" id="inquiry-desk-btn" class="hidden xl:block btn-premium px-8 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all shadow-lg shadow-clinical-800/10">
-                            Inquiry Desk
-                        </button>
-
-                        <button onclick="toggleMobileMenu()" class="xl:hidden text-clinical-800 p-2 focus:outline-none">
-                            <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-                        </button>
-                    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Main Header Bar -->
+        <div class="flex items-center justify-between h-20 sm:h-28">
+            
+            <!-- Logo Section -->
+            <a href="index.html" class="flex items-center space-x-2 sm:space-x-4 shrink-0">
+                <img src="168411901502.png" alt="Logo" class="h-10 sm:h-14 w-auto">
+                
+                <!-- Brand Text: Hidden on mobile (< 400px), shown on larger screens -->
+                <div class="hidden min-[400px]:block border-l border-slate-200 pl-3 sm:pl-4">
+                    <span class="text-[11px] sm:text-[15px] font-extrabold tracking-[0.2em] text-clinical-800 block leading-none font-display uppercase">MERITORIOUS</span>
+                    <span class="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-100 px-6 py-8 space-y-5 shadow-2xl">
-                <a href="index.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Home</a>
-                <a href="about.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">About Us</a>
-                <a href="products.html" class="block text-clinical-500 font-bold uppercase tracking-widest text-[10px]">Products</a>
-                <a href="resources.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Resources</a>
-                <a href="contact.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Contact</a>
-                <a href="career.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Career</a>
-                <hr class="border-slate-100">
-                <button onclick="openDrawer('General Inquiry')" class="w-full text-center bg-clinical-500 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest">
+            <!-- Right Side Actions -->
+            <div class="flex items-center space-x-2">
+                <!-- Back Button (Shown only in Detail View) -->
+                <button onclick="window.location.hash=''" id="back-button" class="hidden border-2 border-clinical-800 text-clinical-800 px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-clinical-800 hover:text-white transition-all">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <!-- Desktop Navigation (Hidden on Mobile/Tablet) -->
+                <nav id="nav-links" class="hidden xl:flex items-center space-x-10 text-[10px] font-bold text-slate-500 uppercase tracking-widest mr-10">
+                    <a href="index.html" class="hover:text-clinical-500 transition-all">Home</a>
+                    <a href="about.html" class="hover:text-clinical-500 transition-all">About Us</a>
+                    <a href="products.html" class="text-clinical-800 border-b-2 border-clinical-500 pb-1">Products</a>
+                    <a href="resources.html" class="hover:text-clinical-500 transition-all">Resources</a>
+                    <a href="contact.html" class="hover:text-clinical-500 transition-all">Contact</a>
+                    <a href="career.html" class="hover:text-clinical-500 transition-all">Career</a>
+                </nav>
+
+                <!-- Inquiry Desk Button (Desktop Only) -->
+                <button onclick="openDrawer('General Inquiry')" id="inquiry-desk-btn" class="hidden xl:block btn-premium px-8 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all">
                     Inquiry Desk
                 </button>
+
+                <!-- Hamburger Menu Icon (Mobile Only) -->
+                <button onclick="toggleMobileMenu()" class="xl:hidden text-clinical-800 p-2 focus:outline-none bg-slate-50 rounded-lg">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
             </div>
-        </header>
+        </div>
+    </div>
+
+    <!-- Mobile Slide-down Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-100 px-6 py-8 space-y-5 shadow-2xl absolute w-full left-0 z-50">
+        <a href="index.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Home</a>
+        <a href="about.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">About Us</a>
+        <a href="products.html" class="block text-clinical-500 font-bold uppercase tracking-widest text-[10px]">Products</a>
+        <a href="resources.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Resources</a>
+        <a href="contact.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Contact</a>
+        <a href="career.html" class="block text-slate-600 font-bold uppercase tracking-widest text-[10px]">Career</a>
+        <hr class="border-slate-100">
+        <button onclick="openDrawer('General Inquiry')" class="w-full text-center bg-clinical-500 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest">
+            Inquiry Desk
+        </button>
+    </div>
+</header>
 
         <!-- GRID VIEW HERO CONTENT -->
         <div id="view-grid">
@@ -233,7 +241,7 @@
                 <!-- Office -->
                 <div>
                     <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Office</h4>
-                    <p class="text-[11px] leading-relaxed mb-4">DLF Phase IV, Gurugram, Haryana 122009</p>
+                    <p class="text-[11px] leading-relaxed mb-4"> E-9, Ansal API, Sushant Shopping Arcade, Sushant Lok Phase I, Gurugram, Haryana, 122002</p>
                     <p class="text-[11px] flex items-center leading-relaxed"><i class="fa-solid fa-envelope mr-2 text-clinical-500"></i> meritoriouspharmaceuticals2021@gmail.com</p>
                 </div>
             </div>
@@ -276,11 +284,39 @@
 
     <script>
         const products = [
-            { id: 'mgbliss-d3', name: 'MGBLISS-D3', image: 'MGBLISS-D3.png', cat: 'ortho', tag: 'Magnesium + D3 Tablets', packaging: '10x1x10 Tablets', comp: [['Magnesium Glycine Complex', '250 mg'], ['Vitamin D3', '1000 IU']], benefits: ['Reduces pregnancy-induced leg cramps.', 'Optimizes bone health and calcium absorption.'], link: 'https://www.1mg.com/otc/mgbliss-d3-tablet-otc1142891' },
+            { id: 'mgbliss-d3', name: 'MGBLISS-D3', image: 'MGBLISS-D3.png', cat: 'ortho', tag: 'Magnesium + D3 Tablets', packaging: '10x1x10 Tablets', comp: [['Magnesium Glycine Complex', '1250 mg'], ['Vitamin D3', '1000 IU']], benefits: ['Reduces pregnancy-induced leg cramps.', 'Optimizes bone health and calcium absorption.'], link: 'https://www.1mg.com/otc/mgbliss-d3-tablet-otc1142891' },
             { id: 'd-lozy', name: 'D-LOZY Nano Shot', image: 'D-LOZY.png', cat: 'neuro', tag: 'Cholecalciferol 60K', packaging: '4x5ml Ready-Shot', comp: [['Vitamin D3 (Cholecalciferol)', '60,000 IU']], benefits: ['Highest bioavailability nano-emulsion.', 'Sugar-free Butterscotch formulation.'], link: 'https://www.1mg.com/drugs/d-lozy-nano-shot-5ml-each-825229' },
             { id: 'eso-d', name: 'ESO-D SR', image: 'ESO-D.png', cat: 'gastro', tag: 'Esomeprazole + Domperidone', packaging: '10x10 Capsules', comp: [['Esomeprazole', '40 mg'], ['Domperidone (SR)', '30 mg']], benefits: ['Effective GERD and acidity control.', 'Prokinetic action for improved digestion.'], link: 'https://www.1mg.com/drugs/eso-d-capsule-sr-823785' },
             { id: 'cl-24', name: 'CL 24', image: 'CL 24.png', cat: 'gynecology', tag: 'Advanced Nutrient Combo', packaging: '10x1x15 Tablets', comp: [['Calcium Carbonate', '1250 mg'], ['Vitamin D3', '2000 IU'], ['Methylcobalamin', '1500 mcg'], ['L-Methylfolate Calcium', '1 mg'], ['Pyridoxal-5-Phosphate', '20 mg']], benefits: ['Comprehensive metabolic bone support.', 'Active folate and B12 for nerve health.'], link: 'https://www.1mg.com/drugs/cl-24-tablet-898769' },
-            { id: 'streptolac-ibs', name: 'STREPTOLAC-IBS', image: 'STREPTOLAC-IBS.png', cat: 'gastro', tag: 'IBS Specialty', packaging: '10x10 Capsules', comp: [['Melatonin', '3 mg'], ['Pre-biotics & Pro-biotics', '4.4 Billion']], benefits: ['Manages Gut-Brain axis disturbances.', 'Relieves chronic bloating and abdominal pain.'], link: 'https://www.1mg.com/otc/streptolac-ibs-capsule-otc823752' },
+            { 
+    id: 'streptolac-ibs', 
+    name: 'STREPTOLAC-IBS', 
+    image: 'STREPTOLAC-IBS.png', 
+    cat: 'gastro', 
+    tag: 'Pre & Probiotic DR Capsules', 
+    packaging: '10x10 Capsules', 
+    comp: [
+        ['Melatonin', '3 mg'],
+        ['Bifidobacterium breve', '340 Million'],
+        ['Bifidobacterium longum', '680 Million'],
+        ['Bifidobacterium infantis', '340 Million'],
+        ['Bifidobacterium bifidum', '200 Million'],
+        ['Lactobacillus acidophilus', '680 Million'],
+        ['Lactobacillus plantarum', '340 Million'],
+        ['Lactobacillus casei', '680 Million'],
+        ['Lactobacillus rhamnosus', '680 Million'],
+        ['Streptococcus thermophilus', '100 Million'],
+        ['Fructo-oligosaccharides', '100 mg'],
+        ['Saccharomyces boulardii', '100 Million']
+    ], 
+    benefits: [
+        'Essential for overall nutrition and restoration of gut flora.',
+        'Treats IBS symptoms: bloating, gas, abdominal pain, and unusual movements.',
+        'Supports management of Ulcerative Colitis and Constipation.',
+        'Aids Lactose Intolerance by converting milk sugar into lactic acid.'
+    ], 
+    link: 'https://www.1mg.com/otc/streptolac-ibs-capsule-otc823752' 
+},
             { id: 'stretch-bliss', name: 'STRETCH BLISS', image: 'STRETCH BLISS.png', cat: 'gynecology', tag: 'Stretch Marks Cream', packaging: '75ml Squeeze Tube', comp: [['Marine Collagen Peptide', 'Active'], ['Sea Buckthorn & Red Algae', 'Extract'], ['Shea Butter & Primrose Oil', 'Active'], ['Vitamin A & E', 'Active']], benefits: ['Minimizes stretch marks visibility.', 'Enhances skin elasticity during pregnancy.'], link: 'https://www.1mg.com/otc/stretch-bliss-intensive-stretch-marks-cream-75gm-each-otc1092620' },
             { id: 'axonac-mr', name: 'AXONAC-MR', image: 'Axonac-MR.png', cat: 'ortho', tag: 'Etoricoxib + Thiocolchicoside', packaging: '10x10 Tablets', comp: [['Etoricoxib', '60 mg'], ['Thiocolchicoside', '4 mg']], benefits: ['Rapid relief from musculoskeletal spasms.', 'Potent anti-inflammatory action.'], link: 'https://www.1mg.com/drugs/axonac-mr-tablet-823793' },
             { id: 'polmanac', name: 'Polmanac', image: 'Polmanac.png', cat: 'ortho', tag: 'Polmacoxib 2 mg', packaging: '10x10 Capsules', comp: [['Polmacoxib', '2 mg']], benefits: ['Selective Cox-2 Inhibitor.', 'Superior OA pain management.'], link: 'https://www.1mg.com/drugs/polmanac-capsule-1087611' },
@@ -392,25 +428,36 @@
         }
 
         function handleRoute() {
-            const hash = window.location.hash.substring(1);
-            const navLinks = document.getElementById('nav-links');
-            const inquiryBtn = document.getElementById('inquiry-desk-btn');
-            const backBtn = document.getElementById('back-button');
+    const hash = window.location.hash.substring(1);
+    const navLinks = document.getElementById('nav-links');
+    const inquiryBtn = document.getElementById('inquiry-desk-btn');
+    const backBtn = document.getElementById('back-button');
 
-            if (hash) {
-                showDetail(hash);
-                navLinks.classList.add('hidden');
-                if(inquiryBtn) inquiryBtn.classList.add('hidden');
-                backBtn.classList.remove('hidden');
-            } else {
-                document.getElementById('view-grid').classList.remove('hidden');
-                document.getElementById('view-grid-body').classList.remove('hidden');
-                document.getElementById('view-detail').classList.add('hidden');
-                navLinks.classList.remove('hidden'); 
-                if(inquiryBtn) inquiryBtn.classList.remove('hidden'); 
-                backBtn.classList.add('hidden');
-            }
+    if (hash) {
+        // --- DETAIL VIEW ---
+        showDetail(hash);
+        navLinks.classList.add('hidden');
+        if(inquiryBtn) inquiryBtn.classList.add('hidden');
+        backBtn.classList.remove('hidden');
+    } else {
+        // --- GRID VIEW ---
+        document.getElementById('view-grid').classList.remove('hidden');
+        document.getElementById('view-grid-body').classList.remove('hidden');
+        document.getElementById('view-detail').classList.add('hidden');
+        
+        // Ensure Nav Links stay hidden on mobile, show only on XL
+        navLinks.classList.add('hidden'); 
+        navLinks.classList.add('xl:flex'); 
+        
+        // Ensure Inquiry Button stays hidden on mobile, show only on XL
+        if(inquiryBtn) {
+            inquiryBtn.classList.add('hidden');
+            inquiryBtn.classList.add('xl:block');
         }
+
+        backBtn.classList.add('hidden');
+    }
+}
 
         window.addEventListener('hashchange', handleRoute);
         window.addEventListener('load', () => { renderGrid(); handleRoute(); });
