@@ -5,135 +5,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Trade | Meritorious Pharmaceuticals</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="168411901502.png">
-    
-    <!-- Fonts & Icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="168411901502.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
-                    colors: { clinical: { 700: '#003a6d', 800: '#001e3c', 900: '#001329', 500: '#0ea5e9' } }
+                    colors: { 
+                        clinical: { 
+                            700: '#2d4f3e', /* Deep Sage */
+                            800: '#1a3026', /* Forest Charcoal */
+                            900: '#0f1c16', /* Dark Moss */
+                            500: '#52b788'  /* Vibrant Mint */
+                        }
+                    }
                 }
             }
         }
     </script>
 
     <style>
-        body { 
-            background-color: #f4f8f9; 
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23003a6d' stroke-opacity='0.03' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+        .trellis-pattern {
+            background-color: #fafaf9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='120' viewBox='0 0 80 120'%3E%3Cg fill='none' stroke='%232d4f3e' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M0 30 L20 0 L40 30 L20 60 Z'/%3E%3Cpath d='M40 30 L60 0 L80 30 L60 60 Z'/%3E%3Cpath d='M0 90 L20 60 L40 90 L20 120 Z'/%3E%3Cpath d='M40 90 L60 60 L80 90 L60 120 Z'/%3E%3Cpath d='M20 60 L40 30 L60 60 L40 90 Z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .combined-hero { background: #ffffff; position: relative; overflow: hidden; }
+        .combined-hero::before {
+            content: ''; position: absolute; top: -50%; left: -10%; width: 70%; height: 200%;
+            background: radial-gradient(circle, rgba(82, 183, 136, 0.08) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(-15deg);
+        }
+        .glass-card {
+            background: #ffffff; border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04);
         }
         .white-logo-filter { filter: brightness(0) invert(1); }
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
-        .accent-line { height: 3px; width: 40px; background: #0ea5e9; margin-bottom: 1rem; }
+        .accent-line { height: 3px; width: 50px; background: #52b788; margin-bottom: 1.5rem; }
     </style>
 </head>
-<body class="text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+<body class="text-slate-700 font-sans antialiased min-h-screen flex flex-col trellis-pattern">
 
-    <!-- HERO SECTION -->
-    <div class="bg-clinical-900 border-b border-white/5 pb-24">
-        <header class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                <img src="1684119015028.png" alt="Logo" class="h-10 white-logo-filter">
-                <div class="border-l border-white/20 pl-3 text-left">
-                    <span class="text-white font-extrabold text-xs tracking-widest font-display uppercase block">MERITORIOUS</span>
-                    <span class="text-[8px] tracking-[0.25em] uppercase text-sky-400 font-bold block">PHARMACEUTICALS</span>
+    <!-- HEADER & HERO -->
+    <div class="combined-hero border-b border-slate-100">
+        <div class="absolute inset-0 trellis-pattern opacity-40"></div>
+        <header class="relative z-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between h-20 sm:h-28">
+                    <a href="index.html" class="flex items-center space-x-4">
+                        <img src="168411901502.png" alt="Logo" class="h-10 sm:h-14 w-auto">
+                        <div class="border-l border-slate-200 pl-4">
+                            <span class="text-[11px] sm:text-[15px] font-extrabold tracking-[0.2em] text-clinical-800 block leading-none font-display uppercase">MERITORIOUS</span>
+                            <span class="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+                        </div>
+                    </a>
+                    <a href="index.html" class="text-clinical-800 text-[10px] font-bold uppercase tracking-widest border-2 border-clinical-800 px-6 py-2.5 rounded-full hover:bg-clinical-800 hover:text-white transition-all">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Back to Home
+                    </a>
                 </div>
-            </a>
-            <a href="index.html" class="bg-white/10 text-white px-5 py-2 rounded-full text-[9px] font-bold uppercase tracking-widest hover:bg-white/20 transition-all border border-white/10">Back to Portal</a>
+            </div>
         </header>
 
-        <div class="max-w-4xl mx-auto px-6 pt-16 text-center">
-            <span class="text-sky-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Regulatory & Trade Guidelines</span>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-display uppercase tracking-tight leading-tight">Terms & <span class="text-sky-400 italic font-light">Conditions</span></h1>
-            <p class="text-slate-400 text-xs sm:text-sm mt-4 font-light max-w-2xl mx-auto">Please read these commercial terms carefully. All stockists, distributors, and healthcare partners are bound by these operational protocols.</p>
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-24 relative z-10 text-center lg:text-left">
+            <div class="accent-line mx-auto lg:mx-0"></div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-clinical-800 font-display tracking-tight leading-tight uppercase">
+                Terms of <br><span class="text-clinical-500 italic font-light">Commercial Trade.</span>
+            </h1>
+            <p class="mt-6 text-slate-500 max-w-2xl text-sm sm:text-base leading-relaxed mx-auto lg:mx-0 font-light">
+                Please review our regulatory and operational protocols. These terms govern all distribution agreements, stockist liaisons, and clinical sourcing activities.
+            </p>
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-5xl mx-auto px-6 -mt-16 mb-24 flex-grow">
-        <div class="glass-card p-8 sm:p-16 rounded-[3rem] shadow-2xl">
+    <!-- CONTENT -->
+    <main class="max-w-5xl mx-auto px-6 -mt-12 mb-24 relative z-20 flex-grow">
+        <div class="glass-card p-8 sm:p-16 rounded-[3rem] shadow-2xl space-y-12">
             
-            <div class="grid grid-cols-1 gap-12 text-sm text-slate-600 leading-relaxed">
-                
+            <div class="grid grid-cols-1 gap-12">
                 <!-- Section 1 -->
                 <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">1. Commercial Eligibility</h2>
-                    <p>Trade relations are only established with entities holding a valid <b>Drug License (Form 20, 21)</b> and a registered <b>GSTIN</b>. Copies of these documents must be submitted to the Meritorious Pharmaceuticals administrative office before the first billing.</p>
+                    <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4 font-bold">01</span>
+                        Commercial Eligibility
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        Trade relations are only established with entities holding a valid <b>Drug License (Form 20, 21)</b> and a registered <b>GSTIN</b>. Valid copies of these credentials must be provided for our regulatory records prior to account activation and initial billing.
+                    </p>
                 </section>
 
                 <!-- Section 2 -->
                 <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">2. Quality Assurance & Sourcing</h2>
-                    <p>We certify that 100% of our products are manufactured at <b>WHO-GMP certified facilities</b>. Meritorious Pharmaceuticals acts as the Marketing & Distribution bridge. While we ensure high-quality sourcing, clinical efficacy is backed by the respective manufacturer's regulatory filings and COA (Certificate of Analysis).</p>
+                    <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4 font-bold">02</span>
+                        Quality & Sourcing
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        We certify that 100% of our portfolio is sourced from <b>WHO-GMP certified facilities</b>. While Meritorious Pharmaceuticals manages the marketing and pipeline, clinical efficacy and stability data are supported by the manufacturing site's Certificate of Analysis (COA).
+                    </p>
                 </section>
 
                 <!-- Section 3 -->
                 <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">3. Pricing & NPPA Compliance</h2>
-                    <p>Product prices (PTR/PTS/MRP) are subject to change without prior notice, following <b>NPPA (National Pharmaceutical Pricing Authority)</b> guidelines or changes in raw material costs. Taxes (GST) will be charged extra as per government norms at the time of invoicing.</p>
+                    <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4 font-bold">03</span>
+                        Pricing & Compliance
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        All product pricing (PTR/PTS/MRP) adheres to <b>NPPA (National Pharmaceutical Pricing Authority)</b> guidelines. Prices are subject to revision based on raw material fluctuations. Applicable GST is charged as per government norms at the time of invoice generation.
+                    </p>
                 </section>
 
                 <!-- Section 4 -->
                 <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">4. Payment Terms & Penalties</h2>
-                    <p>All payments are to be made via RTGS/NEFT/Cheque in favor of "Meritorious Pharmaceuticals". Credit periods are subject to prior agreement. <b>Cheque bounce cases</b> will attract a penalty of ₹500/- plus legal interest, and immediate suspension of the supply chain.</p>
+                    <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4 font-bold">04</span>
+                        Storage & Logistics
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        Stockists must maintain specified <b>storage temperatures</b> (Cold Chain or Cool/Dry place) as indicated on packaging. Meritorious Pharmaceuticals is not responsible for product degradation resulting from improper storage conditions post-delivery.
+                    </p>
                 </section>
 
                 <!-- Section 5 -->
                 <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">5. Logistics & Cold Chain</h2>
-                    <p>It is the sole responsibility of the stockist/distributor to maintain <b>storage temperatures</b> (as mentioned on product packaging) once the stock is delivered. Meritorious Pharmaceuticals is not liable for potency loss due to improper storage at the distributor's end.</p>
+                    <h2 class="text-clinical-800 font-display font-black text-xl uppercase tracking-widest mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-clinical-500/10 text-clinical-500 flex items-center justify-center text-xs mr-4 font-bold">05</span>
+                        Jurisdiction
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        In the event of any commercial dispute or legal claim, the courts at <b>Gurugram (Haryana)</b> shall have exclusive jurisdiction over all proceedings concerning Meritorious Pharmaceuticals.
+                    </p>
                 </section>
+            </div>
 
-                <!-- Section 6 -->
-                <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">6. Expiry & Breakage Policy</h2>
-                    <p>Expired stock must be reported at least <b>6 months prior to the date of expiry</b> for smooth processing. Shortages or breakages during transit must be mentioned on the LR (Lorry Receipt) copy; otherwise, claims will not be entertained.</p>
-                </section>
-
-                <!-- Section 7 -->
-                <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">7. Ethical Promotion</h2>
-                    <p>Partners are required to promote Meritorious products using only authorized scientific literature provided by us. Any misrepresentation of clinical data or unethical trade practices will lead to immediate termination of the partnership.</p>
-                </section>
-
-                <!-- Section 8 -->
-                <section>
-                    <div class="accent-line"></div>
-                    <h2 class="text-clinical-800 font-display font-extrabold text-xl mb-4 uppercase tracking-tight">8. Legal Jurisdiction</h2>
-                    <p>In case of any commercial or legal dispute, the courts at <b>Gurugram (Haryana)</b> shall have exclusive jurisdiction over all matters concerning Meritorious Pharmaceuticals.</p>
-                </section>
-
+            <div class="pt-8 border-t border-slate-100">
+                <p class="text-[11px] text-slate-400 italic">For full trade policy details or breakage/expiry claims, please contact our logistics desk at meritoriouspharmaceuticals2021@gmail.com.</p>
             </div>
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-clinical-900 text-slate-500 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Meritorious Pharmaceuticals. Registered in Haryana.</p>
-            <div class="flex space-x-6 text-[10px] font-bold uppercase tracking-widest">
-                <a href="privacy.html" class="hover:text-white">Privacy</a>
-                <a href="sitemap.html" class="hover:text-white">Sitemap</a>
+    <footer class="bg-clinical-900 text-slate-400 py-16 mt-auto border-t border-white/10 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/5">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="168411901502.png" alt="Logo" class="h-9 white-logo-filter">
+                        <div class="flex flex-col border-l-2 border-clinical-500 pl-3">
+                            <span class="text-white font-extrabold text-sm tracking-widest font-display uppercase leading-none">MERITORIOUS</span>
+                            <span class="text-[8px] tracking-[0.25em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] leading-relaxed">Leading pharmaceutical marketing enterprise committed to ethical distribution and clinical excellence.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Segments</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="products.html" class="hover:text-clinical-500 transition-colors">Orthopedic Care</a></li>
+                        <li><a href="products.html" class="hover:text-clinical-500 transition-colors">Gynecology</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Organization</h4>
+                    <ul class="space-y-3 text-[11px]">
+                        <li><a href="about.html" class="hover:text-clinical-500 transition-colors">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-clinical-500 transition-colors">Careers</a></li>
+                        <li><a href="sitemap.html" class="hover:text-clinical-500 transition-colors">Sitemap</a></li>
+                        <li><a href="terms.html" class="hover:text-clinical-500 transition-colors text-white">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Office</h4>
+                    <p class="text-[11px] leading-relaxed">E-9, Sushant Shopping Arcade, DLF Phase IV, Gurugram, Haryana 122009</p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Development Alert Script -->
-    <script src="dev-alert.js"></script>
 </body>
 </html>
