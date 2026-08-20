@@ -26,10 +26,10 @@
                     },
                     colors: {
                         clinical: {
-                            700: '#003a6d',
-                            800: '#001e3c',
-                            900: '#001329',
-                            500: '#0ea5e9'
+                            700: '#2d4f3e', /* Deep Sage */
+                            800: '#1a3026', /* Forest Charcoal */
+                            900: '#0f1c16', /* Dark Moss */
+                            500: '#52b788'  /* Vibrant Mint */
                         }
                     }
                 }
@@ -38,119 +38,137 @@
     </script>
 
     <style>
-        body { 
-            background-color: #f4f8f9; 
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23003a6d' stroke-opacity='0.03' stroke-width='1.5'%3E%3Cpath d='M0 10 L10 0 L20 10 L20 30 L10 40 L0 30 Z' /%3E%3Cpath d='M40 10 L50 0 L60 10 L60 30 L50 40 L40 30 Z' /%3E%3Cpath d='M20 30 L30 20 L40 30 L40 50 L30 60 L20 50 Z' /%3E%3Cpath d='M60 30 L70 20 L80 30 L80 50 L70 60 L60 50 Z' /%3E%3C/g%3E%3C/svg%3E");
+        .trellis-pattern {
+            background-color: #fafaf9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='120' viewBox='0 0 80 120'%3E%3Cg fill='none' stroke='%232d4f3e' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M0 30 L20 0 L40 30 L20 60 Z'/%3E%3Cpath d='M40 30 L60 0 L80 30 L60 60 Z'/%3E%3Cpath d='M0 90 L20 60 L40 90 L20 120 Z'/%3E%3Cpath d='M40 90 L60 60 L80 90 L60 120 Z'/%3E%3Cpath d='M20 60 L40 30 L60 60 L40 90 Z'/%3E%3C/g%3E%3C/svg%3E");
         }
-        .white-logo-filter { filter: brightness(0) invert(1); }
+        .white-logo-filter { filter: none; } /* Using original green logo for white hero */
         .combined-hero {
-            background: linear-gradient(145deg, #001329 0%, #001e3c 40%, #004e92 100%);
+            background: #ffffff;
             position: relative;
             overflow: hidden;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+        .combined-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 70%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(82, 183, 136, 0.08) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(-15deg);
         }
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(26, 48, 38, 0.1);
+            border-color: #52b788;
+        }
+        .footer-logo-filter { filter: brightness(0) invert(1); }
     </style>
 </head>
-<body class="text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+<body class="text-slate-700 font-sans antialiased min-h-screen flex flex-col trellis-pattern">
 
     <!-- 1. HEADER & HERO -->
-    <div class="combined-hero border-b border-white/5">
+    <div class="combined-hero border-b border-slate-100">
+        <div class="absolute inset-0 trellis-pattern opacity-40"></div>
         <header class="relative z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20 sm:h-24">
+                <div class="flex items-center justify-between h-20 sm:h-28">
                     <a href="index.html" class="flex items-center space-x-3">
-                        <img src="1684119015028.png" alt="Logo" class="h-10 sm:h-11 w-auto white-logo-filter">
-                        <div class="border-l border-white/20 pl-3">
-                            <span class="text-xs sm:text-sm font-extrabold tracking-widest text-white block leading-none font-display uppercase">MERITORIOUS</span>
-                            <span class="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase text-sky-400 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
+                        <img src="168411901502.png" alt="Logo" class="h-10 sm:h-14 w-auto">
+                        <div class="border-l border-slate-200 pl-3">
+                            <span class="text-xs sm:text-[15px] font-extrabold tracking-widest text-clinical-800 block leading-none font-display uppercase">MERITORIOUS</span>
+                            <span class="text-[8px] sm:text-[10px] tracking-[0.25em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
                         </div>
                     </a>
-                    <nav class="hidden lg:flex space-x-8 text-[10px] font-bold text-slate-300 uppercase tracking-widest">
-                        <a href="index.html" class="hover:text-white transition-all">Home</a>
-                        <a href="about.html" class="hover:text-white transition-all">About Us</a>
-                        <a href="products.html" class="hover:text-white transition-all">Products</a>
-                        <a href="resources.html" class="hover:text-white transition-all">Resources</a>
-                        <a href="contact.html" class="hover:text-white transition-all">Contact</a>
-                        <a href="career.html" class="hover:text-white transition-all">Career</a>
+                    <nav class="hidden lg:flex space-x-8 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                        <a href="index.html" class="hover:text-clinical-500 transition-all">Home</a>
+                        <a href="about.html" class="hover:text-clinical-500 transition-all">About Us</a>
+                        <a href="products.html" class="hover:text-clinical-500 transition-all">Products</a>
+                        <a href="resources.html" class="hover:text-clinical-500 transition-all">Resources</a>
+                        <a href="contact.html" class="hover:text-clinical-500 transition-all">Contact</a>
+                        <a href="career.html" class="hover:text-clinical-500 transition-all">Career</a>
                     </nav>
                 </div>
             </div>
         </header>
 
-        <div class="max-w-7xl mx-auto px-6 pt-12 pb-24 text-center">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-display tracking-tight">
-                Corporate <span class="text-sky-400 italic">Sitemap.</span>
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-24 text-center lg:text-left relative z-10">
+            <h1 class="text-4xl sm:text-7xl font-extrabold text-clinical-800 font-display tracking-tight leading-tight">
+                Corporate <span class="text-clinical-500 italic font-light">Sitemap.</span>
             </h1>
-            <p class="mt-4 text-slate-300 max-w-xl mx-auto text-sm font-light">
+            <p class="mt-4 text-slate-500 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed font-light">
                 Complete directory of Meritorious Pharmaceuticals digital assets and organizational sections.
             </p>
         </div>
     </div>
 
     <!-- 2. SITEMAP CONTENT -->
-    <section class="py-16 max-w-7xl mx-auto px-6 sm:px-8 flex-grow">
+    <section class="py-16 max-w-7xl mx-auto px-6 sm:px-8 flex-grow relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <!-- Category 1: Main Navigation -->
             <div class="glass-card p-10 rounded-[2.5rem]">
-                <div class="w-10 h-10 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 mb-6">
-                    <i class="fa-solid fa-compass"></i>
+                <div class="w-12 h-12 bg-clinical-500/10 rounded-2xl flex items-center justify-center text-clinical-500 mb-6">
+                    <i class="fa-solid fa-compass text-xl"></i>
                 </div>
-                <h3 class="font-bold text-slate-900 text-sm mb-6 font-display uppercase tracking-widest border-b border-slate-100 pb-4">Main Navigation</h3>
-                <ul class="space-y-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    <li><a href="index.html" class="hover:text-sky-500 flex items-center"><i class="fa-solid fa-house mr-3 text-[10px]"></i> Home Page</a></li>
-                    <li><a href="about.html" class="hover:text-sky-500 flex items-center"><i class="fa-solid fa-building mr-3 text-[10px]"></i> About Us</a></li>
-                    <li><a href="products.html" class="hover:text-sky-500 flex items-center"><i class="fa-solid fa-capsules mr-3 text-[10px]"></i> Product Portfolio</a></li>
-                    <li><a href="resources.html" class="hover:text-sky-500 flex items-center"><i class="fa-solid fa-book-medical mr-3 text-[10px]"></i> Resources</a></li>
-                    <li><a href="contact.html" class="hover:text-sky-500 flex items-center"><i class="fa-solid fa-envelope-open-text mr-3 text-[10px]"></i> Contact</a></li>
-                    <li><a href="career.html" class="hover:text-sky-500 flex items-center"><i class="fa-solid fa-user-doctor mr-3 text-[10px]"></i> Careers</a></li>
+                <h3 class="font-bold text-clinical-800 text-sm mb-6 font-display uppercase tracking-widest border-b border-slate-100 pb-4">Main Navigation</h3>
+                <ul class="space-y-4 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                    <li><a href="index.html" class="hover:text-clinical-500 flex items-center"><i class="fa-solid fa-house mr-3 opacity-30 text-[10px]"></i> Home Page</a></li>
+                    <li><a href="about.html" class="hover:text-clinical-500 flex items-center"><i class="fa-solid fa-building mr-3 opacity-30 text-[10px]"></i> About Us</a></li>
+                    <li><a href="products.html" class="hover:text-clinical-500 flex items-center"><i class="fa-solid fa-capsules mr-3 opacity-30 text-[10px]"></i> Product Portfolio</a></li>
+                    <li><a href="resources.html" class="hover:text-clinical-500 flex items-center"><i class="fa-solid fa-book-medical mr-3 opacity-30 text-[10px]"></i> Resources</a></li>
+                    <li><a href="contact.html" class="hover:text-clinical-500 flex items-center"><i class="fa-solid fa-envelope-open-text mr-3 opacity-30 text-[10px]"></i> Contact</a></li>
+                    <li><a href="career.html" class="hover:text-clinical-500 flex items-center"><i class="fa-solid fa-user-doctor mr-3 opacity-30 text-[10px]"></i> Careers</a></li>
                 </ul>
             </div>
 
             <!-- Category 2: Product Segments -->
             <div class="glass-card p-10 rounded-[2.5rem]">
-                <div class="w-10 h-10 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 mb-6">
-                    <i class="fa-solid fa-vial-virus"></i>
+                <div class="w-12 h-12 bg-clinical-500/10 rounded-2xl flex items-center justify-center text-clinical-500 mb-6">
+                    <i class="fa-solid fa-vial-virus text-xl"></i>
                 </div>
-                <h3 class="font-bold text-slate-900 text-sm mb-6 font-display uppercase tracking-widest border-b border-slate-100 pb-4">Therapeutic Segments</h3>
-                <ul class="space-y-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    <li><a href="products.html" class="hover:text-sky-500 flex items-center">Orthopedic Care</a></li>
-                    <li><a href="products.html" class="hover:text-sky-500 flex items-center">Gynecology</a></li>
-                    <li><a href="products.html" class="hover:text-sky-500 flex items-center">Gastroenterology</a></li>
-                    <li><a href="products.html" class="hover:text-sky-500 flex items-center">Neuro & General</a></li>
-                    <li><a href="products.html" class="hover:text-sky-500 flex items-center">Nutraceuticals</a></li>
+                <h3 class="font-bold text-clinical-800 text-sm mb-6 font-display uppercase tracking-widest border-b border-slate-100 pb-4">Therapeutic Segments</h3>
+                <ul class="space-y-4 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                    <li><a href="products.html" class="hover:text-clinical-500 flex items-center">Orthopedic Care</a></li>
+                    <li><a href="products.html" class="hover:text-clinical-500 flex items-center">Gynecology</a></li>
+                    <li><a href="products.html" class="hover:text-clinical-500 flex items-center">Gastroenterology</a></li>
+                    <li><a href="products.html" class="hover:text-clinical-500 flex items-center">Neuro & General</a></li>
+                    <li><a href="products.html" class="hover:text-clinical-500 flex items-center">Nutraceuticals</a></li>
                 </ul>
             </div>
 
             <!-- Category 3: Administration -->
             <div class="glass-card p-10 rounded-[2.5rem]">
-                <div class="w-10 h-10 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 mb-6">
-                    <i class="fa-solid fa-shield-halved"></i>
+                <div class="w-12 h-12 bg-clinical-500/10 rounded-2xl flex items-center justify-center text-clinical-500 mb-6">
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
                 </div>
-                <h3 class="font-bold text-slate-900 text-sm mb-6 font-display uppercase tracking-widest border-b border-slate-100 pb-4">Legal & Support</h3>
-                <ul class="space-y-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    <li><a href="admin.html" class="hover:text-sky-500 flex items-center"><i class="fa-solid fa-lock mr-3 text-[10px]"></i> Admin Console</a></li>
-                    <li><a href="#" class="hover:text-sky-500 flex items-center">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-sky-500 flex items-center">Terms of Trade</a></li>
+                <h3 class="font-bold text-clinical-800 text-sm mb-6 font-display uppercase tracking-widest border-b border-slate-100 pb-4">Legal & Support</h3>
+                <ul class="space-y-4 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                    <li><a href="admin.html" class="hover:text-clinical-500 flex items-center"><i class="fa-solid fa-lock mr-3 opacity-30 text-[10px]"></i> Admin Console</a></li>
+                    <li><a href="#" class="hover:text-clinical-500 flex items-center">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-clinical-500 flex items-center">Terms of Trade</a></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER (Matching all pages) -->
-    <footer class="bg-clinical-900 text-slate-400 py-16 mt-auto border-t border-slate-800">
+    <!-- FOOTER -->
+    <footer class="bg-clinical-900 text-slate-400 py-16 mt-auto border-t border-white/10 relative">
         <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/5">
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3 justify-center md:justify-start">
-                        <img src="1684119015028.png" alt="Logo" class="h-9 white-logo-filter">
-                        <div class="flex flex-col text-left">
+                        <img src="168411901502.png" alt="Logo" class="h-9 footer-logo-filter">
+                        <div class="flex flex-col text-left border-l-2 border-clinical-500 pl-3">
                             <span class="text-white font-extrabold text-sm tracking-widest font-display uppercase leading-none">MERITORIOUS</span>
-                            <span class="text-[8px] tracking-[0.25em] uppercase text-sky-400 font-bold block mt-1 leading-none">PHARMACEUTICALS</span>
+                            <span class="text-[8px] tracking-[0.25em] uppercase text-clinical-500 font-bold block mt-1 leading-none font-sans">PHARMACEUTICALS</span>
                         </div>
                     </div>
                     <p class="text-[11px] leading-relaxed">WHO-GMP certified pharmaceutical marketing enterprise based in India.</p>
@@ -158,15 +176,15 @@
                 <div>
                     <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Explore</h4>
                     <ul class="space-y-3 text-[11px]">
-                        <li><a href="about.html" class="hover:text-sky-400">About Us</a></li>
-                        <li><a href="products.html" class="hover:text-sky-400">Products</a></li>
+                        <li><a href="about.html" class="hover:text-clinical-500 transition-colors">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-clinical-500 transition-colors">Products</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Organization</h4>
                     <ul class="space-y-3 text-[11px]">
-                        <li><a href="contact.html" class="hover:text-sky-400">Contact</a></li>
-                        <li><a href="career.html" class="hover:text-sky-400">Careers</a></li>
+                        <li><a href="contact.html" class="hover:text-clinical-500 transition-colors">Contact</a></li>
+                        <li><a href="career.html" class="hover:text-clinical-500 transition-colors">Careers</a></li>
                     </ul>
                 </div>
                 <div>
@@ -174,10 +192,10 @@
                     <p class="text-[11px] leading-relaxed">E-9, LG Floor, Sushant Shopping Arcade, DLF IV, Gurugram</p>
                 </div>
             </div>
-            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-500 font-light">
-                <p>&copy; 2026 Meritorious Pharmaceuticals.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="sitemap.html" class="hover:text-white">Sitemap</a>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+                <p>&copy; 2026 Meritorious Pharmaceuticals. All rights reserved.</p>
+                <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                    <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
                 </div>
             </div>
         </div>
